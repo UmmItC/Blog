@@ -1,0 +1,99 @@
+/* Custom Styles */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Fonts */
+
+/* inter-300 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/inter-v3-latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/inter-v3-latin-300.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/inter-v3-latin-300.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/inter-v3-latin-300.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/inter-v3-latin-300.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/inter-v3-latin-300.svg#Inter")
+      format("svg"); /* Legacy iOS */
+}
+/* inter-500 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/inter-v3-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/inter-v3-latin-500.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/inter-v3-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/inter-v3-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/inter-v3-latin-500.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/inter-v3-latin-500.svg#Inter")
+      format("svg"); /* Legacy iOS */
+}
+/* inter-700 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/inter-v3-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/inter-v3-latin-700.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/inter-v3-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/inter-v3-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/inter-v3-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/inter-v3-latin-700.svg#Inter")
+      format("svg"); /* Legacy iOS */
+}
+
+
+div.highlight pre {
+  background: #24292f;
+  color: #707b8a;
+  font-size: auto;
+  border-radius: 5px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-wrap: initial;
+  padding: 0.5rem;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-family: monospace;
+  line-height: 1.2;
+
+  display: block;
+  overflow-x: auto;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+div.highlight {
+  position: relative;
+}
+
+div.highlight button {
+  color: #adb5bd;
+  box-sizing: border-box;
+  transition: 0.89s ease-out;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(134, 128, 128, 0.301);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0.50rem;
+}
