@@ -30,3 +30,13 @@ to run your server type the following command:
 ```shell
 npm start
 ```
+
+# Build html file
+
+The default paths on `public/`.
+
+After that upload on your server.
+
+```shell
+hugo -v
+```
