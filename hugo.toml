@@ -1,0 +1,179 @@
+baseurl = "https://k2ovoo-blog.org"
+metaDataFormat = "yaml"
+title = "VBoo - 9up blogger"
+theme = "blist"
+
+DefaultContentLanguage = "zh_tw"
+DefaultContentLanguageInSubdir = true
+[languages]
+  [languages.zh_TW]
+    contentDir = "content/zh_TW" #Example language
+    weight = 3
+    languageName = "Taiwan"
+    [languages.zh_TW.params]
+      introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
+      introSubtitle = "i use Arch btw :)"
+      introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+    [[languages.zh_TW.menu.main]]
+        name = "文章"
+        url = "blog"
+        weight = 1
+
+    [[languages.zh_TW.menu.main]]
+        name = "關於我"
+        url = "page/about/"
+        weight = 2
+
+    [[languages.zh_TW.menu.main]]
+        name = "標籤"
+        url = "tags"
+        weight = 3
+
+  [languages.zh_HK]
+    contentDir = "content/zh_HK" #Example language
+    weight = 3
+    languageName = "HongKong"
+    [languages.zh_HK.params]
+      introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
+      introSubtitle = "i use Arch btw :)"
+      introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+    [[languages.zh_HK.menu.main]]
+        name = "文章"
+        url = "blog"
+        weight = 1
+
+    [[languages.zh_HK.menu.main]]
+        name = "關於我"
+        url = "page/about/"
+        weight = 2
+
+    [[languages.zh_HK.menu.main]]
+        name = "標籤"
+        url = "tags"
+        weight = 3
+    
+  [languages.en]
+    contentDir = "content/en" #English
+    weight = 1
+    languageName = "English"
+    [languages.en.params]
+      introTitle = "9upper"
+      introSubtitle = "20 years old, come form Hong Kong. i love writing and tech. and i use Arch btw :)"
+      introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+    [[languages.en.menu.main]]
+        name = "Blog"
+        url = "blog"
+        weight = 1
+
+    [[languages.en.menu.main]]
+        name = "About"
+        url = "page/about/"
+        weight = 2
+
+    [[languages.en.menu.main]]
+        name = "Tags"
+        url = "tags"
+        weight = 3
+
+[params]
+  # Enable the darkmode toggle in header
+  darkModeToggle = true
+  
+  # Enable search in header
+  enableSearch = true
+
+  # Option to customize the search parameters of a page
+  # Below are the supported options; Note that including entire content
+  # may slowdown the loading of search results
+  # Title of page is included by default
+  searchKeys = [
+    "tags",
+    "date",
+    "categories",
+    "summary",
+    "content",
+    "link",
+    "author"
+  ]
+
+  # Custom copyright - optional
+  copyright = "Copyright © 2023 - VBoo"
+  favicon = "/favicon.svg"
+
+  # Color for the intro details and social links block, not applicable for dark mode
+  # Supported values: Any color from TailwindCSS default colors
+  # Reference: https://tailwindcss.com/docs/customizing-colors
+  ascentColor = "bg-blue-100"
+
+  # The page bundle that is shown on the front page
+  frontBundle = "blog"
+
+  # Used to hide the post metadata such as posted date, reading time and word count
+  # Can be used at site level or page level
+  hideMeta = false
+
+  # To hide "Other languages" option if the post is available in multiple languages
+  # Can be used at site level or page level
+  hideOtherLanguages = false
+
+  # Add support for Table of contents
+  # Can be added to a page level also in markdown frontmatter
+  toc = true
+
+  # Hides the thumbnail in post view
+  # Thumbnails in home and blog pages will still be shown
+  # This setting can also be in page's markdown file
+  hidePageThumbnail = false
+
+# Comments system
+[params.comments]
+  # Supports disqus, giscus and utterances
+  # Check hugo docs for setting up disqus
+  system = "giscus"
+
+  # Options for giscus, exclude hyphens
+  repo = ""
+  repoid = ""
+  category = ""
+  categoryid = ""
+  mapping = ""
+  strict = ""
+  reactionsenabled = ""
+  emitmetadata = ""
+  inputposition = ""
+  theme = ""
+
+  # Options for utterances, exclude hyphens
+  # repo = ""
+  # issueterm = ""
+  # theme = ""
+
+[params.homepage.social]
+  # Global params common for both languages
+  title = "Follow me"
+  description = "I work on everything coding and tweet developer memes"
+
+  [[params.homepage.social.icons]]
+    website = "twitter"
+    url = "https://twitter.com/"
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    # Enable to include inline HTML
+    unsafe = true
