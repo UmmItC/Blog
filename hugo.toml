@@ -128,6 +128,8 @@ DefaultContentLanguageInSubdir = true
   # This setting can also be in page's markdown file
   hidePageThumbnail = false
 
+  defaultThemeDark = true
+
 # Comments system
 [params.comments]
   # Supports disqus, giscus and utterances
@@ -154,11 +156,7 @@ DefaultContentLanguageInSubdir = true
 [params.homepage.social]
   # Global params common for both languages
   title = "Follow me"
-  description = "I work on everything coding and tweet developer memes"
-
-  [[params.homepage.social.icons]]
-    website = "twitter"
-    url = "https://twitter.com/"
+  description = "i enjoy using linux btw."
 
 [[menu.main]]
   name = "About"
