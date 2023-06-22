@@ -60,7 +60,7 @@ DefaultContentLanguageInSubdir = true
     languageName = "English"
     [languages.en.params]
       introTitle = "9upper"
-      introSubtitle = "20 years old, come form Hong Kong. i love writing and tech. and i use Arch btw :)"
+      introSubtitle = "Hi i come form Hong Kong. i love writing and tech. and i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
       logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
     [[languages.en.menu.main]]
