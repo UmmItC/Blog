@@ -14,7 +14,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
       introSubtitle = "i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
-      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "/linux.png"
     [[languages.zh_TW.menu.main]]
         name = "文章"
         url = "blog"
@@ -38,7 +38,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
       introSubtitle = "i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
-      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "/linux.png"
     [[languages.zh_HK.menu.main]]
         name = "文章"
         url = "blog"
@@ -62,7 +62,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "9upper"
       introSubtitle = "Hi i come form Hong Kong. i love writing and tech. and i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
-      logo = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      logo = "/linux.png"
     [[languages.en.menu.main]]
         name = "Blog"
         url = "blog"
@@ -101,7 +101,7 @@ DefaultContentLanguageInSubdir = true
 
   # Custom copyright - optional
   copyright = "Copyright © 2023 - VBoo"
-  favicon = "/favicon.svg"
+  favicon = "/linux.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
