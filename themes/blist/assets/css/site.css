@@ -54,7 +54,7 @@ body {
       format("svg"); /* Legacy iOS */
 }
 
-/* p font-family using SourceHanSerifHC-Bold */
+/* p font-family using SourceHanSerifHC-Regular */
 
 @font-face {
   font-family: SourceHanSansHWTC-Regular;
@@ -63,6 +63,17 @@ body {
 
 p{
   font-family: SourceHanSansHWTC-Regular;
+}
+
+/* h1 font-family using SourceHanSerifHC-Bold */
+
+@font-face {
+  font-family: SourceHanSansHWTC-Bold;
+  src: url("/fonts/SourceHanSansHWTC-Bold.otf");
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: SourceHanSansHWTC-Bold;
 }
 
 /* Codeblock using ComicMono font-family */
