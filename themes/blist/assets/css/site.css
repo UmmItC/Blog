@@ -54,6 +54,13 @@ body {
       format("svg"); /* Legacy iOS */
 }
 
+/* Codeblock using ComicMono font-family */
+
+@font-face {
+  font-family: ComicMono;
+  src: url("/fonts/ComicMono.ttf");
+}
+
 
 div.highlight pre {
   background: #24292f;
@@ -66,7 +73,7 @@ div.highlight pre {
   padding: 0.5rem;
   margin-bottom: 15px;
   margin-top: 15px;
-  font-family: monospace;
+  font-family: ComicMono;
   line-height: 1.2;
 
   display: block;
@@ -76,6 +83,7 @@ div.highlight pre {
   padding-bottom: 15px;
   background: #1a1a1a;
   color: #fff;
+
 }
 
 div.highlight {
