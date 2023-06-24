@@ -51,6 +51,9 @@
       "ul"
     ],
     "classes": [
+      "15px",
+      "50px",
+      "5px",
       "absolute",
       "bg-blue-100",
       "bg-gray-100",
@@ -118,6 +121,7 @@
       "lg:gap-8",
       "lg:grid-cols-3",
       "lg:prose-lg",
+      "margin-top:",
       "max-w-3xl",
       "max-w-4xl",
       "max-w-5xl",
