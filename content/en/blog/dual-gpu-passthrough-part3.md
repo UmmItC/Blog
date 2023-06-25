@@ -3,7 +3,7 @@ author: "VBoo"
 title: "Dual GPU Passthrough Guided Part 3 - Enable virtualization on your linux system"
 description: "let enable virtualization on your linux system."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
-date: 2023-05-13T05:38:00+0800
+date: 2023-05-13T05:50:00+0800
 thumbnail: https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGludXh8ZW58MHx8MHx8fDA%3D&w=1000&q=80
 ---
 
