@@ -7,28 +7,56 @@ date: 2021-12-11T02:15:01+0800
 thumbnail: https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/.github/banner.svg
 ---
 
-# yt-dlp <i class="fa-brands fa-youtube"></i>
+# yt-dlp
 
 yt-dlp 其實是 youtube-dl 的 fork 版本，而 youtube-dl 是官方版本，但似乎 youtube-dl 的作者已經不再製作了。因此我建議使用 yt-dlp，有一個長期的 long-maintain。而本文章全部主力集中於 yt-dlp，因為 yt-dlp 用到的 youtube-dl 也用到。
 
+<table>
+    <tr>
+        <td>版本</td>
+        <td>更新速度</td>
+        <td>連接方法</td>
+        <td>支援系統</td>
+        <td>指令分別</td>
+        <td>介面</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/ytdl-org/youtube-dl">Youtube-dl</a></td>
+        <td>已停更</td>
+        <td>單線程</td>
+        <td>Linux, Mac, Windows</td>
+        <td>唔夠 yt-dlp 多指令</td>
+        <td>CLI, White color only</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></td>
+        <td>頻繁</td>
+        <td>多線程</td>
+        <td>Linux, Mac, Windows</td>
+        <td>比起 youtube-dl 多指令</td>
+        <td>CLI, Colorful</td>
+    </tr>
+    <tr>
+        <td><a href=https://github.com/jely2002/youtube-dl-gui">youtube-dl-gui</td>
+        <td>已停更</td>
+        <td></td>
+        <td>Mac, Windows</td>
+        <td></td>
+        <td>GUI</td>
+    </tr>
+</table>
+
 ---
 
-# 1. 下載 yt-dlp <i class="fa-brands fa-youtube"></i>
+# 1. 下載 yt-dlp 
 
-以下會說明使用 `curl` 或者 `wget` 的下載方法，轉自作者。
+下載 yt-dlp 有幾個方法：
 
-<div class="note warning flat">
-    注意 : 如果要用 youtube-dl 轉檔功能，你需要裝 <a href="https://www.ffmpeg.org/">FFmpeg</a>。</br>
-    安裝方法只需將 <code>FFMPEG</code> 放在和 <code>youtube-dl</code> 同一個資料夾內就能偵查到 <code>FFMPEG</code>。
-</div>
-
----
+- curl
+- wget
+- package manager
 
 ## 使用 Curl 下載
-
-<div class="note warning flat">
-    此方法只適用於你部機本身有裝 <code>curl</code> 工具。
-</div>
 
 ```shell
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
@@ -37,10 +65,6 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 
 ## 使用 wget 下載
 
-<div class="note warning flat">
-    此方法只適用於你部機本身有裝 <code>wget</code> 工具。
-</div>
-
 ```shell
 sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
@@ -48,7 +72,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 
 ## Linux Package Manager 下載
 
-### <i class="fa-brands fa-linux"></i> APT-GET
+### APT-GET
 
 <div class="note info flat">
     適用於 : Debian, Ubuntu, Linux mint, Pop_OS 等有使用 <code>APT</code> 套裝管理員的系統。
@@ -58,7 +82,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 sudo apt-get install yt-dlp -y
 ```
 
-### <i class="fa-brands fa-apple"></i> MacOS
+###  MacOS
 
 <div class="note info flat">
     適用於 : MacOS
@@ -68,7 +92,7 @@ sudo apt-get install yt-dlp -y
 sudo brew install yt-dlp -y
 ```
 
-### <i class="fa-brands fa-linux"></i> Pacman
+### Pacman
 
 <div class="note info flat">
     適用於 : Arch Linux,Manjaro,EndeavourOs
@@ -78,7 +102,7 @@ sudo brew install yt-dlp -y
 sudo pacman -S yt-dlp
 ```
 
-### <i class="fa-brands fa-fedora"></i> Fedora
+### Fedora
 
 <div class="note info flat">
     適用於 : Fedora
@@ -88,7 +112,7 @@ sudo pacman -S yt-dlp
 sudo dnf install yt-dlp
 ```
 
-### <i class="fa-brands fa-python"></i> python pip
+### python pip
 
 <div class="note info flat">
     適用於 : 有安裝 python pip 的系統
@@ -596,6 +620,21 @@ yt-dlp [link] --throttled-rate [number]K
 yt-dlp --throttled-rate 100K https://www.youtube.com/watch?v=d59Qe_Ov2k8
 ```
 
+## 多線程下載影片
+
+其實呢個指令係唔洗打都得，因為佢預設係已經會用多線程下載。
+
+`--concurrent-fragments [number]` 使用你想要的線程下載影片。
+
+```shell
+yt-dlp [link] --concurrent-fragments (number)
+```
+
+**例子 :**
+
+```shell
+yt-dlp --concurrent-fragments 10 https://www.youtube.com/watch?v=d59Qe_Ov2k8
+```
 
 # 文章更新
 
