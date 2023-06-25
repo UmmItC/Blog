@@ -4,7 +4,7 @@ title: "Dual GPU Passthrough Guided Part 1 - Preparations hardware"
 description: "In this tutorial you will be taught how to prepare your gpu passthrough hardware and requirements"
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:38:00+0800
-thumbnail: https://virt-manager.org/static/topbar_logo.png
+thumbnail: https://cdn.mos.cms.futurecdn.net/hxHC9kET4QctevKmEPgzL.jpg
 ---
 
 # 0. Introduction
@@ -64,7 +64,7 @@ It is important to note that not all motherboards explicitly mention IOMMU suppo
 
 Remember to verify the information from reliable sources and ensure that the motherboard supports the required features before proceeding with GPU passthrough setup.
 
-Here is a example a mother board supported.
+Here is a example a motherboard supported.
 
 - [Intel Z790/H770/B760 Series Motherboard](https://download.asrock.com/Manual/Software/Intel%20B760/Software_BIOS%20Setup%20Guide_English.pdf)
 
