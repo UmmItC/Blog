@@ -110,6 +110,13 @@ html[lang="tw"] h6 {
   font-family: SourceHanSansHWTC-Bold;
 }
 
+/* Styles specific to the hk language 
+  p font-family
+*/
+
+html[lang="hk"] p{
+  font-family: SourceHanSansHWTC-Regular;
+}
 
 /* Styles specific to the Code-Block */ 
 
