@@ -1,9 +1,9 @@
 ---
 author: "VBoo"
-title: "Dual GPU Passthrough Guided Part 3 - Passthrough the GPU"
+title: "Dual GPU Passthrough Guided Part 4 - Passthrough the GPU"
 description: "in this guied, we will passthrough the second GPU."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
-date: 2023-05-13T05:38:00+0800
+date: 2023-05-13T05:55:00+0800
 thumbnail: https://i.pcmag.com/imagery/articles/04QbILXwVNxIcTB52JDHeir-5..v1569489465.jpg
 ---
 
