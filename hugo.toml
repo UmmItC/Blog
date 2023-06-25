@@ -131,22 +131,22 @@ DefaultContentLanguageInSubdir = true
   defaultThemeDark = true
 
 # Comments system
-[params.comments]
+# [params.comments]
   # Supports disqus, giscus and utterances
   # Check hugo docs for setting up disqus
-  system = "giscus"
+#  system = "giscus"
 
   # Options for giscus, exclude hyphens
-  repo = ""
-  repoid = ""
-  category = ""
-  categoryid = ""
-  mapping = ""
-  strict = ""
-  reactionsenabled = ""
-  emitmetadata = ""
-  inputposition = ""
-  theme = ""
+#  repo = ""
+#  repoid = ""
+#  category = ""
+#  categoryid = ""
+#  mapping = ""
+#  strict = ""
+#  reactionsenabled = ""
+#  emitmetadata = ""
+#  inputposition = ""
+#  theme = ""
 
   # Options for utterances, exclude hyphens
   # repo = ""
