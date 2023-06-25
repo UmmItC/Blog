@@ -3,29 +3,29 @@ metaDataFormat = "yaml"
 title = "VBoo - 9up blogger"
 theme = "blist"
 
-DefaultContentLanguage = "zh_tw"
+DefaultContentLanguage = "tw"
 DefaultContentLanguageInSubdir = true
 [languages]
-  [languages.zh_TW]
-    contentDir = "content/zh_TW" #Example language
+  [languages.tw]
+    contentDir = "content/tw" #Example language
     weight = 3
     languageName = "Taiwan"
-    [languages.zh_TW.params]
+    [languages.tw.params]
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
       introSubtitle = "i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
       logo = "/linux.png"
-    [[languages.zh_TW.menu.main]]
+    [[languages.tw.menu.main]]
         name = "文章"
         url = "blog"
         weight = 1
 
-    [[languages.zh_TW.menu.main]]
+    [[languages.tw.menu.main]]
         name = "關於我"
         url = "page/about/"
         weight = 2
 
-    [[languages.zh_TW.menu.main]]
+    [[languages.tw.menu.main]]
         name = "標籤"
         url = "tags"
         weight = 3
