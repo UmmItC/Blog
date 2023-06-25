@@ -7,8 +7,6 @@ date: 2021-12-11T02:15:01+0800
 thumbnail: https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/.github/banner.svg
 ---
 
-<img alt="yt-dlp" src="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/.github/banner.svg" width="auto"/>
-
 # yt-dlp <i class="fa-brands fa-youtube"></i>
 
 yt-dlp 其實是 youtube-dl 的 fork 版本，而 youtube-dl 是官方版本，但似乎 youtube-dl 的作者已經不再製作了。因此我建議使用 yt-dlp，有一個長期的 long-maintain。而本文章全部主力集中於 yt-dlp，因為 yt-dlp 用到的 youtube-dl 也用到。
