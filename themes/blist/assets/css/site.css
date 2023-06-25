@@ -68,14 +68,17 @@ body {
   src: url("/fonts/SourceHanSansHWTC-Bold.otf");
 }
 
-/* font-family ComicMono */
+/* font-family Comic Mono */
 
 @font-face {
   font-family: ComicMono;
   src: url("/fonts/ComicMono.ttf");
 }
 
-/* Styles specific to the English language */
+/* Styles specific to the English language 
+  p, h1, h2, h3, h4, h5, h6 font-family
+*/
+
 html[lang="en"] p,
 html[lang="en"] h1,
 html[lang="en"] h2,
