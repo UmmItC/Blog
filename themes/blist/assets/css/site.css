@@ -97,6 +97,19 @@ html[lang="tw"] p{
   font-family: SourceHanSansHWTC-Regular;
 }
 
+/* Styles specific to the tw language 
+  h1, h2, h3, h4, h5, h6 font-family
+*/
+
+html[lang="tw"] h1,
+html[lang="tw"] h2,
+html[lang="tw"] h3,
+html[lang="tw"] h4,
+html[lang="tw"] h5,
+html[lang="tw"] h6 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
 
 div.highlight pre {
   background: #24292f;
