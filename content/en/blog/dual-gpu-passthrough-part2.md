@@ -3,7 +3,7 @@ author: "VBoo"
 title: "Dual GPU Passthrough Guided Part 2 - Enable virtualization on your BIOS setting"
 description: "let enable virtualization on your BIOS setting."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
-date: 2023-05-13T05:38:00+0800
+date: 2023-05-13T05:45:00+0800
 thumbnail: https://images.unsplash.com/photo-1540829917886-91ab031b1764?ixlib=rb-4.0.3
 ---
 
