@@ -118,6 +118,20 @@ html[lang="hk"] p{
   font-family: SourceHanSansHWTC-Regular;
 }
 
+/* Styles specific to the hk language 
+  h1, h2, h3, h4, h5, h6 font-family
+*/
+
+html[lang="hk"] h1,
+html[lang="hk"] h2,
+html[lang="hk"] h3,
+html[lang="hk"] h4,
+html[lang="hk"] h5,
+html[lang="hk"] h6 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
