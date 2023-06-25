@@ -208,8 +208,10 @@
       "z-10"
     ],
     "ids": [
+      "0-ensure",
       "0-introduction",
       "0-virt-manager",
+      "1-download-iso",
       "1-download-virt-manager",
       "1-edit-bootloader",
       "1-edit-bootloader-config",
@@ -219,6 +221,7 @@
       "1-preparations",
       "11-gpu-preparations",
       "12-cpu-support",
+      "12-fastest-download-files",
       "12-find-gpu-ids",
       "12-find-iommu-gpu-ids",
       "12-for-grub-user",
