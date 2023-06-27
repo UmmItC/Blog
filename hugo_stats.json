@@ -227,8 +227,10 @@
       "TableOfContents",
       "a",
       "enable-virtualization",
+      "firefox-預設-search-engine",
       "optional-enable-virsh-network-by-default",
-      "yt-dlp"
+      "yt-dlp",
+      "如何修改"
     ]
   }
 }
