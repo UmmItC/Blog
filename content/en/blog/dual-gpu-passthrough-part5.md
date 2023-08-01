@@ -1,6 +1,6 @@
 ---
 author: "VBoo"
-title: "Dual GPU Passthrough Guided Part 3 - Setup virt-manager"
+title: "Dual GPU Passthrough Guided Part 5 - Setup virt-manager and config"
 description: "virt-manager is a nice tool for gpu-passthorugh. that helping you control the pci device."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:58:00+0800

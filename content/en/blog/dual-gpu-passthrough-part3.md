@@ -30,3 +30,13 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## 1.3 For bootctl user
 
 edit `/boot/loader/entries/your_config.conf` , edit the line starts with: options, then reboot your system to apply the new changes.
+
+your result should like that:
+
+```shell
+title Arch linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+
+options root=<root> quiet rw intel_iommu=on iommu=pt
+```

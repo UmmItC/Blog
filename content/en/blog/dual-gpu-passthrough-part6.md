@@ -25,11 +25,12 @@ the virtio iso is for your best using experience, then the windows 10 iso is for
 for your fastest download the files, i recommnad using aria2 to download the iso file, that will using multithread download the file, for install `aria2`, type the following command:
 
 ```shell
-sudo pacman -Sy aria2c
+sudo pacman -S aria2c
 ```
 
 to download the target file for using 16 thread, type the following command:
 
 ```shell
-aria2c -x 16 "iso_link.iso"
+aria2c -x 16 "windows_iso_link.iso"
+aria2c -x 16 "virtio-win_link.iso"
 ```

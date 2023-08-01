@@ -61,7 +61,12 @@ vfio-pci.ids=1002:73ff,1002:ab28
 result should like that:
 
 ```shell
-intel_iommu=on iommu=pt video=efifb:off vfio-pci.ids=1002:73ff,1002:ab28
+title Arch linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+
+options root=<root> quiet rw intel_iommu=on iommu=pt vfio-pci.ids=1002:73ff,1002:ab28
+
 ```
 
 # 2. Added vfio.conf
