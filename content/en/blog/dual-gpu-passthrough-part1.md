@@ -50,7 +50,7 @@ Here is an example with supported CPU:
 
 - [Intel® Core™ i9-13900K Processor](https://www.intel.com/content/www/us/en/products/sku/230496/intel-core-i913900k-processor-36m-cache-up-to-5-80-ghz/specifications.html?wapkw=i9%2013900k)
 
-<img src="/blog/en/dual-gpu-passthrough/part1/Example-with-cpu-supported.png">
+![CPU](/blog/linux/dual-gpu-passthrough/part1/Example-with-cpu-supported.png)
 
 ## 1.3 MotherBoard
 
@@ -68,7 +68,7 @@ Here is a example a motherboard supported.
 
 - [Intel Z790/H770/B760 Series Motherboard](https://download.asrock.com/Manual/Software/Intel%20B760/Software_BIOS%20Setup%20Guide_English.pdf)
 
-<img src="/blog/en/dual-gpu-passthrough/part1/Example-with-motherboard-supported.png"/>
+![CPU](/blog/linux/dual-gpu-passthrough/part1/Example-with-motherboard-supported.png)
 
 ## 1.3 Keyboard and Mouse (Optional)
 
