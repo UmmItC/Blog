@@ -1,42 +1,43 @@
-# vboo-server
+# Arcsly Blog Server Setup
 
-[k2ovoo-blog.org source tree.](k2ovoo-blog.org)
+Arcsly blog server was using Hugo and [Blist](https://blist.vercel.app/en/) themes. but i modify something.
 
-# Usage
+## Usage
 
-with hosting this website. following the step:
+Follow these steps to host this website:
 
-## Clone repo
+### Clone the Repository
 
-makesure on your computer installed `git`, then git clone.
+Ensure that you have `git` installed on your computer, and then clone the repository:
 
 ```shell
-git clone https://codeberg.org/k2ovoo/vboo-server
+git clone https://codeberg.org/Arcsly/Arcsly-server.git
 ```
 
-## Install pacakge
+### Install Required Packages
 
-makesure on your computer installed `nodejs` `npm`:
+Make sure `nodejs` and `npm` are installed on your computer:
 
 ```shell
 npm install
 npm install postcss-cli
 ```
 
-## Start server
+### Start the Server
 
-to run your server type the following command:
+To run your server, use the following command:
 
 ```shell
-npm start
+npm start  # Use npm to run
+hugo server --watch --verbose # Use Hugo to run
 ```
 
-# Build html file
+## Build HTML Files
 
-The default paths on `public/`.
-
-After that upload on your server.
+The HTML files are built to the default paths in `public/`. After building, upload them to your server:
 
 ```shell
 hugo -v
 ```
+
+By following these steps, you can effectively set up and manage your blog server this source.
