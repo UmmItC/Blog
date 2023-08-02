@@ -1,5 +1,5 @@
 ---
-author: "VBoo"
+author: "Arcsly"
 title: "使用 yt-dlp 下載影片或音樂"
 description: "yt-dlp 是一款主要下載影片的工具。本文章會說明 yt-dlp 一些常用的參數和使用示範。"
 tags: ["youtube-dl", "yt-dlp"]
