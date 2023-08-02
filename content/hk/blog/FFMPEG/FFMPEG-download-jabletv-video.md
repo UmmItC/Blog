@@ -1,6 +1,7 @@
 ---
-author: "VBoo"
-title: "使用 FFEMPG 下載 Jable.tv 影片教學"
+author: "Arcsly"
+title: "FFEMPG 下載 Jable.tv 影片教學"
+description: "教你點用 FFMPEG 下載 HLS 既片。"
 tags: ["ffmpeg"]
 date: 2021-12-13T00:28:36+0800
 thumbnail: /blog/linux/linux-tools/FFMPEG/FFMPEG-download-jabletv-video/jable.png
