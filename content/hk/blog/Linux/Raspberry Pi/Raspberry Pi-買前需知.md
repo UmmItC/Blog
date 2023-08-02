@@ -1,5 +1,5 @@
 ---
-author: "VBoo"
+author: "Arcsly"
 title: "Raspberry Pi 買前需知及說明"
 description: "呢篇文會同你講我本人對 Raspberry 既用後感，應唔應該買? 如果要買要準備啲乜?"
 tags: ["Raspberry Pi", "Linux", "Hardware"]
