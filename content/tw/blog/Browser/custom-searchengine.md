@@ -1,5 +1,5 @@
 ---
-author: "VBoo"
+author: "Arcsly"
 title: "電腦版 Firefox 自訂你想使用的 Search Engine"
 description: "Firefox 沒有一個預設選項來新增其他的 Search Engine，你是需要修改 about:config。本文章會說明如何修改 ~"
 tags: ["youtube-dl", "yt-dlp"]
