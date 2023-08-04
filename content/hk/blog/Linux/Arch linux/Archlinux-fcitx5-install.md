@@ -7,7 +7,7 @@ date: 2022-12-17T02:57:50+08:00
 thumbnail: /blog/linux/Archlinux-fcitx5-install/fix_ed_fontfaimly.png
 ---
 
-# Fxtix5
+# Fctix5
 
 Fcitx5 is an input method framework with a lightweight core, offering additional language support via addons. It is the successor to Fcitx. 
 
@@ -21,7 +21,7 @@ Fcitx5 is an input method framework with a lightweight core, offering additional
 
 而今次我會講解點裝 **fcitx5**
 
-## 點先打到中文?
+# Fcitx5 安裝
 
 如果要係 Arch Linux 打到中文，我地需要裝一個叫做 **fxitx5** 既中文輸入法工具，輸入以下呢句指令安裝
 
@@ -44,7 +44,7 @@ sudo pacman -S kcm-fcitx5
 
 ![fcitx5 install](/blog/linux/Archlinux-fcitx5-install/kcm%20install.png)
 
-### Support Program Windows
+## Support Program Windows
 
 因為每個程式行緊既 Windwos 所用既技術都係唔一樣，
 所以係要視乎返用緊咩程式，咁先可以係個個程式入面打到字，各自裝一個係 for 返佢打字- - QT
@@ -88,7 +88,6 @@ sudo nano /etc/environment/
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=fcitx
 export QT_IM_MODULE=fcitx
-
 export SDL_IM_MODULE=fcitx
 ```
 
@@ -98,7 +97,7 @@ export SDL_IM_MODULE=fcitx
 
 右下角打 search input method，將佢打開.
 
-![add input type](/blog/linux/Archlinux-fcitx5-install/add%20input%20type.png)
+![add input type](/blog/linux/Archlinux-fcitx5-install/add_input_type.png)
 
 ### Add Input Method
 
