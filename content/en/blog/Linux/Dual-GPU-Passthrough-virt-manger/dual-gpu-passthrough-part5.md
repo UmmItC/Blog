@@ -4,96 +4,122 @@ title: "Dual GPU Passthrough Guided Part 5 - Setup virt-manager and config"
 description: "virt-manager is a nice tool for gpu-passthorugh. that helping you control the pci device."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:58:00+0800
-thumbnail: https://virt-manager.org/static/topbar_logo.png
+thumbnail: https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/virt-manager-icon.png
 ---
 
-# 0. virt-manager
+Certainly! Here's the revised version of the section with explanations of what each package is used for:
 
-now we need a virtual machine to using the passed thorught machine. we are gotta to use virt-manger to setup your own virtual machine (QEMU/KVM).
+# Set Up virt-manager
 
+To utilize hardware passthrough, we'll configure a virtual machine using virt-manager, a powerful GUI tool for managing QEMU/KVM virtualization.
 
-# 1. install needed package
+# 1. Install Required Packages
 
-to install the needed package type the following command, the following pacakge with Role:
+Start by installing the necessary packages, each with its respective role:
 
-- virt-manger, qemu (QEMU/KVM)
-- dmidecode (retrieve system information)
+- `virt-manager`, `qemu` (QEMU/KVM): Virt-manager provides a user-friendly interface for managing virtual machines, while QEMU is a fast processor emulator that performs hardware virtualization.
+- `vde2`: The Virtual Distributed Ethernet (VDE) toolkit is used for creating virtual networks.
+- `ebtables`: This tool operates at the Ethernet frame level and enables administrators to set up rules to filter or manipulate network traffic.
+- `iptables-nft`, `nftables`: These provide firewall management for IPv4 and IPv6 using the Netfilter framework.
+- `dnsmasq`: A lightweight DNS and DHCP server, useful for small networks and virtual environments.
+- `bridge-utils`: These utilities enable management of Ethernet bridges.
+- `ovmf`: The Open Virtual Machine Firmware provides a modern UEFI firmware implementation for use in virtual machines.
+- `dmidecode`: This tool retrieves system information including BIOS, motherboard, CPU, memory, and more.
 
+Execute the following command to install these packages:
 ```shell
 sudo pacman -S virt-manager qemu vde2 ebtables iptables-nft nftables dnsmasq bridge-utils ovmf dmidecode
 ```
 
-# 2. virt-manager Configuration
+# 2. Configure virt-manager
 
-Now you open virt-manager should have a pop-up for needed root user. will also need to edited the config let you open up this program without the root permission.
+1. Open virt-manager with Root Permission:
+   When you launch virt-manager, a root user prompt may appear. We will adjust configurations to run this program without requiring root permission.
 
-now we edit the first config files, the file located on `/etc/libvirt/libvirtd.conf`, for this step is the permission for open up virt-manager.
+2. Edit libvirtd.conf for Permission:
+   Edit the configuration file located at `/etc/libvirt/libvirtd.conf`. This step manages the permission for opening virt-manager.
+   ```shell
+   unix_sock_group = "libvirt"
+   unix_sock_rw_perms = "0770"
+   ```
 
-```shell
-unix_sock_group = "libvirt"
+3. Log Files for Troubleshooting:
+   If you encounter issues with virt-manager not functioning correctly, log files can aid in troubleshooting. In the same `/etc/libvirt/libvirtd.conf` file, add these lines to the end:
+   ```shell
+   log_filters="3:qemu 1:libvirt"
+   log_outputs="2:file:/var/log/libvirt/libvirtd.log"
+   ```
 
-unix_sock_rw_perms = "0770"
-```
+By completing these steps, you install the necessary packages, each serving a specific purpose in virtualization and networking. You also configure virt-manager for efficient usage and set up logging for potential troubleshooting scenarios. This paves the way for creating your virtual machine with hardware passthrough capabilities.
 
-## 2.2 Log files
+## 2.3 Adding libvirt Group to Your User
 
-sometimes you test the virt-manager but now working, the log file will useful for your debugging what error for detail and troubleshooting. same on file `/etc/libvirt/libvirtd.conf`, end of files add two lines:
-
-```shell
-log_filters="3:qemu 1:libvirt"
-log_outputs="2:file:/var/log/libvirt/libvirtd.log"
-```
-
-## 2.3 adding libvirt group to your user
-
-to allow your user using virt-manager for no warning pop up superuser, type the following commands:
+To enable your user to use `virt-manager` without encountering superuser warnings, run the following commands:
 
 ```shell
 sudo usermod -a -G kvm,libvirt $(whoami)
 ```
 
-## 2.4 Enable/start libvirt services
+## 2.4 Enable and Start libvirt Services
 
-Now enable the service
+Now, enable the libvirt service to ensure it starts automatically upon boot:
 
 ```shell
 sudo systemctl enable libvirtd
 ```
 
-Then start the service
+Next, start the libvirt service:
 
 ```shell
 sudo systemctl start libvirtd
 ```
 
-## 2.5 Verify group
+## 2.5 Verify Group Membership
 
-by verify libvirt has been added to your group, this should return kvm libvirt including the output.
+To confirm that `libvirt` has been added to your group, including `kvm`, execute the following command:
 
 ```shell
 sudo groups $(whoami)
 ```
 
-## 2.6 edit qemu.conf
+By completing these steps, you add your user to the necessary groups, enable and start the libvirt service, and verify the updated group membership, ensuring a smooth experience while using `virt-manager` for virtualization tasks.
 
-finally edit the file qemu.conf the files located on /etc/libvirt/qemu.conf, using superuser to edit the file:
+## 2.6 Edit qemu.conf
 
-```shell
-sudo nano /etc/libvirt/qemu.conf
+In the `qemu.conf` file, you will come across lines that look like this:
+
+```plaintext
+user = "your_username"
+
+# The group for QEMU processes run by the system instance. It can be
+# specified in a similar way to user.
+group = "your_username"
 ```
 
-to easy way to find out what lines need edit, for nano shortcut press  ctrl + w search user = , on the same area edit the content with libvirt, change this to your current user name.
+Replace `"your_username"` with your actual username. Ensure it matches the same username you used earlier to verify your group membership.
 
-## 2.7 restart libvirtd service
+To quickly find the lines for editing within the `nano` text editor, follow these steps:
 
-by apply the lines of changes, type the following command to restart libvirtd servies.
+1. Press `Ctrl + W` to initiate a search.
+2. Enter `user =` and press `Enter`.
 
+Now, within the same section, update the `user` and `group` settings to match your current username.
+
+By following these instructions, you'll seamlessly replace `"your_username"` with your actual username, making the configuration clearer and more aligned with your system setup.
+
+## 2.7 Restart libvirtd Service
+
+Apply the changes by restarting the `libvirtd` service with the following command:
 ```shell
 sudo systemctl restart libvirtd
 ```
 
-## Optional: enable virsh network by default
+## Optional: Enable virsh Network by Default
 
-by type following command, this will make your virsh network automatically started.
+If you wish to have the virsh network automatically start, execute the following command:
+> Note: If you don't require the virsh network, you can skip this step.
+```shell
+sudo virsh net-autostart default
+```
 
-***Note: if you dont need virsh network, you dont need to do.***
+By completing these steps, you verify group membership, configure `qemu.conf`, and restart the `libvirtd` service, ensuring your virtualization setup is correctly aligned with your user and system settings.
