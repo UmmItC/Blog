@@ -3,7 +3,7 @@ author: "Arcsly"
 title: "Arch linux Resolving dlopen() Error Issues"
 description: "Fixing this error dlopen()"
 tags: ["Arch Linux", "Appimage"]
-date: 2023-02-14T20:04:00+08:00
+date: 2023-02-14T20:04:00+0800
 thumbnail: https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/07/AppImage.jpg
 ---
 
