@@ -7,9 +7,9 @@ date: 2023-05-13T05:55:00+0800
 thumbnail: https://i.pcmag.com/imagery/articles/04QbILXwVNxIcTB52JDHeir-5..v1569489465.jpg
 ---
 
-# 1. list the IOMMU Groups
+# 1. List the IOMMU Groups
 
-So, Now should able to see the iommu group. on your linux system (use bash), type the following command:
+Now, you should be able to view the IOMMU groups on your Linux system using the following command in your terminal:
 
 ```shell
 #!/bin/bash
@@ -22,22 +22,22 @@ for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
 done;
 ```
 
+This script will display a list of IOMMU groups along with the devices contained within each group. It provides valuable insight into how your devices are grouped for IOMMU purposes. Analyzing this information can help you better plan and configure device passthrough for virtualization purposes.
+
 ## 1.2 Find IOMMU GPU IDS
 
 That should return somethings like that, you need to find your second GPU `IDS`.
 
 ```shell
-IOMMU Group 20:
-	07:00.0 PCI bridge [0604]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Upstream Port of PCI Express Switch [1002:1478] (rev c7)
-IOMMU Group 21:
-	08:00.0 PCI bridge [0604]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Downstream Port of PCI Express Switch [1002:1479]
 IOMMU Group 22:
 	09:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 23 [Radeon RX 6600/6600 XT/6600M] [1002:73ff] (rev c7)
 IOMMU Group 23:
 	09:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 21/23 HDMI/DP Audio Controller [1002:ab28]
 ```
 
-For example my IDS is:
+### example IDS
+
+My example ids:
 
 - 1002:73ff (GPU)
 - 1002:ab28 (GPU Audio)
