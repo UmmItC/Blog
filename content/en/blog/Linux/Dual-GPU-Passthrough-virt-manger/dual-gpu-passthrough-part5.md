@@ -31,20 +31,42 @@ Execute the following command to install these packages:
 sudo pacman -S virt-manager qemu vde2 ebtables iptables-nft nftables dnsmasq bridge-utils ovmf dmidecode
 ```
 
-# 2. Configure virt-manager
+## 2.2 Configure libvirtd.conf for Permissions and Logger
 
-1. Open virt-manager with Root Permission:
-   When you launch virt-manager, a root user prompt may appear. We will adjust configurations to run this program without requiring root permission.
+Open virt-manager with Root Permission:
+When you launch virt-manager, a root user prompt may appear. We will adjust configurations to run this program without requiring root permission.
 
-2. Edit libvirtd.conf for Permission:
-   Edit the configuration file located at `/etc/libvirt/libvirtd.conf`. This step manages the permission for opening virt-manager.
-   ```shell
+In this crucial step, we'll be working with two essential commands: `unix_sock_group` and `unix_sock_rw_perms`.
+
+Type the following command to edit the configuration file, this adjustment is responsible for managing permissions necessary for launching virt-manager.
+
+```shell
+sudo nano /etc/libvirt/libvirtd.conf
+```
+
+2. Within the text editor, locate the entries for `unix_sock_group` and `unix_sock_rw_perms`.
+
+3. Update the `unix_sock_group` entry as follows:
+
+   ```plaintext
    unix_sock_group = "libvirt"
+   ```
+
+4. For `unix_sock_rw_perms`, set the permissions to the recommended value:
+
+   ```plaintext
    unix_sock_rw_perms = "0770"
    ```
 
-3. Log Files for Troubleshooting:
+5. Save your changes by pressing `Ctrl + O`, then press Enter. Exit the text editor by pressing `Ctrl + X`.
+
+By performing these steps, you ensure that the necessary permissions are properly configured, allowing you to seamlessly launch and manage virt-manager without any permission-related obstacles.
+
+
+### 2.3 Log Files for Troubleshooting
+
    If you encounter issues with virt-manager not functioning correctly, log files can aid in troubleshooting. In the same `/etc/libvirt/libvirtd.conf` file, add these lines to the end:
+
    ```shell
    log_filters="3:qemu 1:libvirt"
    log_outputs="2:file:/var/log/libvirt/libvirtd.log"
@@ -52,7 +74,7 @@ sudo pacman -S virt-manager qemu vde2 ebtables iptables-nft nftables dnsmasq bri
 
 By completing these steps, you install the necessary packages, each serving a specific purpose in virtualization and networking. You also configure virt-manager for efficient usage and set up logging for potential troubleshooting scenarios. This paves the way for creating your virtual machine with hardware passthrough capabilities.
 
-## 2.3 Adding libvirt Group to Your User
+## 3. Adding libvirt Group to Your User
 
 To enable your user to use `virt-manager` without encountering superuser warnings, run the following commands:
 
@@ -60,7 +82,7 @@ To enable your user to use `virt-manager` without encountering superuser warning
 sudo usermod -a -G kvm,libvirt $(whoami)
 ```
 
-## 2.4 Enable and Start libvirt Services
+## 4. Enable and Start libvirt Services
 
 Now, enable the libvirt service to ensure it starts automatically upon boot:
 
@@ -74,7 +96,7 @@ Next, start the libvirt service:
 sudo systemctl start libvirtd
 ```
 
-## 2.5 Verify Group Membership
+### 4.2 Verify Group Membership
 
 To confirm that `libvirt` has been added to your group, including `kvm`, execute the following command:
 
@@ -84,30 +106,42 @@ sudo groups $(whoami)
 
 By completing these steps, you add your user to the necessary groups, enable and start the libvirt service, and verify the updated group membership, ensuring a smooth experience while using `virt-manager` for virtualization tasks.
 
-## 2.6 Edit qemu.conf
+## 5. Enhance QEMU Configuration
 
-In the `qemu.conf` file, you will come across lines that look like this:
+To customize the `qemu.conf` file located at `/etc/libvirt/qemu.conf`, follow these steps to understand how this configuration impacts your system:
 
-```plaintext
-user = "your_username"
+1. Type the following command to edit the `qemu.conf` file:
 
-# The group for QEMU processes run by the system instance. It can be
-# specified in a similar way to user.
-group = "your_username"
-```
+   ```shell
+   sudo nano /etc/libvirt/qemu.conf
+   ```
 
-Replace `"your_username"` with your actual username. Ensure it matches the same username you used earlier to verify your group membership.
+2. Inside the text editor, you'll encounter lines resembling the following:
 
-To quickly find the lines for editing within the `nano` text editor, follow these steps:
+   ```plaintext
+   user = "your_username"
 
-1. Press `Ctrl + W` to initiate a search.
-2. Enter `user =` and press `Enter`.
+   # The group for QEMU processes run by the system instance. It can be
+   # specified in a similar way to user.
+   group = "your_username"
+   ```
 
-Now, within the same section, update the `user` and `group` settings to match your current username.
+   Here's how this works:
+   
+   - The `user` line designates the specific user that QEMU processes will run under. Replace `"your_username"` with your actual username.
+   
+   - The `group` line specifies the group for QEMU processes. This is configured similarly to the `user` line.
+   
+3. Once you've replaced `"your_username"` with your actual username, you're indicating that QEMU processes will be executed with your user's privileges.
 
-By following these instructions, you'll seamlessly replace `"your_username"` with your actual username, making the configuration clearer and more aligned with your system setup.
+4. For a swift way to locate the lines requiring modification within the `nano` text editor, you can use:
 
-## 2.7 Restart libvirtd Service
+   - Press `Ctrl + W` to initiate a search.
+   - Type `user =` and press `Enter`.
+
+By completing these steps, you ensure that QEMU processes operate within the specified user's scope, contributing to a more controlled and secure virtualization environment.
+
+## 6. Restart libvirtd Service
 
 Apply the changes by restarting the `libvirtd` service with the following command:
 ```shell
