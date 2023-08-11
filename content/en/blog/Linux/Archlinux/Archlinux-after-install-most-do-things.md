@@ -75,7 +75,7 @@ By running this command, you'll efficiently optimize your mirrorlist, ensuring f
 
 Elevate your Arch Linux environment with captivating visual enhancements. Follow these simple steps to breathe life into your interface:
 
-#### Enable "ILoveCandy" Animation
+#### 3.2 Enable "ILoveCandy" Animation
 
 1. Type the following command and press Enter:
 
@@ -95,7 +95,7 @@ ILoveCandy
 
 5. Now the process bar will shown the `c` animation!
 
-#### Infuse Vibrancy with "Color"
+#### 3.3 Infuse Vibrancy with "Color"
 
 1. Open your terminal application.
 
@@ -123,7 +123,7 @@ For those using AMDGPU, elevate your gaming potential. Execute:
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S lib32-mesa mesa vulkan-radeon amdvlk lib32-vulkan-radeon xf86-video-amdgpu
+sudo pacman -S lib32-mesa mesa lib32-vulkan-radeon vulkan-radeon amdvlk xf86-video-amdgpu
 ```
 
 ### 5. Gnome Users: Enhance Browsing Experience
@@ -138,6 +138,79 @@ Once installed, you'll be able to effortlessly install extensions from [https://
 
 By completing these tasks, you'll optimize your Arch Linux environment, enriching your experience and unleashing its full potential. Enjoy your enhanced system!
 
-### 6. Customize Your Gnome
+### 6. Customize Your GNOME Environment
 
 Arch Linux offers a default GNOME environment that's visually appealing, but you still can customize it to reflect your unique style and preferences.
+
+### 7: Install Yay AUR Helper
+
+Installing software on Arch Linux is made even more convenient with the `yay` package manager. `yay` simplifies the process of acquiring and managing software from the Arch User Repository (AUR), an extensive community-contributed software collection.
+
+Here's a step-by-step guide to installing `yay` using Git:
+
+1. Install Git:
+
+   Before you proceed, ensure that Git is installed on your system. If not, you can install it using the following command:
+
+   ```shell
+   sudo pacman -S git
+   ```
+
+2. Clone the `yay` Repository:
+
+   Open your terminal and enter the following command to clone the `yay` repository from the Arch User Repository (AUR):
+
+   ```shell
+   git clone https://aur.archlinux.org/yay.git
+   ```
+
+3. Navigate to the Cloned Folder:
+
+   Use the `cd` command to navigate into the cloned `yay` folder:
+
+   ```shell
+   cd yay
+   ```
+
+4. Build and Install the Package:
+
+   Inside the `yay` folder, you'll find a file named `PKGBUILD`. This file contains instructions for building the package. Use the following commands to build and install `yay`:
+
+   ```shell
+   makepkg -si
+   ```
+
+   Follow any prompts or provide any necessary permissions during the installation process.
+
+5. Start Using `yay`:
+
+   Once the installation is complete, you can start using `yay` to search for and install packages from the AUR. For example, to install a package, use the following command:
+
+   ```shell
+   yay -S package-name
+   ```
+
+With `yay` successfully installed, you'll have a powerful tool that streamlines the installation of additional software and allows you to tailor your Arch Linux environment to suit your needs.
+
+### 8. Install Your Daily Software
+
+With your Arch Linux system set up and customized, it's time to install some essential software that you use on a daily basis.
+Install the Firefox web browser and VLC media player using the `yay` AUR helper.
+
+1. 8.2. Install Firefox:
+
+   To install Firefox, use the following command:
+
+   ```shell
+   sudo pacman -S firefox
+   ```
+
+2. 8.3. Install VLC:
+
+   To install VLC media player, use the following command:
+
+   ```shell
+   sudo pacman -S vlc
+   ```
+
+With Firefox and VLC installed, you now have access to a web browser and media player, allowing you to browse the web and enjoy multimedia content on your Arch Linux system.
