@@ -141,6 +141,24 @@ sudo pacman -S wqy-zenhei
 
 ![fcitx5 install](/blog/linux/Archlinux-fcitx5-install/fix_ed_fontfaimly.png)
 
+---
+
+## GNOME user
+
+GNOME user 既話就有小小唔同。我地需要裝一個 Package 叫做 `fcitx5-configtool`。唔知點解 GNOME 會 detect 唔到，如果要加 input method 就只可以用佢本身個工具黎整。
+
+```shell
+sudo pacman -S fcitx5-configtool
+```
+
+1. 直接 Search `fc` 就會搵到 (如下圖）
+
+![search-configtool](/blog/linux/Archlinux-fcitx5-install/search-configtool.png)
+
+2. 開左之後就咁用佢個箭嘴揀返 `Quick Classic  (速成)`  （如下圖）
+
+![configtool](/blog/linux/Archlinux-fcitx5-install/configtool.png)
+
 # Reference
 
 - https://wiki.archlinux.org/title/Localization/Simplified_Chinese?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DLocalization_%28%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587%29%2FSimplified_Chinese_%28%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587%29%26redirect%3Dno
