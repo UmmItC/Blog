@@ -1,7 +1,7 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 3 - Enable virtualization on your linux system"
-description: "let enable virtualization on your linux system."
+title: "Dual GPU Passthrough Guided Part 3 - Empowering Virtualization on Your Linux System"
+description: "Learn how to enable virtualization on your Linux system for a seamless dual GPU passthrough setup. Unlock the potential of virtualization and optimize your computing experience."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:50:00+0800
 thumbnail: https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGludXh8ZW58MHx8MHx8fDA%3D&w=1000&q=80
@@ -9,62 +9,103 @@ thumbnail: https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb
 
 # 1. Edit Bootloader Configuration
 
-To enable virtualization on your Linux system, you need to make certain configuration changes in your bootloader settings. The process is similar regardless of the bootloader you are using.
+Your journey into the world of dual GPU passthrough continues, and now we're delving into the realm of bootloader configuration. Fear not, for we're here to guide you through the process and shed light on the magic of virtualization.
 
-Here's a summary of the necessary changes based on your CPU type:
+To optimize your bootloader settings, let's customize them based on your CPU type:
 
 |     AMD CPU      |    Intel CPU     |
 |----------------- | -----------------|
 |   `amd_iommu=on` |  `intel_iommu=on` |
 | `video=efifb:off`|     `iommu=pt`    |
+| `iommu=pt` |                                     |
+
+Each of these parameters plays a pivotal role in enabling virtualization and enhancing your system's performance for virtual machines.
+
+### Decoding the Commands
+
+The added parameters hold the key to unlocking virtualization's potential. Let's decipher their magic:
+
+- `amd_iommu=on` (AMD) / `intel_iommu=on` (Intel): These flags activate IOMMU support, which enables better hardware isolation and sharing for virtualization.
+
+- `video=efifb:off`: This flag disables the EFI framebuffer driver, which can interfere with GPU passthrough.
+
+- `iommu=pt`: This flag sets the IOMMU to use pass-through mode, ensuring efficient and direct access to hardware by VMs.
 
 By including these parameters in your bootloader configuration, you enable virtualization features on your system, which can enhance your ability to run virtual machines and perform other virtualization-related tasks.
 
 ---
 
-## 1.2 For GRUB Users
+## 1.2 Unveiling GRUB's Secrets
 
-If you are using GRUB as your bootloader, follow these steps:
+For those who embrace the GRUB bootloader, here's your pathway to bootloader configuration mastery:
 
-1. Edit the GRUB configuration file located at `/etc/default/grub`.
+1. Open the GRUB configuration file located at `/etc/default/grub`.
 
-2. Locate the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and edit it according to your needs.
+2. Look for the line beginning with `GRUB_CMDLINE_LINUX_DEFAULT` and bring your customization skills to the fore.
 
-3. After making the edits to the GRUB configuration, rebuild the GRUB configuration using the following command:
+3. After applying your modifications, regenerate the GRUB configuration by executing this command:
 
 ```shell
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-4. Reboot your system to apply the new GRUB configuration changes.
+4. Welcome the excitement of rebooting your system, as it ushers in the new GRUB configuration.
 
-By following these steps, you successfully modify your GRUB configuration to include the desired parameters, which can enhance your system's performance and functionality.
+Your careful steps ensure that your GRUB bootloader now houses the prescribed parameters, setting the stage for an optimized virtualization experience.
+
+#### GRUB AMD User Example
+
+For AMD CPU users, your modified GRUB configuration might look like:
+
+```shell
+GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=efifb:off"
+```
+
+#### GRUB Intel User Example
+
+For Intel CPU users, your modified GRUB configuration might look like:
+
+```shell
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+```
 
 ---
 
-## 1.3 For bootctl Users
+## 1.3 Navigating bootctl's Path
 
-If you are using `bootctl` as your bootloader, follow these steps:
+For bootctl as bootloader:
 
-1. Edit your configuration file located at `/boot/loader/entries/your_config.conf`.
+1. Tailor your configuration file located at `/boot/loader/entries/your_config.conf`.
 
-2. Locate the line that starts with `options` and edit it. For example, your original line might look like:
+2. Identify the line commencing with `options` and give it a makeover. An original line might resemble:
 
    ```shell
    options root=<root> quiet rw
    ```
 
-3. Add the desired kernel parameters to the line. For instance, you might add `intel_iommu=on` and `iommu=pt`:
+3. Elevate your configuration by adding the desired kernel parameters. For instance, if you're wielding an AMD CPU, your line might transform into:
 
    ```shell
-   options root=<root> quiet rw intel_iommu=on iommu=pt
+   options root=<root> quiet rw amd_iommu=on iommu=pt video=efifb:off
    ```
 
-4. Save the changes to the configuration file.
+4. Preserve your configuration changes.
 
-5. Reboot your system to apply the new configuration.
+5. Embrace the system reboot, which breathes life into your new configuration.
 
-Your result should resemble the following:
+With these steps, your modified bootloader entry is primed for action:
+
+```shell
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+
+options root=<root> quiet rw amd_iommu=on iommu=pt video=efifb:off
+```
+
+#### bootctl Intel User Example
+
+For Intel CPU users using `bootctl`, your modified configuration might resemble:
 
 ```shell
 title Arch Linux
@@ -74,4 +115,4 @@ initrd /initramfs-linux.img
 options root=<root> quiet rw intel_iommu=on iommu=pt
 ```
 
-By following these steps, you effectively modify your bootloader configuration to include the specified kernel parameters, enhancing your system's functionality and performance.
+Your bootloader configuration is now an instrument of virtualization magic. With carefully crafted parameters, it stands ready to unleash the full potential of your dual GPU passthrough setup.
