@@ -1,15 +1,15 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 4 - Passthrough the GPU"
-description: "in this guied, we will passthrough the second GPU."
+title: "Dual GPU Passthrough Guided Part 4 - Passthrough the Second GPU"
+description: "Learn how to configure GPU passthrough for your virtual machine's second GPU in this step-by-step guide, unlocking advanced virtualization capabilities and boosting performance."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:55:00+0800
 thumbnail: https://i.pcmag.com/imagery/articles/04QbILXwVNxIcTB52JDHeir-5..v1569489465.jpg
 ---
 
-# 1. List the IOMMU Groups
+# 1. Explore IOMMU Grouping
 
-Now, you should be able to view the IOMMU groups on your Linux system using the following command in your terminal:
+As you delve into the intricacies of GPU passthrough, understanding how your devices are grouped becomes crucial. IOMMU groups play a pivotal role in device isolation for virtualization. To get a clear view of these groups on your Linux system, execute the following command in your terminal:
 
 ```shell
 #!/bin/bash
@@ -22,11 +22,13 @@ for g in $(find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V); do
 done;
 ```
 
-This script will display a list of IOMMU groups along with the devices contained within each group. It provides valuable insight into how your devices are grouped for IOMMU purposes. Analyzing this information can help you better plan and configure device passthrough for virtualization purposes.
+This script meticulously presents the IOMMU groups along with their associated devices, revealing the intricate web of connections within your system. The information gleaned from this exploration will serve as a valuable compass as you navigate the terrain of device passthrough configuration for virtualization purposes.
 
-## 1.2 Find IOMMU GPU IDS
+## 1.2 Identify IOMMU GPU IDs
 
-That should return somethings like that, you need to find your second GPU `IDS`.
+The output will unveil a list of GPUs residing within your system. Your second GPU, the one destined for passthrough, will make an appearance here. Take note of its unique PCI (Peripheral Component Interconnect) numbers, often referred to as **PCI IDs**. These IDs will play a crucial role in the next steps.
+
+Here's an example of what you might see:
 
 ```shell
 IOMMU Group 22:
@@ -35,80 +37,78 @@ IOMMU Group 23:
 	09:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 21/23 HDMI/DP Audio Controller [1002:ab28]
 ```
 
-### example IDS
+### Example IDs
 
-My example ids:
+Let's assume your investigation yields the following GPU IDs:
 
 - 1002:73ff (GPU)
 - 1002:ab28 (GPU Audio)
 
-Now notes that, for next step we need to paste those ids to your bootloader config.
+Keep these IDs in your sights; they're your key to unlocking the next phase.
 
-## 1.3 Paste ids on your bootloader config
+## 1.3 Embed IDs in Your Bootloader Config
 
-When configuring GPU passthrough, you will need to identify the unique identifier of the GPU you want to pass through to the virtual machine. This identifier is typically represented by a **PCI (Peripheral Component Interconnect) number (ids)**, which serves as a unique name or address for the GPU within the system.
+Configuring GPU passthrough involves telling your system exactly which GPU to hand over to the virtual machine. This is done by specifying the unique PCI IDs of the GPU in question. These IDs act as addresses that pinpoint the GPU within the system.
 
-By specifying the correct GPU using its PCI number, you can instruct the virtualization software to exclusively assign and pass through that particular GPU to the virtual machine. This ensures that the virtual machine has direct access and control over the GPU, allowing it to utilize the GPU's capabilities effectively for tasks such as gaming or other GPU-intensive applications.
+By providing the correct PCI IDs, you instruct the virtualization software to exclusively allocate and pass through the designated GPU to the virtual machine. This enables the VM to directly leverage the GPU's capabilities for tasks like gaming or graphics-intensive applications.
 
-Now edit your bootloader, this step similar the adding enable virtualization.
+Let's integrate these IDs into your bootloader configuration, a step similar to enabling virtualization.
 
-at the same line, in the line of ends, add:
+Within the same line where you enabled virtualization, add the following at the end:
 
 ```shell
 vfio-pci.ids=1002:73ff,1002:ab28
 ```
 
-result should like that:
+The result should resemble this:
 
 ```shell
-title Arch linux
+title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 
 options root=<root> quiet rw intel_iommu=on iommu=pt vfio-pci.ids=1002:73ff,1002:ab28
-
 ```
 
-# 2. Added vfio.conf
+## 2. Craft a vfio.conf
 
-now create a new file.
+Now, let's forge a new file:
 
 ```shell
 sudo nano /etc/modprobe.d/vfio.conf
 ```
 
-type the following content:
+Input the following content:
 
 ```shell
 options vfio-pci ids=1002:73ff,1002:ab28
 ```
 
-# 3. edit mkinitcpio.conf
+## 3. Enhance mkinitcpio.conf
 
-we need to enable `vfio`, `vfio_iommu_typ1` modules, by default this is disabled. on `/etc/mkinitcpio.conf`edit the Modules() became that:
+Let's illuminate the path for the `vfio`, `vfio_iommu_typ1` modules. By default, these modules are dimmed. Edit `/etc/mkinitcpio.conf` and adjust the `MODULES()` line as follows:
 
 ```shell
 MODULES=(vfio_pci vfio vfio_iommu_type1) 
 ```
 
-# 3.2 Rebuilt new image
+## 3.2 Forge a New Image
 
-once you done, now build your new image, then reboot your system.
+With your adjustments complete, it's time to fashion a new image. Build it, then orchestrate a system reboot:
 
 ```shell
 sudo mkinitcpio -p linux
 ```
 
-# 4. Verify GPU-passthrough status
+## 4. Validate GPU Passthrough Status
 
-to verify your GPU is passed status, type the following command to check:
+To verify your GPU's passthrough status, execute the following command:
 
 ```shell
 lspci -k
 ```
 
-now check your PCI, the Kernel driver in use: should shown the result `vfio-pci`.
-for example should like that:
+Examine your PCI setup. The "Kernel driver in use" entry should bear the mark `vfio-pci`. For example:
 
 ```shell
 09:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 23 [Radeon RX 6600/6600 XT/6600M] (rev c7)
@@ -121,6 +121,4 @@ for example should like that:
 	Kernel modules: snd_hda_intel
 ```
 
-once you saw the result is vfio-pci, Congratulations! your GPU and GPU-Audio was already successful passed!
-
-if not, you something doing wrong. just do it again!
+When you encounter the `vfio-pci` signal, you've reached the summit! Your GPU and GPU Audio have triumphantly made the passage. If not, fear not; simply retrace your steps and try again. Success is within reach!
