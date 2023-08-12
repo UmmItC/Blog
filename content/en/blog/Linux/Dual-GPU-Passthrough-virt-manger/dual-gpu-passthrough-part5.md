@@ -1,159 +1,138 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 5 - Setup virt-manager and config"
-description: "virt-manager is a nice tool for gpu-passthorugh. that helping you control the pci device."
+title: "Dual GPU Passthrough Guide Part 5 - Configuring virt-manager and Device Setup"
+description: "Unveil the potential of virt-manager, a crucial instrument for seamless GPU passthrough. Effortlessly seize command over your PCI devices and experience a realm of limitless possibilities."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:58:00+0800
 thumbnail: https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/virt-manager-icon.png
 ---
 
-Certainly! Here's the revised version of the section with explanations of what each package is used for:
+## Step 1: Install Required Packages
 
-# Set Up virt-manager
+Begin your journey into GPU passthrough with virt-manager by installing essential packages. Each package serves a specific purpose in setting up and managing virtualization:
 
-To utilize hardware passthrough, we'll configure a virtual machine using virt-manager, a powerful GUI tool for managing QEMU/KVM virtualization.
+- **virt-manager** and **qemu (QEMU/KVM):** virt-manager provides a user-friendly interface for virtual machine management, while qemu is a powerful processor emulator that enables hardware virtualization.
+- **vde2:** This toolkit, Virtual Distributed Ethernet (VDE), is used to create virtual networks, enabling seamless communication between virtual machines.
+- **ebtables:** Operating at the Ethernet frame level, ebtables allows administrators to establish rules for filtering and manipulating network traffic, enhancing network control.
+- **iptables-nft** and **nftables:** These tools provide firewall management for both IPv4 and IPv6, using the Netfilter framework to regulate network traffic and enhance security.
+- **dnsmasq:** A lightweight DNS and DHCP server that proves invaluable for managing network addresses and facilitating communication within small networks and virtual environments.
+- **bridge-utils:** These utilities empower you to manage Ethernet bridges, facilitating the integration of virtual machines into your network infrastructure.
+- **ovmf:** The Open Virtual Machine Firmware offers a modern UEFI (Unified Extensible Firmware Interface) implementation, ensuring compatibility and stability in virtualized environments.
+- **dmidecode:** This tool allows you to retrieve crucial system information such as BIOS, CPU details, memory configuration, and more, aiding in accurate virtualization setup.
 
-# 1. Install Required Packages
-
-Start by installing the necessary packages, each with its respective role:
-
-- `virt-manager`, `qemu` (QEMU/KVM): Virt-manager provides a user-friendly interface for managing virtual machines, while QEMU is a fast processor emulator that performs hardware virtualization.
-- `vde2`: The Virtual Distributed Ethernet (VDE) toolkit is used for creating virtual networks.
-- `ebtables`: This tool operates at the Ethernet frame level and enables administrators to set up rules to filter or manipulate network traffic.
-- `iptables-nft`, `nftables`: These provide firewall management for IPv4 and IPv6 using the Netfilter framework.
-- `dnsmasq`: A lightweight DNS and DHCP server, useful for small networks and virtual environments.
-- `bridge-utils`: These utilities enable management of Ethernet bridges.
-- `ovmf`: The Open Virtual Machine Firmware provides a modern UEFI firmware implementation for use in virtual machines.
-- `dmidecode`: This tool retrieves system information including BIOS, motherboard, CPU, memory, and more.
-
-Execute the following command to install these packages:
+Execute the following command in your terminal to install these packages:
 ```shell
 sudo pacman -S virt-manager qemu vde2 ebtables iptables-nft nftables dnsmasq bridge-utils ovmf dmidecode
 ```
 
-## 2.2 Configure libvirtd.conf for Permissions and Logger
+## Step 2: Configure libvirtd.conf for Permissions and Logging
 
-Open virt-manager with Root Permission:
-When you launch virt-manager, a root user prompt may appear. We will adjust configurations to run this program without requiring root permission.
+### 2.1 Adjust Permissions for virt-manager
 
-In this crucial step, we'll be working with two essential commands: `unix_sock_group` and `unix_sock_rw_perms`.
+Fine-tune your system for optimal virt-manager usage without the need for constant root permissions:
 
-Type the following command to edit the configuration file, this adjustment is responsible for managing permissions necessary for launching virt-manager.
-
+1. Open the configuration file using the command:
 ```shell
 sudo nano /etc/libvirt/libvirtd.conf
 ```
+2. Within this file, locate the entries for `unix_sock_group` and `unix_sock_rw_perms`.
 
-2. Within the text editor, locate the entries for `unix_sock_group` and `unix_sock_rw_perms`.
-
-3. Update the `unix_sock_group` entry as follows:
-
+3. Update the `unix_sock_group` entry to specify the group "libvirt" for better control:
    ```plaintext
    unix_sock_group = "libvirt"
    ```
 
-4. For `unix_sock_rw_perms`, set the permissions to the recommended value:
-
+4. Set the `unix_sock_rw_perms` to "0770" to grant appropriate permissions for launching virt-manager:
    ```plaintext
    unix_sock_rw_perms = "0770"
    ```
 
-5. Save your changes by pressing `Ctrl + O`, then press Enter. Exit the text editor by pressing `Ctrl + X`.
+5. Save your changes by pressing `Ctrl + O`, then press Enter. Exit the text editor with `Ctrl + X`.
 
-By performing these steps, you ensure that the necessary permissions are properly configured, allowing you to seamlessly launch and manage virt-manager without any permission-related obstacles.
+By configuring these settings, you ensure that virt-manager can be launched and managed without encountering permission-related obstacles.
 
+### 2.2 Set Up Logging for Troubleshooting
 
-### 2.3 Log Files for Troubleshooting
+In case you encounter issues with virt-manager, having detailed logs can be immensely helpful for troubleshooting. To set up logging:
 
-   If you encounter issues with virt-manager not functioning correctly, log files can aid in troubleshooting. In the same `/etc/libvirt/libvirtd.conf` file, add these lines to the end:
+1. Open the `/etc/libvirt/libvirtd.conf` file again:
+```shell
+sudo nano /etc/libvirt/libvirtd.conf
+```
 
-   ```shell
-   log_filters="3:qemu 1:libvirt"
-   log_outputs="2:file:/var/log/libvirt/libvirtd.log"
-   ```
+2. Add the following lines at the end of the file to specify the log filters and outputs:
+```shell
+log_filters="3:qemu 1:libvirt"
+log_outputs="2:file:/var/log/libvirt/libvirtd.log"
+```
 
-By completing these steps, you install the necessary packages, each serving a specific purpose in virtualization and networking. You also configure virt-manager for efficient usage and set up logging for potential troubleshooting scenarios. This paves the way for creating your virtual machine with hardware passthrough capabilities.
+By completing this step, you've not only installed crucial packages but also optimized virt-manager's permissions and established a logging mechanism for effective troubleshooting.
 
-## 3. Adding libvirt Group to Your User
+## Step 3: Add Your User to libvirt Group
 
-To enable your user to use `virt-manager` without encountering superuser warnings, run the following commands:
+Empower your user to seamlessly use `virt-manager` without encountering superuser warnings:
 
+1. Execute the following commands to add your user to the `kvm` and `libvirt` groups:
 ```shell
 sudo usermod -a -G kvm,libvirt $(whoami)
 ```
 
-## 4. Enable and Start libvirt Services
+## Step 4: Enable and Start libvirt Services
 
-Now, enable the libvirt service to ensure it starts automatically upon boot:
+Ensure that libvirt services are set to start automatically upon boot and then initiate the libvirt service:
 
 ```shell
 sudo systemctl enable libvirtd
-```
-
-Next, start the libvirt service:
-
-```shell
 sudo systemctl start libvirtd
 ```
 
-### 4.2 Verify Group Membership
+### Verify Group Membership
 
-To confirm that `libvirt` has been added to your group, including `kvm`, execute the following command:
+To confirm that your user has been added to the necessary groups, including `libvirt` and `kvm`:
 
 ```shell
 sudo groups $(whoami)
 ```
 
-By completing these steps, you add your user to the necessary groups, enable and start the libvirt service, and verify the updated group membership, ensuring a smooth experience while using `virt-manager` for virtualization tasks.
+By completing these steps, you've successfully added your user to the required groups, enabled and started the libvirt service, and verified the updated group membership. This ensures a seamless experience while utilizing `virt-manager` for your virtualization tasks.
 
-## 5. Enhance QEMU Configuration
+## Step 5: Improve QEMU Configuration
 
-To customize the `qemu.conf` file located at `/etc/libvirt/qemu.conf`, follow these steps to understand how this configuration impacts your system:
+Customize the `qemu.conf` file to further optimize your virtualization environment:
 
-1. Type the following command to edit the `qemu.conf` file:
+1. Edit the `qemu.conf` file using the command:
+```shell
+sudo nano /etc/libvirt/qemu.conf
+```
 
-   ```shell
-   sudo nano /etc/libvirt/qemu.conf
-   ```
+2. Within the text editor, locate the lines that resemble the following:
+```plaintext
+user = "your_username"
+group = "your_username"
+```
 
-2. Inside the text editor, you'll encounter lines resembling the following:
+3. Replace `"your_username"` with your actual username on both lines.
 
-   ```plaintext
-   user = "your_username"
+4. By making this adjustment, you're specifying that QEMU processes will execute under your user's privileges.
 
-   # The group for QEMU processes run by the system instance. It can be
-   # specified in a similar way to user.
-   group = "your_username"
-   ```
+For quicker navigation within the `nano` text editor:
+- Press `Ctrl + W`, type `user =`, and press `Enter`.
 
-   Here's how this works:
-   
-   - The `user` line designates the specific user that QEMU processes will run under. Replace `"your_username"` with your actual username.
-   
-   - The `group` line specifies the group for QEMU processes. This is configured similarly to the `user` line.
-   
-3. Once you've replaced `"your_username"` with your actual username, you're indicating that QEMU processes will be executed with your user's privileges.
+By following these steps, you ensure that QEMU processes operate securely within the scope of your user's permissions.
 
-4. For a swift way to locate the lines requiring modification within the `nano` text editor, you can use:
+## Step 6: Restart libvirtd Service
 
-   - Press `Ctrl + W` to initiate a search.
-   - Type `user =` and press `Enter`.
-
-By completing these steps, you ensure that QEMU processes operate within the specified user's scope, contributing to a more controlled and secure virtualization environment.
-
-## 6. Restart libvirtd Service
-
-Apply the changes by restarting the `libvirtd` service with the following command:
+Apply the changes you've made by restarting the `libvirtd` service using the command:
 ```shell
 sudo systemctl restart libvirtd
 ```
 
-## Optional: Enable virsh Network by Default
+## Optional: Start virsh Network Automatically
 
-If you wish to have the virsh network automatically start, execute the following command:
-> Note: If you don't require the virsh network, you can skip this step.
+If you wish to have the virsh network start automatically, you can execute the following command:
+> Note: If the virsh network isn't needed, you can skip this step.
 ```shell
 sudo virsh net-autostart default
 ```
 
-By completing these steps, you verify group membership, configure `qemu.conf`, and restart the `libvirtd` service, ensuring your virtualization setup is correctly aligned with your user and system settings.
+By completing these comprehensive steps, you've not only verified your group membership and fine-tuned `qemu.conf`, but you've also restarted the `libvirtd` service, ensuring that your virtualization setup is seamlessly aligned with your user and system settings. This detailed guide equips you with the expertise to confidently harness GPU passthrough capabilities for exceptional virtualization performance.
