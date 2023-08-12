@@ -1,7 +1,7 @@
 ---
 author: "Arcsly"
-title: "7 Tips to Secure your linux VPS server"
-description: "Secure your linux vps server is simple. only 7 points."
+title: "ALL Tips to Secure your linux VPS server"
+description: "Learn how to effortlessly secure your VPS server with just a few essential steps. This blog will guide you through the process."
 tags: ["VPS", "SSH", "Linux"]
 date: 2023-06-29T01:23:00+08:00
 thumbnail: https://www.atulhost.com/wp-content/uploads/2020/04/ssh.png
