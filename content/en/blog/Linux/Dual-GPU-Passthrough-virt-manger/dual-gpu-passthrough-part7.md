@@ -1,19 +1,19 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 7 - Install Windows and Passthrough everything"
-description: "Creating a new vm on your virt-manager."
+title: "Dual GPU Passthrough Guided Part 7: Installing Windows and Enabling Full Passthrough"
+description: "In this section, we will guide you through the process of creating a new VM using Virt-Manager, installing the Windows OS and enabling complete passthrough of hardware components."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T06:30:00+0800
 thumbnail: /blog/linux/dual-gpu-passthrough/part7/Install_now.png
 ---
 
-## Great
+## Final Step: Setting Up Your Virtual Machine (VM)
 
-Great, you've reached this stage, and you're only one step away from completion, which is setting up the virtual machine (VM). Next, you just need to manually select your PCI devices and install your system.
+Congratulations on making it this far! You're now just one step away from completing the entire process. In the upcoming stage, we'll walk you through the essential task of manually selecting your PCI devices and successfully installing your system.
 
-Installing Windows on a VM differs slightly from the regular installation process. I'll guide you through the steps!
+It's important to note that the procedure for installing Windows on a VM differs slightly from the standard installation process. However, fear not—I'm here to guide you through each step.
 
-Please make sure to select the appropriate PCI devices and follow the installation instructions to set up your system successfully.
+Please ensure that you carefully select the correct PCI devices and diligently follow the provided installation instructions. This will ensure a smooth and successful setup of your virtual machine. Let's dive in and get your system up and running seamlessly!
 
 ## 1. virt-manger - Create new VM
 
