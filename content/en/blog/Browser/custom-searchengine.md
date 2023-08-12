@@ -1,7 +1,7 @@
 ---
 author: "Arcsly"
-title: "Mastering Firefox: Customizing Your Default Search Engine on Desktop"
-description: "Discover how to take control of your Firefox browsing experience by customizing your default search engine on the desktop version with this comprehensive guide."
+title: "Enhance Your Firefox Experience: Customizing the Default Search Engine on Desktop"
+description: "Unlock a world of personalized browsing in Firefox with our step-by-step guide. Learn how to easily customize your default search engine on the desktop version."
 tags: ["Browser", "firefox"]
 date: 2023-08-11T08:20:50+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg
