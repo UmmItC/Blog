@@ -1,89 +1,83 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 1 - Preparations hardware"
-description: "In this tutorial you will be taught how to prepare your gpu passthrough hardware and requirements"
+title: "Dual GPU Passthrough Guided Part 1 - Hardware Preparations"
+description: "in this tutorial, you'll gain comprehensive insights into preparing your hardware for GPU passthrough. Learn the crucial steps and requirements that pave the way for a successful setup."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:38:00+0800
 thumbnail: https://cdn.mos.cms.futurecdn.net/hxHC9kET4QctevKmEPgzL.jpg
 ---
 
-# 0. Introduction
+## Introduction
 
-What is GPU Passthrough? In simple terms, imagine you are using a virtual machine (VM). Normally, you wouldn't be able to play games on a VM because it cannot directly access the GPU. GPU passthrough solves this problem by allowing you to pass the GPU through to your VM. This means that you can use your VM as if it were a real machine, enabling you to play games and utilize the full power of the GPU within the virtual environment.
+Welcome to the realm of GPU passthrough, a gateway to unlocking the full potential of your graphics processing unit (GPU) within a virtual machine (VM). Have you ever yearned to play games or run GPU-intensive applications on a VM? The dream becomes a reality with dual GPU passthrough. In this guide, we're about to embark on a journey where you'll learn to harness the power of dual GPU passthrough. But first, let's understand what it's all about.
 
-**IMPORTANT: This article specifically applies to operating systems that use Linux as their host system. The reason is that Kernel-based Virtual Machine (KVM) is a virtualization technology that is available exclusively on Linux. Therefore, the instructions and concepts discussed in this article are relevant and applicable primarily to Linux-based host systems.**
+**Note: While single GPU passthrough is an option, our focus here is on the more advanced and versatile dual GPU passthrough.**
 
-# 1. Preparations
+## 1. Preparations
 
-Now, let's talk what need to careful what need to buy!
+Before we plunge into the world of dual GPU passthrough, let's lay the groundwork by ensuring you have the necessary hardware and components in place.
 
-**IMPORTANT: for your GPU-Passthrough, you need below hardware to start your GPU-Passthrough environment. If not, you cannot passthrough your GPU.** 
+**Important: Dual GPU passthrough requires a minimum of two GPUs. Without these components, dual GPU passthrough is not achievable.**
 
-## 1.1 GPU Preparations
+### 1.1 GPU Requirements
 
-To set up GPU passthrough, you will need two GPUs:
+Our adventure into dual GPU passthrough begins with not one, but two GPUs:
 
-- one for the host machine
-- one for the guest machine (your VM).
+- **Host GPU:** This GPU is reserved for your host system's needs.
+- **Guest GPU:** The guest GPU is exclusively assigned to your VM, ensuring optimal performance within the virtual realm.
 
-The choice of GPU depends on your preference and requirements.
+The choice of GPUs is flexible, tailored to your preferences and performance expectations. However, having dependable and capable GPUs for both the host and guest systems is a key consideration.
 
-In my case, I recommend using an AMD GPU. AMD GPUs have excellent support for Linux, making them more user-friendly compared to NVIDIA GPUs. AMD's drivers and software are well-integrated with Linux distributions, ensuring smoother compatibility and performance for virtualization purposes. However, the final decision on which GPU to use ultimately depends on your specific needs and considerations.
+### 1.2 CPU Virtualization Support
 
-## 1.2 CPU Support?
+Before we proceed, it's vital to confirm that your CPU supports virtualization technology. This technology underpins efficient VM performance and enables successful passthrough capabilities.
 
-To ensure that your CPU supports virtualization, you can follow these steps:
+To ascertain CPU virtualization support:
 
-1. Check the official website of your CPU manufacturer.
-2. Look for the specifications or features section related to virtualization.
-3. You should see information confirming whether your CPU supports virtualization or not.
+1. Visit your CPU manufacturer's official website.
+2. Navigate to the specifications or features section related to virtualization support.
+3. Verify whether your CPU supports virtualization technology (Intel VT-x or AMD-V).
 
-By referring to the official website of your CPU manufacturer, you can find detailed and accurate information about your CPU's virtualization support.
+| AMD CPU   | Intel CPU |
+| ----------|-----------|
+| IOMMU     | Vt-D      |
+| NX mode   | VT-X      |
+| SVM Mode  |           |
 
-| AMD CPU  | Intel CPU |
-|----------|-----------|
-|   IOMMU  |    Vt-D   |
-|  NX mode |    VT-X   |
-| SVM Mode |           |
 
-Here is an example with supported CPU:
+Ensuring proper CPU virtualization support is a crucial step toward a successful dual GPU passthrough setup.
+
+**Example of supported CPU:**
 
 - [Intel® Core™ i9-13900K Processor](https://www.intel.com/content/www/us/en/products/sku/230496/intel-core-i913900k-processor-36m-cache-up-to-5-80-ghz/specifications.html?wapkw=i9%2013900k)
 
 ![CPU](/blog/linux/dual-gpu-passthrough/part1/Example-with-cpu-supported.png)
 
-## 1.3 MotherBoard
+### 1.3 Motherboard Compatibility
 
-When it comes to the motherboard, the process of checking IOMMU support is similar to checking the CPU. However, it may be more challenging to find detailed information specifically about IOMMU support for a motherboard.
+The motherboard's role in dual GPU passthrough is pivotal. It must embrace Input-Output Memory Management Unit (IOMMU) technology, which facilitates hardware isolation between the host and guest systems.
 
-To determine if your motherboard supports IOMMU, you should try to locate the motherboard's manual or documentation. **Look for the model number of the motherboard and search for its PDF or online documentation.**
+To determine motherboard compatibility:
 
-In the manual or documentation, you can refer to the specifications or features section to find information about IOMMU support. The details provided in the manual should indicate whether the motherboard supports IOMMU or has any specific virtualization features.
+1. Consult your motherboard's manual or official documentation.
+2. Seek information concerning IOMMU support or hardware virtualization features.
+3. Confirm whether your motherboard supports IOMMU technology for dual GPU passthrough.
 
-It is important to note that not all motherboards explicitly mention IOMMU support in their documentation. In such cases, you may need to rely on community forums, online discussions, or user experiences with the same motherboard model to determine its IOMMU compatibility.
+Having a motherboard with robust IOMMU support is essential for a seamless dual GPU passthrough experience.
 
-Remember to verify the information from reliable sources and ensure that the motherboard supports the required features before proceeding with GPU passthrough setup.
-
-Here is a example a motherboard supported.
+**Example of supported motherboard:**
 
 - [Intel Z790/H770/B760 Series Motherboard](https://download.asrock.com/Manual/Software/Intel%20B760/Software_BIOS%20Setup%20Guide_English.pdf)
 
-![CPU](/blog/linux/dual-gpu-passthrough/part1/Example-with-motherboard-supported.png)
+![MotherBoard](/blog/linux/dual-gpu-passthrough/part1/Example-with-motherboard-supported.png)
 
-## 1.3 Keyboard and Mouse (Optional)
+### 1.4 Additional Peripherals (Optional)
 
-After enabling GPU passthrough, it's important to note that you won't be able to use the keyboard on your host machine because the device has been passed directly through to the VM. In this case, it is recommended to have separate keyboards and mice for both the host and the VM to ensure proper functionality and control. This way, you can use one set of keyboard and mouse for the host machine and another set for the virtual machine. Having dedicated input devices for each system will help you effectively manage and interact with both the host and the VM.
+Enhance your dual GPU passthrough setup with the following peripherals:
 
-By two Keyboard and mouse, you can using Host and Guest on same time.
+- **Keyboard and Mouse:** Separate input devices for the host and guest systems ensure smooth control and interaction between both environments.
+- **Monitors:** While optional, dual monitors significantly boost productivity, enabling simultaneous access to both the host and guest systems. For those with a single monitor, dual HDMI inputs are crucial for seamless switching between systems.
 
-## 1.4 Monitor (Optional)
+With these preparations complete, you're ready to embark on your dual GPU passthrough journey. Stay tuned for upcoming segments of our Dual GPU Passthrough Guided series, where we'll delve deeper into the setup process and configuration steps.
 
-To achieve the highest and optimal settings, it is indeed recommended to use two monitors. This setup allows you to have simultaneous access to both the host system and the VM, simulating a dual-system experience.
-
-In this configuration, you will require two keyboards and a mouse to efficiently operate both systems. You can connect the primary monitor to the host system using an HDMI cable, while the secondary monitor can be connected to the other GPU (guest GPU) assigned to the VM.
-
-If you have only one monitor, it needs to have dual HDMI ports to accommodate both the host and the VM. This allows you to switch between the two systems seamlessly and make the most out of your dual-system setup.
-
-![two monitor](http://www.rdaxpress.com/uploads/3/1/6/7/31672951/s586650569732673968_p93_i1_w2560.jpeg)
-
-Image source: http://www.rdaxpress.com/uploads/3/1/6/7/31672951/s586650569732673968_p93_i1_w2560.jpeg
+![Dual Monitors](http://www.rdaxpress.com/uploads/3/1/6/7/31672951/s586650569732673968_p93_i1_w2560.jpeg)
