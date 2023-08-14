@@ -19,7 +19,7 @@ To enable seamless extension installation, start by installing the necessary pac
 sudo pacman -S gnome-browser-connector
 ```
 
-### 2. Recommended Extensions
+###  Recommended Extensions
 
 Explore these recommended GNOME extensions that can enhance your desktop functionality:
 
@@ -46,6 +46,10 @@ Explore these recommended GNOME extensions that can enhance your desktop functio
 #### Resource Monitor
 - **Link**: [Resource Monitor Extension](https://extensions.gnome.org/extension/1634/resource-monitor/)
 - **Description**: Keep a close eye on your system's resource usage with a dedicated resource monitor directly in your top panel.
+
+#### TopHat
+- **Link**: [Resource Monitor Extension](https://extensions.gnome.org/extension/5219/tophat/)
+- **Description**: TopHat aims to be an elegant system resource monitor for the GNOME shell. It displays CPU, memory, disk, and network activity in the GNOME top bar.
 
 By effortlessly installing these extensions, you can tailor your GNOME desktop to your workflow, optimizing productivity and functionality.
 
