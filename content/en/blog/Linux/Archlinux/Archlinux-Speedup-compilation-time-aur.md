@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Boost AUR Compilation in Arch Linux with ccache"
 description: "Speed up AUR package compilation in Arch Linux using ccache. Follow our guide to unlock efficient multi-threading and caching, optimizing your software installation process."
-tags: ["Arch Linux"]
+tags: ["Arch Linux", "AUR"]
 date: 2023-08-13T07:55:46+0800
 thumbnail: https://wallpaperaccess.com/full/4537030.png
 ---
