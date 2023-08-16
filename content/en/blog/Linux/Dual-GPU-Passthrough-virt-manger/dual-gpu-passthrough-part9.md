@@ -1,6 +1,6 @@
 ---
 author: "Arcsly"
-title: "Dual GPU Passthrough Guided Part 7: Installing Linux and Enabling Full Passthrough"
+title: "Dual GPU Passthrough Guided Part 9: Installing Linux and Enabling Full Passthrough"
 description: "In this section, we will guide you through the process of creating a new VM using Virt-Manager, installing the Linux and enabling complete passthrough of hardware components."
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-08-16T02:50:40+0800
