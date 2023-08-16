@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Set Up SearXNG on Your SSH VPS Server with Docker: A Quick and Private Metasearch"
 description: "Set up your private SearXNG metasearch engine on an SSH VPS server using Docker. Follow this concise guide to quickly install, customize, and maintain SearXNG."
-tags: ["Arch Linux"]
+tags: ["Self-host"]
 date: 2023-08-13T07:55:46+0800
 thumbnail: https://www.maketecheasier.com/assets/uploads/2022/06/searxng-install-00-featured-image.jpg
 ---
