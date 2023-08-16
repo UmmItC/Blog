@@ -180,11 +180,25 @@ Here's a comprehensive guide to installing both `yay` and `yay-bin` using Git, a
 
 3. **Installing `yay-bin` for Swiftness:**
 
-   On the other hand, if time efficiency is your priority, `yay-bin` provides a quicker installation route. This pre-compiled version eliminates the build phase. Install `yay-bin` with:
+   On the other hand, if time efficiency is your priority, opt for the pre-compiled `yay-bin` version. This version eliminates the build phase for quicker installation. Begin by cloning the `yay-bin` repository from the Arch User Repository (AUR) using:
 
    ```shell
-   yay -S yay-bin
+   git clone https://aur.archlinux.org/yay-bin.git
    ```
+
+   Navigate to the cloned `yay-bin` folder:
+
+   ```shell
+   cd yay-bin
+   ```
+
+   Build and install `yay-bin` with the following commands:
+
+   ```shell
+   makepkg -si
+   ```
+
+   Respond to prompts and grant necessary permissions during installation.
 
 4. **Start Using `yay`:**
 
@@ -203,7 +217,7 @@ By providing separate installation paths for `yay` and `yay-bin` while maintaini
 With your Arch Linux system set up and customized, it's time to install some essential software that you use on a daily basis.
 Install the Firefox web browser and VLC media player using the `yay` AUR helper.
 
-1. 8.2. Install Firefox:
+#### Install Firefox
 
    To install Firefox, use the following command:
 
@@ -211,7 +225,7 @@ Install the Firefox web browser and VLC media player using the `yay` AUR helper.
    sudo pacman -S firefox
    ```
 
-2. 8.3. Install VLC:
+#### Install VLC
 
    To install VLC media player, use the following command:
 
