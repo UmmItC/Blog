@@ -153,8 +153,6 @@ If you're planning to perform system upgrades within your virtual machine (VM), 
 
 ![neofetch](/blog/linux/dual-gpu-passthrough/part9/neofetch.png)
 
-My apologies for any confusion. Here is the final step using your provided instructions:
-
 ### Final Step: Optimizing Monitor Configuration
 
 As you approach the final stage of your Linux passthrough setup, optimizing your monitor configuration becomes essential to ensure a seamless visual experience. This step involves switching your monitor to a secondary input, such as HDMI2, and configuring your virtual machine (VM) accordingly.
