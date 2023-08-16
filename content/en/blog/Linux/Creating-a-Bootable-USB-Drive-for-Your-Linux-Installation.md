@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Creating a Bootable USB Drive for Your Linux Installation"
 description: "Crafting a Bootable USB Drive with 'dd': Your Gateway to Linux Installation"
-tags: ["Arch Linux"]
+tags: ["Linux"]
 date: 2023-08-11T08:00:50+0800
 thumbnail: https://4.bp.blogspot.com/-WOe_jqAf8GU/UpmIwmL9WnI/AAAAAAAAAPY/qY6A7m1sOwc/s1600/Bootable+USB.jpg
 ---
