@@ -27,7 +27,9 @@ Follow this guide: [Dual GPU Passthrough Guided Part 8: Installing Windows 11 vi
 
 Explain the straightforward process of installing Linux on QEMU/KVM, focusing on the UEFI-based installation method.
 
->Note:  only Make sure to use a UEFI-compatible ISO for the installation.
+Follow this guide: [Dual GPU Passthrough Guided Part 9: Installing Linux and Enabling Full Passthrough](/en/blog/linux/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part9/)
+
+>Note:  only Make sure to use a UEFI-compatible ISO for the installation. for  real monitor switching to  `Ramfb`.
 
 ### macOS on QEMU/KVM (Using OSX-KVM)
 Provide a brief overview of using the OSX-KVM project to install macOS on QEMU/KVM.
