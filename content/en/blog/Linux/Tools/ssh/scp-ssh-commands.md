@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Efficient and Secure File Transfer with SCP: A Comprehensive Guide"
 description: "Discover the power of secure and efficient file transfers using SCP (Secure Copy) and learn how to seamlessly manage remote server access with SSH login methods. "
-tags: ["Linux", "screen"]
+tags: ["Linux", "scp", "SSH"]
 date: 2022-01-27T20:24:39+0800
 thumbnail: https://www.freecodecamp.org/news/content/images/size/w2000/2021/09/uide-to-writting-a-good-readme-file--3-.png
 ---
