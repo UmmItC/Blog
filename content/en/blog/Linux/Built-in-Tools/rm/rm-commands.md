@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Mastering the rm Command: Effective File and Directory Removal in Linux"
 description: "Explore the versatile rm command in Linux, and learn various options and precautions to safely and efficiently remove files and directories from your system."
-tags: ["Linux", "chown"]
+tags: ["Linux", "rm"]
 date: 2022-01-09T03:01:14+0800
 thumbnail: https://vegastack.com/tutorials/content/images/2022/06/Rm-Command-in-Linux.png
 ---
