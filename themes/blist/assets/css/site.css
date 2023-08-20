@@ -29,6 +29,13 @@
   src: url("/fonts/ComicMono.ttf");
 }
 
+/*  title-h1-custom-01 Use font-family */
+
+@font-face {
+  font-family: Jost-Bold;
+  src: url("/fonts/Jost/Jost-Bold.ttf");
+}
+
 /* Custom English font-family to Sen-Bold:
       h1,
       h2,
@@ -80,6 +87,11 @@ html[lang="hk"] h6 {
   font-family: SourceHanSansHWTC-Bold;
 }
 
+/* Styles specific to the title-h1-custom-01 */ 
+
+html[lang="en"] .title-h1-custom-01{
+  font-family: Jost-Bold;
+}
 
 /* Styles specific to the Code-Block */ 
 
