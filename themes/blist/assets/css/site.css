@@ -1,4 +1,4 @@
-/* English Use Font-family */
+/*  Define All the Font Styles */
 
 @font-face {
   font-family: Sen-Bold;
@@ -10,8 +10,6 @@
   src: url("/fonts/Sen/Sen-Regular.ttf");
 }
 
-/* Hong Kong and Taiwan Use Font-family */
-
 @font-face {
   font-family: SourceHanSansHWTC-Regular;
   src: url("/fonts/SourceHanSansHWTC/SourceHanSansHWTC-Regular.otf");
@@ -22,28 +20,17 @@
   src: url("/fonts/SourceHanSansHWTC/SourceHanSansHWTC-Bold.otf");
 }
 
-/* CodeBlock Use font-family */
-
 @font-face {
   font-family: ComicMono;
   src: url("/fonts/ComicMono/ComicMono.ttf");
 }
-
-/*  title-h1-custom-01 Use font-family */
 
 @font-face {
   font-family: Jost-Bold;
   src: url("/fonts/Jost/Jost-Bold.ttf");
 }
 
-/* Custom English font-family to Sen-Bold:
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6
-*/
+/* English Font Styles */
 
 html[lang="en"] h1,
 html[lang="en"] h2,
@@ -54,18 +41,29 @@ html[lang="en"] h6 {
   font-family: Sen-Bold;
 }
 
-/* Custom English font-family to Sen-Regular:
-      p
-*/
-
-html[lang="en"] p{
+html[lang="en"] p {
   font-family: Sen-Regular;
 }
 
-html[lang="tw"] p{
-  font-family: SourceHanSansHWTC-Regular;
+html[lang="en"] .title-h1-custom-01 {
+  font-family: Jost-Bold;
 }
 
+html[lang="en"] .header-li-custom-01 {
+  font-family: Sen-Regular;
+}
+
+html[lang="en"] .footer-social-custom-01 {
+  font-family: Sen-Bold;
+}
+
+html[lang="en"] .footer-social-custom-02 {
+  font-family: Sen-Regular;
+}
+
+/* Taiwan Font Styles */
+
+html[lang="tw"] p,
 html[lang="tw"] h1,
 html[lang="tw"] h2,
 html[lang="tw"] h3,
@@ -75,10 +73,18 @@ html[lang="tw"] h6 {
   font-family: SourceHanSansHWTC-Bold;
 }
 
-html[lang="hk"] p{
+html[lang="tw"] .header-li-custom-01,
+html[lang="tw"] .params-title-custom-01 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="tw"] .params-description-custom-01 {
   font-family: SourceHanSansHWTC-Regular;
 }
 
+/* Hong Kong Font Styles */
+
+html[lang="hk"] p,
 html[lang="hk"] h1,
 html[lang="hk"] h2,
 html[lang="hk"] h3,
@@ -88,48 +94,13 @@ html[lang="hk"] h6 {
   font-family: SourceHanSansHWTC-Bold;
 }
 
-/* Styles specific to the title-h1-custom-01 */ 
-
-html[lang="en"] .title-h1-custom-01{
-  font-family: Jost-Bold;
-}
-
-/* Styles specific to the header-li-custom-01 */ 
-
-html[lang="en"] .header-li-custom-01{
-  font-family: Sen-Regular;
-}
-
-html[lang="hk"] .header-li-custom-01{
+html[lang="hk"] .header-li-custom-01,
+html[lang="hk"] .params-title-custom-01 {
   font-family: SourceHanSansHWTC-Bold;
 }
 
-html[lang="tw"] .header-li-custom-01{
-  font-family: SourceHanSansHWTC-Bold;
-}
-
-html[lang="hk"] .params-title-custom-01{
-  font-family: SourceHanSansHWTC-Bold;
-}
-
-html[lang="tw"] .params-title-custom-01{
-  font-family: SourceHanSansHWTC-Bold;
-}
-
-html[lang="hk"] .params-description-custom-01{
+html[lang="hk"] .params-description-custom-01 {
   font-family: SourceHanSansHWTC-Regular;
-}
-
-html[lang="tw"] .params-description-custom-01{
-  font-family: SourceHanSansHWTC-Regular;
-}
-
-html[lang="en"] .footer-social-custom-01{
-  font-family: Sen-Bold;
-}
-
-html[lang="en"] .footer-social-custom-02{
-  font-family: Sen-Regular;
 }
 
 /* Styles specific to the Code-Block */ 
