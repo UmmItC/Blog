@@ -93,6 +93,12 @@ html[lang="en"] .title-h1-custom-01{
   font-family: Jost-Bold;
 }
 
+/* Styles specific to the header-li-custom-01 */ 
+
+html[lang="en"] .header-li-custom-01{
+  font-family: Sen-Regular;
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
