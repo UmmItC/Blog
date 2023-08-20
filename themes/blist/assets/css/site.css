@@ -74,6 +74,7 @@ html[lang="tw"] h5,
 html[lang="tw"] h6 {
   font-family: SourceHanSansHWTC-Bold;
 }
+
 html[lang="hk"] p{
   font-family: SourceHanSansHWTC-Regular;
 }
@@ -97,6 +98,14 @@ html[lang="en"] .title-h1-custom-01{
 
 html[lang="en"] .header-li-custom-01{
   font-family: Sen-Regular;
+}
+
+html[lang="hk"] .header-li-custom-01{
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="tw"] .header-li-custom-01{
+  font-family: SourceHanSansHWTC-Bold;
 }
 
 /* Styles specific to the Code-Block */ 
