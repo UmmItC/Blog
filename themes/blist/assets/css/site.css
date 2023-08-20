@@ -1,3 +1,34 @@
+/* English Use Font-family */
+
+@font-face {
+  font-family: Sen-Bold;
+  src: url("/fonts/Sen/Sen-Bold.ttf");
+}
+
+@font-face {
+  font-family: Sen-Regular;
+  src: url("/fonts/Sen/Sen-Regular.ttf");
+}
+
+/* Hong Kong and Taiwan Use Font-family */
+
+@font-face {
+  font-family: SourceHanSansHWTC-Regular;
+  src: url("/fonts/SourceHanSansHWTC-Regular.otf");
+}
+
+@font-face {
+  font-family: SourceHanSansHWTC-Bold;
+  src: url("/fonts/SourceHanSansHWTC-Bold.otf");
+}
+
+/* CodeBlock Use font-family */
+
+@font-face {
+  font-family: ComicMono;
+  src: url("/fonts/ComicMono.ttf");
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
