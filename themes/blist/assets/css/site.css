@@ -55,6 +55,31 @@ html[lang="en"] p{
   font-family: Sen-Regular;
 }
 
+html[lang="tw"] p{
+  font-family: SourceHanSansHWTC-Regular;
+}
+
+html[lang="tw"] h1,
+html[lang="tw"] h2,
+html[lang="tw"] h3,
+html[lang="tw"] h4,
+html[lang="tw"] h5,
+html[lang="tw"] h6 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+html[lang="hk"] p{
+  font-family: SourceHanSansHWTC-Regular;
+}
+
+html[lang="hk"] h1,
+html[lang="hk"] h2,
+html[lang="hk"] h3,
+html[lang="hk"] h4,
+html[lang="hk"] h5,
+html[lang="hk"] h6 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
 
 /* Styles specific to the Code-Block */ 
 
