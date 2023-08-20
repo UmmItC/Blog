@@ -124,6 +124,10 @@ html[lang="tw"] .params-description-custom-01{
   font-family: SourceHanSansHWTC-Regular;
 }
 
+html[lang="en"] .footer-social-custom-01{
+  font-family: Sen-Bold;
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
