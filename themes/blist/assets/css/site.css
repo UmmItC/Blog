@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: SourceHanSansHWTC-Bold;
-  src: url("/fonts/SourceHanSansHWTC-Bold.otf");
+  src: url("/fonts/SourceHanSansHWTC/SourceHanSansHWTC-Bold.otf");
 }
 
 /* CodeBlock Use font-family */
