@@ -5,6 +5,7 @@ description: "Speed up AUR package compilation in Arch Linux using ccache. Follo
 tags: ["Arch Linux", "AUR"]
 date: 2023-08-13T07:55:46+0800
 thumbnail: https://wallpaperaccess.com/full/4537030.png
+lastmod: 2023-08-20T19:40:22+0800
 ---
 
 
@@ -98,8 +99,6 @@ source ~/.zshrc
 Similarly, `source` is used to execute the commands in `~/.zshrc`, updating the configuration in your current terminal session.
 
 By using the `source` command, you ensure that your shell recognizes the updated PATH and other configuration changes, allowing you to use `ccache` seamlessly without needing to open a new terminal window.
-
-Certainly, I understand your request. Here's the modified Step 7 with the addition of how to view the locations contained in the `$PATH` variable:
 
 ## Step 7: Verify PATH Configuration
 
