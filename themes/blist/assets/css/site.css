@@ -108,6 +108,14 @@ html[lang="tw"] .header-li-custom-01{
   font-family: SourceHanSansHWTC-Bold;
 }
 
+html[lang="hk"] .params-title-custom-01{
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="tw"] .params-title-custom-01{
+  font-family: SourceHanSansHWTC-Bold;
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
