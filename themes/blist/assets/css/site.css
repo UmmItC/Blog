@@ -128,6 +128,10 @@ html[lang="en"] .footer-social-custom-01{
   font-family: Sen-Bold;
 }
 
+html[lang="en"] .footer-social-custom-02{
+  font-family: Sen-Regular;
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
