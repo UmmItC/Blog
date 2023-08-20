@@ -29,6 +29,33 @@
   src: url("/fonts/ComicMono.ttf");
 }
 
+/* Custom English font-family to Sen-Bold:
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+*/
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6 {
+  font-family: Sen-Bold;
+}
+
+/* Custom English font-family to Sen-Regular:
+      p
+*/
+
+html[lang="en"] p{
+  font-family: Sen-Regular;
+}
+
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
