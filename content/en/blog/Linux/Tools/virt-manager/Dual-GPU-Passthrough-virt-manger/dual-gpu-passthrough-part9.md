@@ -5,6 +5,7 @@ description: "In this section, we will guide you through the process of creating
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-08-16T02:50:40+0800
 thumbnail: /blog/linux/dual-gpu-passthrough/part9/install_ubuntu.png
+lastmod: 2023-08-22T13:51:02+0800
 ---
 
 ## Introduction
@@ -192,3 +193,9 @@ Congratulations on successfully setting up and optimizing your dual GPU passthro
 8. **Backup and Snapshots:** Consider implementing backup strategies and taking snapshots of your VM's state. This ensures that you have recovery options in case of unexpected issues or experiments gone awry.
 
 Remember, the journey of optimizing and customizing your virtual machine is a continuous one. Feel free to explore and experiment with different settings, applications, and configurations to tailor the experience to your preferences and requirements. Whether you're using your VM for gaming, development, testing, or other purposes, the possibilities are vast and exciting. Enjoy your newfound virtual environment to the fullest!
+
+## Update: August 22, 2023
+
+As part of fully upgrading your system, you might want to consider following these steps. I have personally tested this approach. Simply pass through your mouse, keyboard, PCI device, GPU, and GPU-Audio device. Additionally, switch the video mode to `Ramfb` – it functions well. This configuration enables you to operate in passthrough mode using your live-boot environment.
+
+However, for the optimal experience, I highly recommend conducting a complete system upgrade. If this process doesn't yield the desired results, I suggest attempting an upgrade as well.
