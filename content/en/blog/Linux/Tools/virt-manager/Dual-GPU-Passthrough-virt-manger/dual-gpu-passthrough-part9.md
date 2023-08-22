@@ -172,27 +172,39 @@ Here's how to complete this process:
 
 By following these steps, you have successfully configured your monitor to display the output from your Linux VM on a secondary input. This optimization enhances your passthrough experience and provides a dedicated visual channel for your virtual machine. Enjoy the benefits of your fully set up and optimized dual GPU passthrough system!
 
-## What's Next?
+## **What's Next in Your VM Adventure?**
 
-Congratulations on successfully setting up and optimizing your dual GPU passthrough system! You now have a powerful virtual machine (VM) at your disposal, capable of running your desired operating system with the benefits of dedicated hardware components. But the journey doesn't end here. Here are some exciting possibilities to explore and further enhance your VM experience:
+Congratulations on successfully setting up and optimizing your dual GPU passthrough system! You've unlocked the potential of a high-performance virtual machine (VM) that harnesses dedicated hardware for an exceptional computing experience. However, this is just the beginning of your journey. There's a world of possibilities awaiting you to explore and elevate your VM experience even further. Let's dive into some exciting avenues to consider:
 
-1. **Utilize CPU Resources:** Experiment with allocating more CPU cores to your virtual machine to boost its processing capabilities. Adjusting CPU settings can optimize performance for different workloads.
+### **1. Harnessing CPU Power**
 
-2. **Increase Memory Allocation:** If you find your VM's performance demanding more memory, consider allocating additional RAM to meet its requirements. This can result in smoother multitasking and resource-intensive applications.
+Your VM's performance can be further enhanced by utilizing physical CPU cores instead of virtual ones. By allocating specific CPU cores to your VM, you can achieve better speed and responsiveness. Dive into your VM's settings and allocate real CPU cores for improved performance.
 
-3. **Passthrough Input Devices:** Enhance your VM experience by passing through your physical mouse and keyboard. This allows seamless interaction between your host and guest systems, making the virtual environment feel more natural.
+### **2. Amplify Memory Allocation**
 
-4. **Fine-Tune Display Settings:** Explore your VM's display settings to adjust parameters like resolution, refresh rate, and color depth. Achieve the optimal visual experience by aligning these settings with your monitor's capabilities.
+If your VM's tasks demand more memory, increase its allocated RAM. This ensures smoother multitasking and seamless operation of resource-intensive applications. A well-fed VM translates to a more efficient and enjoyable computing experience.
 
-5. **Install Additional Software:** Customize your virtual environment further by installing software, tools, and utilities that cater to your specific needs. Whether it's productivity apps, creative tools, or development environments, your VM can become a versatile workspace.
+### **3. Seamless Input Integration**
 
-6. **Network Configuration:** Set up network sharing between your host and guest systems to enable seamless file transfer and resource sharing. This can be particularly useful for development and testing purposes.
+Elevate your VM interaction by passing through your physical mouse and keyboard. This bridges the gap between your host and guest systems, making your virtual environment feel like a natural extension of your workspace.
 
-7. **Explore GPU Passthrough Variations:** If your hardware allows, you can experiment with different GPU passthrough configurations, such as isolating one GPU for the host and the other for the guest. This approach can enhance performance and compatibility.
+### **4. Fine-Tune Display Parameters**
 
-8. **Backup and Snapshots:** Consider implementing backup strategies and taking snapshots of your VM's state. This ensures that you have recovery options in case of unexpected issues or experiments gone awry.
+Optimize your VM's display settings for the best visual experience. Tweak resolution, refresh rate, and color depth to match your monitor's capabilities. Tailoring the visuals enhances your immersion and productivity.
 
-Remember, the journey of optimizing and customizing your virtual machine is a continuous one. Feel free to explore and experiment with different settings, applications, and configurations to tailor the experience to your preferences and requirements. Whether you're using your VM for gaming, development, testing, or other purposes, the possibilities are vast and exciting. Enjoy your newfound virtual environment to the fullest!
+### **5. Curate Your Software Arsenal**
+
+Customize your virtual environment by installing software that aligns with your goals. Whether you need productivity tools, creative software, or development environments, your VM can cater to your specific requirements.
+
+### **6. Forge Network Connections**
+
+Enable seamless file sharing and resource access between your host and guest systems. This is especially useful for collaborative projects, development, and testing scenarios.
+
+### **7. Embrace Backups and Snapshots**
+
+Implement robust backup strategies and take snapshots of your VM's states. These safety nets provide a way to recover from unexpected issues or experimental endeavors that didn't go as planned.
+
+Remember, your journey to maximize and tailor your virtual machine is ongoing. Embrace experimentation and exploration as you discover the configurations and applications that suit your needs. Whether you're gaming, developing, testing, or all of the above, your VM offers an expansive canvas for you to create your ideal computing environment. Enjoy the boundless potential of your virtual domain!
 
 ## Update: August 22, 2023
 
