@@ -162,7 +162,7 @@ Here's how to complete this process:
 
 1. **Power Off Your VM:** Begin by shutting down your virtual machine.
 
-2. **Configure VM Video Settings:** Access the settings of your VM in Virt-Manager. Navigate to the "Video" section and choose the "QXL" device model. Then, under the "Video RAM" option, select "VGA." Save your changes.
+2. **Configure VM Video Settings:** Access the settings of your VM in Virt-Manager. Navigate to the "Video" section and choose the "Ramfb" device model. Then save your changes.
 
 3. **Switch to Secondary Monitor Input:** On your physical monitor, switch the input source to your desired secondary option, such as HDMI2. This prepares your monitor to receive the output from your VM.
 
