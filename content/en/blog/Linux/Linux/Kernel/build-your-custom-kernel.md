@@ -277,6 +277,39 @@ You've done the hard work, and now it's time to ensure your custom kernel is pro
 
 With these steps, you've crafted a custom entry in your boot loader configuration, pointing to your custom kernel. This ensures that your system will boot into your new kernel with the desired options.
 
+## Step 9: Reboot and Verify Your Custom Kernel
+
+Congratulations! You've successfully compiled your own custom Linux kernel. The process might have taken some time and effort, but now you have a tailored kernel that fits your system's requirements. Let's take the final steps to reboot your computer and ensure that your new custom kernel is up and running.
+
+### 9.2 Reboot Your System
+
+To apply the changes and boot into your new custom kernel, issue the following command:
+
+```shell
+sudo reboot
+```
+
+Executing this command will initiate a system reboot, allowing you to select your custom kernel from the bootloader menu.
+
+### 9.3. Verify the New Kernel
+
+Once your system has rebooted and you've selected your custom kernel from the bootloader, it's time to verify that everything is in order. Open a terminal and enter the following command to check the version of your newly installed custom kernel:
+
+```shell
+uname -mrs
+```
+
+You should see output similar to the following, indicating your new Linux kernel version:
+
+```shell
+Linux 6.4.12 x86_64
+```
+
+This confirms that your custom kernel is now successfully running on your Arch Linux system.
+
+With your custom Linux kernel in place, you have not only gained a deeper understanding of your system's core components but also unlocked the ability to fine-tune and optimize your system's performance according to your needs. Enjoy the benefits of your customized kernel configuration!
+
+
 ## Conclusion
 
 Congratulations! You've successfully completed the entire process of building a custom Linux kernel on Arch Linux. From downloading the source code to configuring, compiling, and integrating it into your boot loader, you've gained a deep understanding of the inner workings of the kernel. This newfound knowledge empowers you to shape your system's performance and features according to your preferences. As you continue to explore the vast realm of Linux, remember that the journey you've undertaken today is just the beginning of your technical prowess. Enjoy your personalized Arch Linux experience!
