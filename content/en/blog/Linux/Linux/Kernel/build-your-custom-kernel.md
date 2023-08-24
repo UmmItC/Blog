@@ -245,7 +245,7 @@ Adjust these values according to your kernel version and naming conventions.
 Finally, generate the custom initramfs using the modified preset file:
 
 ```shell
-sudo mkinitcpio -p linuxcustom
+sudo mkinitcpio -p linux-custom
 ```
 
 This command will build the initramfs based on your custom configuration.
