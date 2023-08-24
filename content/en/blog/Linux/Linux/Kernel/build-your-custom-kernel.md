@@ -266,7 +266,7 @@ You've done the hard work, and now it's time to ensure your custom kernel is pro
    Insert the following lines into the configuration file to define your custom kernel:
    ```shell
    title Arch Linux Custom
-   linux /vmlinuz-custom
+   linux /vmlinuz-linux-custom
    initrd /initramfs-linux-custom.img
 
    options root=/dev/sda2 quiet ro
