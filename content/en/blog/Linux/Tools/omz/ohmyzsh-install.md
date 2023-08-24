@@ -157,10 +157,3 @@ omz help
 ## In Conclusion:
 
 Mastering these essential commands unlocks the true potential of Oh My Zsh, elevating your terminal proficiency. From effortless updates to theme customization and command references, you're equipped to conquer the command line with finesse. Embrace these tools, and watch as your terminal transforms into a productivity powerhouse. Happy terminal hacking!
-
----
-
-Add this ! i missing the how to config a themes. nano ~/.zshrc
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="awesomepanda"
