@@ -131,6 +131,20 @@ tar xvf linux-6.4.12.tar
 
 This command will unpack the compressed source code archive.
 
+### Step 6: Navigate to the Kernel Source Directory
+
+Navigate to the directory containing the kernel source code. You'll want to ensure that you have the necessary permissions to work with the source files without constantly relying on `sudo`. Here's how you can achieve that:
+
+1. **Change Ownership of Kernel Source Directory:**
+
+   To avoid using `sudo` for every operation, change the ownership of the kernel source directory to your user. Replace `$USER` with your actual username:
+   
+   ```shell
+   chown $USER:$USER linux-6.4.12
+   ```
+
+This ensures that you have the necessary access rights to work with the kernel source code and perform various operations without the constant need for superuser privileges.
+
 ### Step 6: Compile and Install Kernel
 
 1. **Navigate to the Kernel Source Directory:**

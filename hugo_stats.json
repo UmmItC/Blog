@@ -662,6 +662,7 @@
       "step-6-compile-and-install-kernel",
       "step-6-enabling-network-access-system-upgrade-and-gpu-passthrough",
       "step-6-install-essential-packages-and-explore-their-functions",
+      "step-6-navigate-to-the-kernel-source-directory",
       "step-6-rebooting-your-vps",
       "step-6-refresh-configuration-and-apply-changes",
       "step-6-resolve-merge-conflicts",
