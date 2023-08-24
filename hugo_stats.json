@@ -671,6 +671,7 @@
       "step-6-start-searxng",
       "step-7-apply-the-changes",
       "step-7-automate-mounts-with-the-fstab-file",
+      "step-7-compile-and-install-kernel",
       "step-7-push-changes-to-remote",
       "step-7-verify-and-access-searxng",
       "step-7-verify-path-configuration",

@@ -145,7 +145,7 @@ Navigate to the directory containing the kernel source code. You'll want to ensu
 
 This ensures that you have the necessary access rights to work with the kernel source code and perform various operations without the constant need for superuser privileges.
 
-### Step 6: Compile and Install Kernel
+### Step 7: Compile and Install Kernel
 
 1. **Navigate to the Kernel Source Directory:**
    
