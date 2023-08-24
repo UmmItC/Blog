@@ -47,6 +47,8 @@ Embark on your kernel customization journey by obtaining the kernel source code 
 
    The official source for Linux kernel releases is [kernel.org](https://www.kernel.org/). You can access the website through your web browser and manually download the source code archive. Keep in mind that this method involves larger file sizes, so a stable internet connection is recommended.
 
+   ![kernel.org](/blog/linux/Kernel/Download%20Kernel%20source.png)
+
 2. **Download using `aria2c`:**
 
    To expedite the process, especially considering the large file size, you can use the `aria2c` command-line tool. This command supports multiple connections for faster downloads:
