@@ -9,7 +9,13 @@ thumbnail: /blog/linux/Kernel/Compile%20Kernel%20Modules.png
 
 ## Introduction
 
-Building a custom Linux kernel on Arch Linux can seem like a daunting task, but with the right guidance, it becomes a valuable skill. This tutorial will walk you through the process, breaking down each step into easy-to-follow commands.
+Building a custom Linux kernel on Arch Linux might appear intimidating at first, but armed with the right knowledge, it becomes an empowering skill. This tutorial is designed to guide you through the process, simplifying each step with clear and straightforward commands.
+
+### August 24, 2023
+
+Throughout this tutorial, we'll use Linux kernel version 6.4.12 as an example. Keep in mind that you can adapt the steps for different kernel versions as needed.
+
+Let's dive in and demystify the process of crafting your very own custom Linux kernel on Arch Linux.
 
 ## Step 1: Prepare Your System
 
