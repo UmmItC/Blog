@@ -11,7 +11,29 @@ thumbnail: /blog/linux/Kernel/Compile%20Kernel%20Modules.png
 
 Building a custom Linux kernel on Arch Linux can seem like a daunting task, but with the right guidance, it becomes a valuable skill. This tutorial will walk you through the process, breaking down each step into easy-to-follow commands.
 
-## Step 1: Download the Kernel Source
+## Step 1: Prepare Your System
+
+Before delving into building the custom Linux kernel, it's essential to ensure your system is equipped with the necessary tools and packages. Follow these steps to prepare your system:
+
+### Step 1.1: Install Required Dependencies
+
+Start by installing the `base-devel` meta package. This package includes essential tools such as `make` and `gcc`. Open a terminal and enter the following command:
+
+```shell
+sudo pacman -S base-devel
+```
+
+### Step 1.2: Install Additional Recommended Packages
+
+For a smooth kernel compilation process, it's advisable to install the following packages as well. These packages are listed in the default Arch kernel PKGBUILD and contribute to a successful kernel build:
+
+```shell
+sudo pacman -S xmlto kmod inetutils bc libelf git cpio perl tar xz
+```
+
+With these dependencies installed, your system is now well-prepared to proceed with building your custom Linux kernel on Arch Linux.
+
+## Step 2: Download the Kernel Source
 
 Embark on your kernel customization journey by obtaining the kernel source code from the official source, kernel.org. The source code is sizeable, typically around 100 MBs or more. Here are a couple of methods to download the source code:
 
@@ -198,3 +220,4 @@ Congratulations! You've successfully completed the entire process of building a 
 
 - https://www.cyberciti.biz/tips/compiling-linux-kernel-26.html
 - https://wiki.linuxquestions.org/wiki/How_to_build_and_install_your_own_Linux_kernel
+- https://wiki.archlinux.org/title/Kernel/Traditional_compilation
