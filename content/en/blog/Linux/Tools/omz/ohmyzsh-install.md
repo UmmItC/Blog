@@ -96,7 +96,7 @@ source ~/.zshrc
 
 Voila! You've successfully changed the theme of your Oh My Zsh-powered terminal. The next time you open a terminal session, you'll experience the charm of the new theme in action.
 
-## Optimizing Your Terminal Workflow with Oh My Zsh: Essential Commands
+## Essential Commands
 
 Enhancing your terminal experience goes beyond installing Oh My Zsh and a custom theme. To truly harness its power, let's dive into some fundamental built-in commands that can turbocharge your productivity. These commands are designed to effortlessly update your installation, manage themes, and provide valuable information at your fingertips.
 
