@@ -179,14 +179,7 @@ This ensures that you have the necessary access rights to work with the kernel s
 
    ![install the kernel](/blog/linux/Kernel/Install%20Kernel%20Modules.png)
 
-5. **Install the Kernel:**
-
-   It's time to officially install your custom kernel:
-   ```shell
-   sudo make ARCH=x86_64 install 
-   ```
-
-6. **Copy Your Own Kernel to /boot/:**
+7. **Copy Your Own Kernel to /boot/:**
 
    Ensure your custom-built kernel is accessible by copying it to the `/boot` directory:
    ```shell
@@ -194,6 +187,61 @@ This ensures that you have the necessary access rights to work with the kernel s
    ```
 
 By following these numbered steps, you're systematically progressing through the critical phases of compiling and installing your custom Linux kernel on Arch Linux.
+
+## Step 8: Create and Configure Kernel Initramfs
+
+The **initramfs** (initial RAM file system) is a temporary file system that's loaded into memory during the boot process before the root file system is available. It contains essential drivers, binaries, and scripts required for the system to identify and access the root file system. Customizing and generating your own initramfs can be crucial, especially if you're making changes to your kernel.
+
+### Step 8.1: Duplicate and Modify the Preset File
+
+Start by duplicating the existing `linux.preset` file for your custom kernel. This file is used by `mkinitcpio` to generate the initramfs. Run the following command to make a copy:
+
+```shell
+sudo cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux-custom.preset
+```
+
+Now, open the newly created `linux-custom.preset` file using a text editor of your choice, and make the following modifications to adapt it for your custom kernel:
+
+```shell
+...
+ALL_kver="/boot/vmlinuz-linux-custom"
+...
+default_image="/boot/initramfs-linux-custom.img"
+...
+fallback_image="/boot/initramfs-linux-custom-fallback.img"
+```
+
+For clarity, here's how the modified section might look:
+
+```shell
+# mkinitcpio preset file for the 'linux-custom' package
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux-custom"
+ALL_microcode=(/boot/*-ucode.img)
+
+PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+default_image="/boot/initramfs-linux-custom.img"
+#default_uki="/efi/EFI/Linux/arch-linux.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+fallback_image="/boot/initramfs-linux-custom-fallback.img"
+#fallback_uki="/efi/EFI/Linux/arch-linux-fallback.efi"
+fallback_options="-S autodetect"
+```
+
+### Step 8.2: Generate Initramfs
+
+Now that your custom preset file is ready, use the following command to generate the initramfs for your custom kernel:
+
+```shell
+sudo mkinitcpio -p linux-custom
+```
+
+This command processes the preset file, creating the initramfs that will be used during the boot process for your custom kernel. Once completed, your custom kernel will be equipped with its own tailored initramfs, ensuring a smooth and efficient boot process.
 
 ### Final Step: Create a Boot Loader Configuration
 
@@ -210,7 +258,7 @@ You've done the hard work, and now it's time to ensure your custom kernel is pro
    ```shell
    title Arch Linux Custom
    linux /vmlinuz-custom
-   initrd /initramfs-linux.img
+   initrd /initramfs-linux-custom.img
 
    options root=/dev/sda2 quiet ro
    ```
