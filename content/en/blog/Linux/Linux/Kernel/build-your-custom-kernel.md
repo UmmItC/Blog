@@ -90,39 +90,34 @@ To ensure the authenticity of the source code, follow these steps to verify its 
    $ gpg --verify linux-6.4.12.tar.sign 
    gpg: assuming signed data in 'linux-6.4.12.tar'
    gpg: Signature made Wed 23 Aug 2023 11:33:44 PM HKT
-   gpg: using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
-   gpg: Good signature from "Greg Kroah-Hartman <gregkh@linuxfoundation.org>" [unknown]
-   gpg: aka "Greg Kroah-Hartman <gregkh@kernel.org>" [unknown]
-   gpg: aka "Greg Kroah-Hartman (Linux kernel stable release signing key) <greg@kroah.com>" [unknown]
-   gpg: WARNING: This key is not certified with a trusted signature!
-   gpg: There is no indication that the signature belongs to the owner.
-   Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
+   gpg:                using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
+   gpg: Can't check signature: No public key
    ```
 
 3. **Import the GPG Key:**
 
    If the signature verification is successful, import the associated GPG key for future use:
    ```shell
-   $ gpg --recv-key 647F28654894E3BD457199BE38DBBDC86092693E
+   $ gpg --recv-key 647F28654894E3BD457199BE38DBBDC86092693E                                        
    gpg: key 38DBBDC86092693E: 1 duplicate signature removed
-   gpg: key 38DBBDC86092693E: "Greg Kroah-Hartman <gregkh@linuxfoundation.org>" not changed
+   gpg: key 38DBBDC86092693E: public key "Greg Kroah-Hartman <gregkh@linuxfoundation.org>" imported
    gpg: Total number processed: 1
-   gpg: unchanged: 1
+   gpg:               imported: 1
    ```
 
 4. **Continue with Signature Confirmation:**
 
    Confirm the validity of the imported key against the signature once again:
    ```shell
-   $ gpg --verify linux-6.4.12.tar.sign                     
+   $ gpg --verify linux-6.4.12.tar.sign  
    gpg: assuming signed data in 'linux-6.4.12.tar'
    gpg: Signature made Wed 23 Aug 2023 11:33:44 PM HKT
-   gpg: using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
+   gpg:                using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
    gpg: Good signature from "Greg Kroah-Hartman <gregkh@linuxfoundation.org>" [unknown]
-   gpg: aka "Greg Kroah-Hartman <gregkh@kernel.org>" [unknown]
-   gpg: aka "Greg Kroah-Hartman (Linux kernel stable release signing key) <greg@kroah.com>" [unknown]
+   gpg:                 aka "Greg Kroah-Hartman <gregkh@kernel.org>" [unknown]
+   gpg:                 aka "Greg Kroah-Hartman (Linux kernel stable release signing key) <greg@kroah.com>" [unknown]
    gpg: WARNING: This key is not certified with a trusted signature!
-   gpg: There is no indication that the signature belongs to the owner.
+   gpg:          There is no indication that the signature belongs to the owner.
    Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
    ```
 
