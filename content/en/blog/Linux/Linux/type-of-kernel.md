@@ -4,7 +4,7 @@ title: "Navigating Linux Kernel Variants: Performance, Stability, Security, and 
 description: "Discover the diverse landscape of Linux kernel variants, from optimizing performance and ensuring stability to enhancing security and embracing innovation."
 tags: ["Linux", "Kernel"]
 date: 2023-08-20T19:10:30+0800
-thumbnail: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2016/03/linux-kernel.png
+thumbnail: https://wallpaperaccess.com/full/2603349.jpg
 ---
 
 ## Why Different Kernel?
