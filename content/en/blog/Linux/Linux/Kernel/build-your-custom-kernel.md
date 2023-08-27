@@ -172,12 +172,54 @@ This ensures that you have the necessary access rights to work with the kernel s
    cd linux-6.4.12
    ```
 
-### 2. Configure Using Current Kernel Configuration:
+### 2. Configure Using Current Kernel Configuration
 
-   To streamline the process, copy the configuration from your currently running kernel:
-   ```shell
-   cp /usr/src/linux/.config .
-   ```
+Configuring a kernel involves determining various settings and options that tailor the kernel to your system's hardware and requirements. The kernel configuration dictates which features, drivers, and functionalities will be included in the final compiled kernel. It's a crucial step in building a custom kernel that aligns with your specific needs.
+
+In this context, the term "configuration" refers to a set of options stored in a file called `.config`. This file contains information about how the kernel should be built, what modules to include, which hardware support to enable, and more. The options can be adjusted through a configuration interface.
+
+To streamline the process of configuring your custom kernel, you can use the configuration from your currently running kernel as a starting point. This ensures that your custom kernel maintains compatibility with your existing hardware and system setup.
+
+The command to copy the configuration from your currently running kernel to the kernel source directory is:
+
+```shell
+cp /usr/src/linux/.config .
+```
+
+Here, `/usr/src/linux` is a symbolic link to the kernel source directory of your currently installed kernel. The `cp` command duplicates the `.config` file into your working directory, allowing you to use it as a basis for your custom kernel configuration.
+
+```shell
+CONFIG_SCSI_MVSAS_TASKLET=y
+CONFIG_SCSI_MVUMI=m
+CONFIG_SCSI_ADVANSYS=m
+CONFIG_SCSI_ARCMSR=m
+CONFIG_SCSI_ESAS2R=m
+CONFIG_MEGARAID_NEWGEN=y
+CONFIG_MEGARAID_MM=m
+CONFIG_MEGARAID_MAILBOX=m
+CONFIG_MEGARAID_LEGACY=m
+CONFIG_MEGARAID_SAS=m
+CONFIG_SCSI_MPT3SAS=m
+CONFIG_SCSI_MPT2SAS_MAX_SGE=128
+CONFIG_SCSI_MPT3SAS_MAX_SGE=128
+CONFIG_SCSI_MPT2SAS=m
+CONFIG_SCSI_MPI3MR=m
+CONFIG_SCSI_SMARTPQI=m
+CONFIG_SCSI_HPTIOP=m
+CONFIG_SCSI_BUSLOGIC=m
+CONFIG_SCSI_FLASHPOINT=y
+CONFIG_SCSI_MYRB=m
+CONFIG_SCSI_MYRS=m
+CONFIG_VMWARE_PVSCSI=m
+CONFIG_XEN_SCSI_FRONTEND=m
+CONFIG_HYPERV_STORAGE=m
+CONFIG_LIBFC=m
+CONFIG_LIBFCOE=m
+CONFIG_FCOE=m
+...
+```
+
+It's worth noting that the kernel configuration is a comprehensive topic on its own, with various options and settings that can significantly impact the behavior and performance of the kernel. Advanced users may explore tools like `make menuconfig`, `make xconfig`, or `make gconfig` to interactively configure the kernel's options. However, for the purpose of this guide, we'll focus on using the existing configuration to compile the custom kernel.
 
 ### 3. Compile the Kernel
 
