@@ -5,6 +5,7 @@ description: "Discover the power of yt-dlp's command line tools, your gateway to
 tags: ["youtube-dl", "yt-dlp"]
 date: 2023-08-12T11:46:50+0800
 thumbnail: https://repository-images.githubusercontent.com/307260205/b6a8d716-9c7b-40ec-bc44-6422d8b741a0
+Lastmod: 2023-08-27T21:01:50+0800
 ---
 
 ## Introduction
@@ -103,6 +104,32 @@ yt-dlp's command-line tools extend beyond individual video downloads. With the `
 >Tips: Replace `path/to/video_list.txt` with the actual path to your text file.
 
 yt-dlp will sequentially download each video listed in the text file, ensuring a hassle-free and efficient batch downloading process. This approach is particularly valuable when you want to download an entire playlist, multiple lectures, or a series of videos without having to enter each URL individually.
+
+## Chapter Handling
+
+In the vast realm of online video content, having the ability to navigate through different sections of a video seamlessly can greatly elevate the viewer's experience. Whether you're watching educational tutorials, conference talks, or your favorite entertainment, having chapter markers can make it easier to jump to specific parts of the video. yt-dlp, an advanced command-line downloader for various media sites, introduces two remarkable features for managing chapters in videos: `--embed-chapters` and `--split-chapters`. Let's delve into how these features work and how they can transform your video consumption.
+
+### Embed Chapters
+
+The `--embed-chapters` option in yt-dlp empowers you to embed chapter markers directly into the video file itself. This integration transforms chapters into an inherent element of the video, enabling easy access through media players that support chapter navigation. Here's how to harness this feature:
+
+```shell
+yt-dlp --embed-chapters [video URL]
+```
+
+Upon executing this command, yt-dlp downloads the video and incorporates the chapter markers. When you play the video in a compatible media player, you'll encounter a list of chapters, allowing you to effortlessly jump to any section with a single click.
+
+This functionality proves invaluable for educational content, conference presentations, and lengthy videos, enabling you to skip directly to specific topics without the inconvenience of manual navigation.
+
+### Splitting Videos with Chapter Precision
+
+The `--split-chapters` option in yt-dlp takes chapter handling to a new echelon, enabling you to divide a video into multiple files based on its internal chapters. This feature is ideal for scenarios where you want to watch individual chapters as standalone videos. Here's the mechanism:
+
+```shell
+yt-dlp --split-chapters [video URL]
+```
+
+Following the video download, yt-dlp automatically segments it into distinct files, each corresponding to a chapter. This approach enables you to enjoy each chapter as a separate video without requiring manual trimming or editing of the original content. It's an efficient way to consume videos when your interest lies solely in specific sections.
 
 ## Enriching Videos: Subtitles
 
