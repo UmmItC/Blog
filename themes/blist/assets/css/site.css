@@ -61,6 +61,28 @@ html[lang="en"] .footer-social-custom-02 {
   font-family: Sen-Regular;
 }
 
+/* Heart animation styling */
+
+.heart-animation {
+  margin: 0 0.25em 0.3em; /* Margin around the heart icon */
+  fill: #f06292; /* Heart color */
+  animation: heartbeat 1.33s ease-in-out infinite; /* Apply heartbeat animation */
+  width: 2rem; /* Set width of heart icon */
+  height: 2rem; /* Set height of heart icon */
+  display: inline-flex; /* Display as inline-flex */
+}
+
+/* Heartbeat animation keyframes */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1); /* Normal scale at 0% and 100% */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger scale at 50% for the beat effect */
+  }
+}
+
+
 /* Taiwan Font Styles */
 
 html[lang="tw"] p,
