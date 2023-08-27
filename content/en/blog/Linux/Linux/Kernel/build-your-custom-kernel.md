@@ -188,14 +188,31 @@ This ensures that you have the necessary access rights to work with the kernel s
 
    ![compile the kernel](/blog/linux/Kernel/Compile%20Kernel%20Modules.png)
 
-### 4.Install Kernel Modules:
+### 4. Install Kernel Modules
 
-   Install the kernel modules for your newly compiled kernel:
-   ```shell
-   sudo make ARCH=x86_64 modules_install 
-   ```
+Once your custom kernel is compiled, it's crucial to install the associated kernel modules to ensure your system's optimal functionality. Kernel modules are essential pieces of software that enable your operating system's kernel to interact with various hardware components, file systems, and system functionalities. Installing these modules correctly is key to a smooth and well-functioning system.
+
+The following command will install the kernel modules for your custom-built kernel:
+
+```shell
+sudo make ARCH=x86_64 modules_install
+```
 
    ![install the kernel](/blog/linux/Kernel/Install%20Kernel%20Modules.png)
+
+#### What does this command do?
+
+it performs the following tasks:
+
+1. **Compilation and Installation**: It compiles the kernel modules that were built during the kernel compilation process and installs them onto your system.
+
+2. **Destination Directory**: The modules are installed into the `/lib/modules` directory on your system. This directory is structured to accommodate various kernel versions and their associated modules.
+
+3. **Kernel Version Subdirectory**: Inside `/lib/modules`, a subdirectory is created with the version number of your custom kernel. This ensures that modules for different kernel versions can coexist without conflicts.
+
+4. **Module Files**: Within the version-specific subdirectory, the individual kernel module files are placed. These files contain the code needed to support various hardware and software functionalities.
+
+By installing the kernel modules to the appropriate location, you ensure that your custom kernel can effectively manage your hardware devices, file systems, and other crucial system components. This step is essential for the overall stability and performance of your custom-built Linux kernel.
 
 ## Step 8: Copy Your Own Kernel to /boot/
 
