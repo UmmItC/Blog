@@ -86,8 +86,6 @@ yt-dlp --playlist-items [range] [video/playlist URL]
 
 Replace `[range]` with your desired number format, such as `1-10` or `5,8,12-15`. This option ensures that your downloaded files are numbered according to your preference, making organization and navigation a breeze.
 
-Certainly, let's expand on the blog by adding a section about using the `-a` option to download multiple videos using a text file with one link per line:
-
 ### Batch Downloading with `-a` Option
 
 yt-dlp's command-line tools extend beyond individual video downloads. With the `-a` option, you can take advantage of batch downloading by providing a text file containing multiple video URLs, each on a separate line. This feature is incredibly useful when you have a list of videos you want to download efficiently. Here's how you can do it:
