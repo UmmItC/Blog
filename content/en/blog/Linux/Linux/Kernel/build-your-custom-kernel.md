@@ -5,6 +5,7 @@ description: "Learn how to build your own custom Linux kernel from scratch on yo
 tags: ["Linux", "Kernel"]
 date: 2023-08-22T14:20:50+0800
 thumbnail: /blog/linux/Kernel/Compile%20Kernel%20Modules.png
+lastmod: 2023-08-27T18:25:55+0800
 ---
 
 ## Introduction
@@ -21,23 +22,40 @@ Let's dive in and demystify the process of crafting your very own custom Linux k
 
 Before delving into building the custom Linux kernel, it's essential to ensure your system is equipped with the necessary tools and packages. Follow these steps to prepare your system:
 
-### 1.  Install Required Dependencies
+### Install Required Dependencies and Additional Packages
 
-Start by installing the `base-devel` meta package. This package includes essential tools such as `make` and `gcc`. Open a terminal and enter the following command:
+To ensure a smooth and successful kernel compilation process, it's essential to install both the required base development tools and additional packages that contribute to various aspects of building your custom Linux kernel on Arch Linux.
+
+1. **Install Base Development Tools:**
+
+Start by installing the `base-devel` meta package, which includes fundamental tools like `make` and `gcc`. Open a terminal and enter the following command:
 
 ```shell
 sudo pacman -S base-devel
 ```
 
-### 2.  Install Additional Recommended Packages
+2. **Install Additional Packages:**
 
-For a smooth kernel compilation process, it's advisable to install the following packages as well. These packages are listed in the default Arch kernel PKGBUILD and contribute to a successful kernel build:
+To further streamline the kernel compilation process and meet all prerequisites for building your custom Linux kernel, it's highly recommended to install the following additional packages:
 
 ```shell
 sudo pacman -S xmlto kmod inetutils bc libelf git cpio perl tar xz
 ```
 
-With these dependencies installed, your system is now well-prepared to proceed with building your custom Linux kernel on Arch Linux.
+Each of these packages serves a specific purpose in the kernel build process:
+
+- **xmlto**: Transforms XML documents into various formats such as HTML and PDF, used for kernel documentation generation.
+- **kmod**: Provides utilities for managing kernel modules, including loading and unloading.
+- **inetutils**: Offers common networking utilities like `ping` and `ifconfig`, helpful for kernel troubleshooting.
+- **bc**: A command-line calculator with precision arithmetic, often used for calculations in kernel build scripts.
+- **libelf**: A library for reading and writing ELF files, essential for working with executable and object files.
+- **git**: Distributed version control system used for tracking kernel source code changes.
+- **cpio**: Creates and extracts archive files, crucial for building `initramfs` images.
+- **perl**: Programming language used in various scripting tasks, sometimes involved in the kernel build process.
+- **tar**: Utility for creating and manipulating archive files, useful for packaging components of the kernel source code.
+- **xz**: Compression utility for efficient file compression and decompression, vital for managing compressed files in the kernel build.
+
+By installing both the base development tools and these additional packages, you ensure that your system is well-equipped to successfully compile, build, and customize your own Linux kernel on Arch Linux. This comprehensive approach minimizes potential issues during the kernel compilation process and helps you achieve your custom kernel with confidence.
 
 ## Step 2: Download the Kernel Source
 
