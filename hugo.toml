@@ -61,7 +61,7 @@ DefaultContentLanguageInSubdir = true
     [languages.en.params]
       introTitle = "9upper"
       introSubtitle = "Hi i come form Hong Kong. i love writing and tech. and i use Arch btw :)"
-      introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
+      introPhoto = "https://vignette.wikia.nocookie.net/logopedia/images/0/04/Linux_logo.png/revision/latest?cb=20120814052336"
       logo = "/linux.png"
     [[languages.en.menu.main]]
         name = "Blog"
