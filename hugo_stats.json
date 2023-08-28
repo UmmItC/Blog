@@ -514,6 +514,7 @@
       "install-firefox",
       "install-required-dependencies-and-additional-packages",
       "install-required-packages",
+      "install-rsync",
       "install-vlc",
       "installation",
       "installation-and-initial-steps",

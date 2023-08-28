@@ -4,7 +4,7 @@ title: "Mastering Data Synchronization with Rsync: A Comprehensive Guide"
 description: "Explore the power of rsync, a versatile tool that efficiently synchronizes data between different locations, ensuring your files are up-to-date and organized."
 tags: ["Linux", "rsync"]
 date: 2023-08-28T22:26:52+0800
-thumbnail: https://ayudalinux.com/wp-content/uploads/2018/01/rsync.jpg
+thumbnail: https://www.freecodecamp.org/news/content/images/2020/09/rsync.png
 ---
 
 ## Why Rsync?
@@ -14,6 +14,15 @@ In today's fast-paced digital world, the need to efficiently synchronize data ac
 ## What is Rsync?
 
 Rsync, which stands for "remote synchronization," is a command-line utility available on Unix-based operating systems like Linux and macOS. It's designed to synchronize and transfer files between two locations, ensuring that the destination location mirrors the source location. Rsync's primary goal is to minimize the amount of data transferred during synchronization, making it an efficient tool for both local and remote file synchronization tasks.
+
+## Install Rsync
+
+If you're using Arch Linux or an Arch-based distribution like Manjaro, you can install rsync using the Pacman package manager. Open a terminal and run the following commad:
+
+```shell
+sudo pacman -Sy
+sudo pacman -S rsync
+```
 
 ### Key Features of Rsync
 
