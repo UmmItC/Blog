@@ -5,7 +5,7 @@ description: "Learn how to build your own custom Linux kernel from scratch on yo
 tags: ["Linux", "Kernel"]
 date: 2023-08-22T14:20:50+0800
 thumbnail: /blog/linux/Kernel/Compile%20Kernel%20Modules.png
-lastmod: 2023-08-27T18:25:55+0800
+lastmod: 2023-08-28T23:20:52+0800
 ---
 
 ## Introduction
@@ -412,13 +412,78 @@ Linux 6.4.12 x86_64
 
 This confirms that your custom kernel is now successfully running on your Arch Linux system.
 
+## Deleting a Custom Kernel (If you need)
+
+While customizing your Linux system can be exciting, there may come a time when you need to clean up and remove certain components, such as a custom kernel. Whether you're making space or simplifying your setup, deleting a custom kernel involves a few straightforward steps.
+
+### Why Remove a Custom Kernel?
+
+Custom kernels can be beneficial for fine-tuning your system's performance, enabling specific features, or testing new functionalities. However, as your system evolves, you might find that you no longer need a particular custom kernel or want to revert to the default kernel provided by your Linux distribution. Removing a custom kernel can help streamline your system and free up disk space.
+
+### Step 1: Identify the Custom Kernel
+
+Before you proceed with deletion, identify the custom kernel you wish to remove. You'll need to know its version number and any associated files.
+
+```shell
+ls -la /boot
+```
+
+### Step 2: Boot into a Different Kernel
+
+To safely delete a custom kernel, it's advisable to boot into a different kernel version. This ensures that the kernel you're attempting to delete is not currently in use, reducing the risk of destabilizing your system.
+
+### Step 4: Remove Configuration Files
+
+In addition to cleaning up the kernel-related files, it's important to remove the associated configuration files that were created during the installation of the custom kernel. This step ensures that your system no longer references the custom kernel. Here's what you need to do:
+
+1. **Remove the Preset File:**
+
+   Locate and remove the preset file associated with the custom kernel. This file is used by the `mkinitcpio` tool to generate the initial RAM disk image. Open a terminal and enter the following command:
+
+   ```shell
+   sudo rm -v /etc/mkinitcpio.d/linux-custom.preset
+   ```
+
+   This removes the configuration file used for creating the initramfs image for the custom kernel.
+
+2. **Remove the Boot Loader Entry:**
+
+   If you added a custom boot loader entry for the custom kernel, you should remove it to prevent any reference to the kernel during the boot process. Run the following command to remove the boot loader entry file:
+
+   ```shell
+   sudo rm -v /boot/loader/entries/linux-custom.conf
+   ```
+
+   This ensures that your boot loader menu no longer lists the custom kernel as an option.
+
+By removing these configuration files, you're ensuring that your system no longer retains any traces of the custom kernel. This step completes the process of removing the custom kernel from your system, freeing up resources and streamlining your setup.
+
+### Step 5: Update the Bootloader (Optional)
+
+Updating the bootloader configuration is an optional step, but it's recommended for ensuring that your system accurately reflects the changes you've made. While modern bootloaders like `bootctl` are often smart enough to automatically detect changes to configuration files, manually updating the bootloader provides an extra layer of assurance. Here's how you can do it:
+
+   > **Note:** Modern bootloaders are designed to automatically detect changes to boot entries and configuration files. However, manually updating the bootloader provides additional peace of mind.
+
+1. **Update the Bootloader:**
+
+   Open a terminal and enter the following command to update the bootloader configuration:
+
+   ```shell
+   sudo bootctl update
+   ```
+
+By performing this optional step, you're making sure that your bootloader's configuration is up to date and accurately reflects the removal of the custom kernel. This helps maintain the overall integrity of your system's boot process.
+
+
 ## Conclusion
 
-Congratulations! You've successfully completed the entire process of building a custom Linux kernel on Arch Linux. From downloading the source code to configuring, compiling, and integrating it into your boot loader, you've gained a deep understanding of the inner workings of the kernel. This newfound knowledge empowers you to shape your system's performance and features according to your preferences.
+Congratulations! You've successfully navigated the process of building a custom Linux kernel on your Arch Linux system. From acquiring the source code to configuring, compiling, and integrating the kernel into your boot loader, you've gained an in-depth understanding of the kernel's inner workings. This knowledge not only empowers you to fine-tune your system's performance and features but also deepens your grasp of the foundational components of your operating system.
 
-With your custom Linux kernel in place, you have not only gained a deeper understanding of your system's core components but also unlocked the ability to fine-tune and optimize your system's performance according to your needs. Enjoy the benefits of your customized kernel configuration!
+Having crafted your own Linux kernel, you now possess the ability to tailor your system's behavior according to your preferences and requirements. The advantages of a customized kernel configuration are at your fingertips, enabling you to harness the full potential of your hardware.
 
-## Resources
+When it comes to removing a custom kernel from your Linux system, a cautious approach is key to maintaining system stability. By meticulously identifying the kernel, booting into an alternate version, and systematically removing associated files, you can safely eliminate a custom kernel. This method ensures that your system retains its functionality and efficiency, reflecting your current needs and choices.
+
+## References
 
 - [How to compile and install Linux Kernel 5.16.9 from source code](https://www.cyberciti.biz/tips/compiling-linux-kernel-26.html)
 - [How to build and install your own Linux kernel](https://wiki.linuxquestions.org/wiki/How_to_build_and_install_your_own_Linux_kernel)
