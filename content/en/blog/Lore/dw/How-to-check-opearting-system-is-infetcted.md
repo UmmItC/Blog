@@ -89,8 +89,6 @@ Here are some common port numbers and their associated services:
 
 ### Why Scan Your Ports?
 
-Port scanning is akin to patrolling the city's streets to ensure the safety of its inhabitants. Here's why it's crucial:
-
 1. **Security Assessment**: Port scanning reveals which ports are open and listening for incoming connections. An open port could be a potential vulnerability if it's not needed for your network's operation.
 
 2. **Network Troubleshooting**: Scanning helps identify issues with network services. If a particular service is not working correctly, checking whether its associated port is open can pinpoint the problem.
