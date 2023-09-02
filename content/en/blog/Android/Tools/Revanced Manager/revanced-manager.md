@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "ReVanced Manager: Removing Ads from Various Applications (YouTube, YouTube Music, Reddit, etc.) Using Official APKs"
 description: "With ReVanced Manager, you can customize your applications by applying patches to remove ads, enhancing your user experience across various platforms such as YouTube, YouTube Music, Reddit, and more. Say goodbye to unwanted ads with this powerful tool."
-tags: ["Android", "Crack"]
+tags: ["Android", "Crack", "Revanced Manager"]
 date: 2023-09-02T21:04:20+0800
 thumbnail: https://styles.redditmedia.com/t5_61bp4y/styles/communityIcon_f06qf3h6hn4b1.png
 ---
