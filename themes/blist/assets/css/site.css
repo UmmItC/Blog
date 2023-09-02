@@ -89,7 +89,6 @@ html[lang="en"] .footer-social-custom-02 {
 
 /* Taiwan Font Styles */
 
-html[lang="tw"] p,
 html[lang="tw"] h1,
 html[lang="tw"] h2,
 html[lang="tw"] h3,
@@ -97,6 +96,10 @@ html[lang="tw"] h4,
 html[lang="tw"] h5,
 html[lang="tw"] h6 {
   font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="tw"] p{
+  font-family: SourceHanSansHWTC-Regular;
 }
 
 html[lang="tw"] .header-li-custom-01,
@@ -110,7 +113,6 @@ html[lang="tw"] .params-description-custom-01 {
 
 /* Hong Kong Font Styles */
 
-html[lang="hk"] p,
 html[lang="hk"] h1,
 html[lang="hk"] h2,
 html[lang="hk"] h3,
@@ -118,6 +120,10 @@ html[lang="hk"] h4,
 html[lang="hk"] h5,
 html[lang="hk"] h6 {
   font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="hk"] p{
+  font-family: SourceHanSansHWTC-Regular;
 }
 
 html[lang="hk"] .header-li-custom-01,
