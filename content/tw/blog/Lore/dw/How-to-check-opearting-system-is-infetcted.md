@@ -132,7 +132,7 @@ thumbnail: https://media.consumeraffairs.com/files/news/Malware_computer_concept
 
 ## 是中間人攻擊嗎？
 
-你的互聯網訪問速度可能會比正常情況下慢。 在黑客世界裡。 它可以實現所謂的中間人攻擊。 我們上網的時候，首先要經過你的路由器，然後連接到ISP，然後連接到你的DNS，然後連接到你要訪問的服務器，對吧？ 不過，如果是受到中間人功擊。 你的內容可以被修改，或者你可能不會更改任何比較隱藏的內容。 這種不修改方法的目的是為了獲取你的個人信息。 信用卡、身份證等，由於這種攻擊，黑客可以將你在瀏覽器中輸入的所有信息直接發送到他的服務器。 成功獲取你的所有信息。 這就是 中間人攻擊。
+你的互聯網訪問速度可能會比正常情況下慢。 在駭客世界裡。 它可以實現所謂的中間人攻擊。 我們上網的時候，首先要經過你的路由器，然後連接到ISP，然後連接到你的DNS，然後連接到你要訪問的服務器，對吧？ 不過，如果是受到中間人功擊。 你的內容可以被修改，或者你不會看到他修改，只隱身和等待。 這種不修改不出現的方法的目的是為了獲取你的個人信息。 信用卡、身份證等，由於這種攻擊，駭客可以將你在瀏覽器中輸入的所有信息直接發送到他的服務器。 成功獲取你的所有信息。 這就是 中間人攻擊。
 
 - 互聯網速度可能很慢 (被連接至駭客的伺服器)
 - 上網時變得異常並訪問了其他網站。(明明去 youtube 但去了其他網站)
@@ -147,7 +147,7 @@ thumbnail: https://media.consumeraffairs.com/files/news/Malware_computer_concept
 
 ## tracert
 
-[Tracert](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert) 是一個適用於Windows 的命令行實用程序，使你能夠跟踪來自以下位置的數據包所採取的路徑：將你的系統連接到目標服務器。 通過仔細檢查此路徑，你可以發現任何意外的躍點或可疑域，從而深入了解網絡通信的安全性。
+[Tracert](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert) 是一個適用於 Windows 的命令行實用程序，使你能夠跟踪來自以下位置的數據包所採取的路徑：將你的系統連接到目標服務器。 通過仔細檢查此路徑，你可以發現任何意外的躍點或可疑域，從而深入了解網絡通信的安全性。
 
 ````shell
 tracert 1.1.1.1
