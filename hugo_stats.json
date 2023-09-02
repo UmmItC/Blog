@@ -55,6 +55,7 @@
       "ul"
     ],
     "classes": [
+      "Translations-display-01",
       "absolute",
       "active",
       "bg-blue-100",
@@ -169,6 +170,7 @@
       "pagination",
       "pagination-default",
       "params-description-custom-01",
+      "params-description-custom-02",
       "params-title-custom-01",
       "pb-4",
       "pb-6",

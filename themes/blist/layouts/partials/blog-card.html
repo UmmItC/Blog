@@ -15,7 +15,7 @@
 </a>
 {{ if not (or (or .Site.Params.hideOtherLanguages .Params.hideOtherLanguages) false) }}
   {{ if .IsTranslated -}}
-    <div style="font-style: italic;font-size: smaller;margin-top: 10px">
+    <div class="Translations-display-01" style="font-style: italic;font-size: smaller;margin-top: 10px">
       {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
       {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
       {{- $cleanLinks := apply $links "chomp" "." -}}
