@@ -9,11 +9,23 @@ thumbnail: https://media.consumeraffairs.com/files/news/Malware_computer_concept
 
 ## Introduction
 
-In today's digital landscape, a user's knowledge level plays a pivotal role in determining their system's security. Let's consider a hypothesis: a long-time user of Apple and a long-time user of Windows. Windows users, on occasion, may download cracked or unofficial versions of software, which can expose them to malware and infections. Seeking help online becomes a common practice when their systems are compromised.
+In today's digital landscape, threats like viruses, malware, and trojans are pervasive. Despite having robust antivirus and anti-malware software, malicious entities can find ways to bypass real-time protection and infiltrate your system. These threats often operate covertly within your computer's depths. In this article, we aim to guide you through comprehensive steps to check and fortify your operating system against potential infections.
+
+### Motivation
+
+Recently, a friend of mine voiced concerns about their computer being compromised by an unknown entity. This prompted me to write this article, which is geared not only towards computer geeks well-versed in network security but also towards individuals who may not be programming experts. It's crucial to understand that computer security and programming skills are distinct, and this article addresses the former. Let's dive into the world of protecting your computer effectively.
 
 ### Is Apple Inherently Safe?
 
+Let's consider a hypothesis: a long-time user of Apple and a long-time user of Windows. Windows users, on occasion, may download cracked or unofficial versions of software, which can expose them to malware and infections. Seeking help online becomes a common practice when their systems are compromised.
+
+Then, Apple users will start laughing at Windows users, what a rotten system, it is really not as good as the Apple system, I will not be poisoned if I use Apple.
+
+#### Why?
+
 On the other hand, Apple adopts a default whitelist system in its approach. Here, the operating system restricts users from opening or downloading files that haven't received explicit approval. While this approach is often touted as safer, it can lead to complications when users attempt to access certain files not officially sanctioned by Apple.
+
+#### Question
 
 This raises a fundamental question: which system can genuinely be considered safe or unsafe? The answer isn't straightforward. Windows provides users with more flexibility, allowing them to open a wide range of files and software. However, this flexibility can expose them to greater risks if they engage in unsafe practices. In contrast, Apple's restrictive approach aims to minimize risks but can limit users' access to legitimate yet unofficial content.
 
