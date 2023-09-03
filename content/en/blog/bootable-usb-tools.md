@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Exploring Some Bootable USB Tools: What are they different?"
 description: "Discover the distinctions between various bootable USB tools and find the right one for your needs. including YUMI, Rufus and BalenaEtcher."
-tags: ["nmap", "Security"]
+tags: ["USB"]
 date: 2023-09-03T23:00:40+0800
 thumbnail: https://staticfiles.acronis.com/images/blog-cover/145c0b7d0c690d905d76bcb42a0b95f4.webp
 ---
