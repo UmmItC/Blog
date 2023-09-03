@@ -2,6 +2,7 @@ baseurl = "https://k2ovoo-blog.org"
 metaDataFormat = "yaml"
 title = "Arcsly - 9up blogger"
 theme = "blist"
+disableKinds = ["sitemap", "RSS", "robotsTXT"]
 
 DefaultContentLanguage = "tw"
 DefaultContentLanguageInSubdir = true
