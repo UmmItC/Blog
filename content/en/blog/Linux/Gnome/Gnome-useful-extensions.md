@@ -5,6 +5,7 @@ description: "Unlock the Power of Gnome with These Must-Have Extensions!"
 tags: ["GNOME", "Linux"]
 date: 2023-08-05T01:47:00+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/23/MediaWiki-extensions-icon.svg
+lastmod: 2023-09-03T19:44:01+0800
 ---
 
 ## Simplifying GNOME Extension Installation Using a Web Browser
@@ -50,6 +51,10 @@ Explore these recommended GNOME extensions that can enhance your desktop functio
 #### TopHat
 - **Link**: [Resource Monitor Extension](https://extensions.gnome.org/extension/5219/tophat/)
 - **Description**: TopHat aims to be an elegant system resource monitor for the GNOME shell. It displays CPU, memory, disk, and network activity in the GNOME top bar.
+
+#### Blur my Shell
+- **Link**: [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+- **Description**: Adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview.
 
 By effortlessly installing these extensions, you can tailor your GNOME desktop to your workflow, optimizing productivity and functionality.
 
