@@ -5,7 +5,7 @@ description: "Learn how to build your own custom Linux kernel from scratch on yo
 tags: ["Linux", "Kernel"]
 date: 2023-08-22T14:20:50+0800
 thumbnail: /blog/linux/Kernel/Compile%20Kernel%20Modules.png
-lastmod: 2023-08-28T23:20:52+0800
+lastmod: 2023-09-03T19:17:22+0800
 ---
 
 ## Introduction
@@ -458,7 +458,65 @@ In addition to cleaning up the kernel-related files, it's important to remove th
 
 By removing these configuration files, you're ensuring that your system no longer retains any traces of the custom kernel. This step completes the process of removing the custom kernel from your system, freeing up resources and streamlining your setup.
 
-### Step 5: Update the Bootloader (Optional)
+### Step 5: Remove Kernel Modules
+
+After deleting the kernel-related files, it's important to remove the associated kernel modules from both `/lib/modules` and `/usr/lib/modules`. Kernel modules are essential components that extend the functionality of the Linux kernel. Removing the modules associated with the custom kernel ensures that no remnants are left behind. Here's how to do it:
+
+1. **Remove Modules in `/lib/modules`:**
+
+   - Open a terminal and navigate to the `/lib/modules` directory:
+
+     ```shell
+     cd /lib/modules
+     ```
+
+   - List the directories in this location to find the directory associated with the custom kernel version:
+
+     ```shell
+     ls
+     ```
+
+   - Remove all files and directories within this directory:
+
+     ```shell
+     sudo rm -rfv 6.4.12
+     ```
+
+2. **Remove Modules in `/usr/lib/modules`:**
+
+   - Similarly, navigate to the `/usr/lib/modules` directory:
+
+     ```shell
+     cd /usr/lib/modules
+     ```
+
+   - List the directories to find the one corresponding to the custom kernel version:
+
+     ```shell
+     ls
+     ```
+
+   - Delete all files and directories within this directory:
+
+     ```shell
+     sudo rm -rfv 6.4.12
+     ```
+
+By removing kernel modules from both `/lib/modules` and `/usr/lib/modules`, you're ensuring a clean removal of the custom kernel from your system. This step completes the process, freeing up resources and streamlining your setup.
+
+**Understanding `/lib/modules` and `/usr/lib/modules`:**
+
+The directories `/lib/modules` and `/usr/lib/modules` serve the same purpose but have different locations in the file system.
+
+- `/lib/modules`: This directory contains the kernel modules that are essential for the system's boot process. Modules in this directory are required early in the boot process when the root file system may not yet be fully available. Placing them here ensures that they are accessible even during the early stages of boot.
+
+- `/usr/lib/modules`: This directory contains additional kernel modules that are not essential for the initial boot process but may be needed later during system operation. Modules in this directory are typically loaded on-demand as needed by the system.
+
+The reason for having these separate directories is to optimize the boot process. By keeping only the essential modules in `/lib/modules`, the boot process can be faster and more reliable. Additional modules are stored in `/usr/lib/modules` to keep the initial boot as lean as possible.
+
+When you remove a custom kernel, it's a good practice to check both locations (`/lib/modules` and `/usr/lib/modules`) to ensure that all associated modules are removed. make sure no remnants of the custom kernel remain on your system.
+
+### Step 6: Update the Bootloader (Optional)
 
 Updating the bootloader configuration is an optional step, but it's recommended for ensuring that your system accurately reflects the changes you've made. While modern bootloaders like `bootctl` are often smart enough to automatically detect changes to configuration files, manually updating the bootloader provides an extra layer of assurance. Here's how you can do it:
 
