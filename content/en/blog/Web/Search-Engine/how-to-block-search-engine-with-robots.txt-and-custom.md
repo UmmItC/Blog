@@ -2,7 +2,7 @@
 author: "Arcsly"
 title: "Search Engine Crawlers: A Guide to custom robots.txt with Disallow or allow Rule"
 description: "Learn how to take control of search engine crawling by using the robots.txt disallow rule to restrict access to specific parts of your website."
-tags: ["USB"]
+tags: ["Search-Engine", "Robots.txt"]
 date: 2023-09-04T21:14:00+0800
 thumbnail: http://studywarehouse.com/wp-content/uploads/2017/06/Google-Search.jpg
 ---
