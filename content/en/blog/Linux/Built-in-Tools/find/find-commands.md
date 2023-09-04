@@ -1,7 +1,7 @@
 ---
 author: "Arcsly"
 title: "Mastering the Find Command: A Guide to Locating Specific File Extensions"
-description: ""
+description: "Dive deep into locating specific file extensions with find commnad and learn how to harness this versatile tool for your file management needs. searching for files with precision or looking to streamline your tasks."
 tags: ["find", "Linux", "tree"]
 date: 2023-09-04T22:45:10+0800
 thumbnail: https://www.puttygen.com/wp-content/uploads/2019/06/find-commands-linux.jpg
