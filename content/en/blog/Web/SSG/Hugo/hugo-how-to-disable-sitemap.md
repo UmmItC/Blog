@@ -5,6 +5,7 @@ description: "Discover the distinctions between various bootable USB tools and f
 tags: ["SSG", "Hugo"]
 date: 2023-09-03T23:33:40+0800
 thumbnail: https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg
+lastmod: 2023-09-04T21:57:30+0800
 ---
 
 ## Introduction
@@ -89,7 +90,13 @@ This one-liner combines the commands to navigate to the public directory, remove
 
 ## Conclusion
 
-Disabling the sitemap in Hugo is a straightforward process that allows you to have more control over your website's output. Whether you have specific SEO requirements, customization needs, or simply want to keep your `public` directory cleaner, Hugo's flexibility makes it easy to achieve your goals.\
+Disabling the sitemap in Hugo is a straightforward process that allows you to have more control over your website's output. Whether you have specific SEO requirements, customization needs, or simply want to keep your `public` directory cleaner, Hugo's flexibility makes it easy to achieve your goals.
+
+## See also
+
+In order to be added to the search engine completely unknowingly, check out this article:
+
+[Search Engine Crawlers: A Guide to custom robots.txt with Disallow or allow Rule](/en/blog/web/search-engine/how-to-block-search-engine-with-robots.txt-and-custom/)
 
 ## References
 
