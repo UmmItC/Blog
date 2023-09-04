@@ -58,3 +58,7 @@ After restarting your computer, the deleted startup programs should no longer la
 ## Conclusion:
 
 Using Regedit to delete startup programs gives you precise control over your computer's boot process and resource usage. However, it's essential to exercise caution when editing the Windows Registry, as incorrect changes can lead to system instability. With this guide, you now have the knowledge to manage your PC's startup programs effectively and optimize its performance.
+
+## Reference
+
+- [7 Ways to Disable Startup Programs in Windows 11](https://www.makeuseof.com/windows-11-disable-startup-programs/)
