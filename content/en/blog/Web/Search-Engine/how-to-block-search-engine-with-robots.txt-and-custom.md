@@ -111,6 +111,30 @@ Allow: /public/
 
 - `Allow: /public/` provides an exception, allowing Bingbot to access the "/public/" directory, even though it falls under the broader "Disallow" rule.
 
+## Using `noindex, nofollow` to Disallow Crawling
+
+While the `robots.txt` file is effective for controlling search engine access to entire directories or sections of your website, you might want to exert more granular control over individual web pages. To achieve this level of control, you can use the `noindex, nofollow` meta tag within the HTML of specific pages.
+
+Here's how to use the `noindex, nofollow` meta tag:
+
+1. **Locate the HTML `<head>` Section**: Open the HTML file of the page you want to block search engines from indexing and locate the `<head>` section within the HTML document.
+
+2. **Insert the Meta Tag**: Inside the `<head>` section, add the following meta tag:
+
+   ```html
+   <meta name="robots" content="noindex, nofollow" />
+   ```
+
+   This meta tag instructs search engine crawlers not to index the page (`noindex`) and not to follow any links on the page (`nofollow`), effectively preventing the page from appearing in search engine results and preventing search engines from crawling any links present on the page.
+
+3. **Save and Update**: Save the changes to your HTML file and upload it to your web server if necessary.
+
+4. **Verify the Meta Tag**: To ensure that the `noindex, nofollow` meta tag has been correctly implemented, you can inspect the HTML source code of the page after it's live on your server. Right-click on the page in your web browser and select "View Page Source" or use the browser's developer tools to inspect the page's HTML source. Look for the presence of the meta tag within the `<head>` section.
+
+Using the `noindex, nofollow` meta tag is particularly useful when you want to block individual pages from being indexed while allowing the rest of your website to be accessible to search engine crawlers. It's a versatile tool for fine-tuning your website's visibility and ensuring that specific content remains private or hidden from search engine results.
+
+Remember that while the `robots.txt` file blocks access to pages and directories at the crawling stage, the `noindex, nofollow` meta tag affects how search engines display and follow links on already indexed pages. Both methods work together to provide comprehensive control over your website's visibility on search engines.
+
 ## Verifying Your Robots.txt Configuration
 
 After you've created or modified your robots.txt file, it's crucial to verify its configuration to ensure it's working as intended. Here's how you can do it:

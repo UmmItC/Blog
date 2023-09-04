@@ -925,6 +925,7 @@
       "using---include-and---exclude-together",
       "using-cloudflare-dns-1111-and-1001",
       "using-google-dns-8888-and-8844",
+      "using-noindex-nofollow-to-disallow-crawling",
       "using-rm-with-caution-the--f-flag",
       "using-the-robotstxt-disallow-rule-to-regulate-search-engines",
       "using-wildcards-to-remove-multiple-files",
