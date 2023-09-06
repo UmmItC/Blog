@@ -42,53 +42,14 @@ Or for the latest development version:
 yay -S looking-glass-git
 ```
 
-### Step 2: Start the Looking Glass Client
+## Step 2: Configuring and Using Looking Glass
 
-Once the installation is complete, you can start the Looking Glass client with the following command:
+After installed the Looking Glass client, you'll need to configure it to connect to your VM. This involves specifying the host's address and port where the Looking Glass server is running.
 
-```bash
-looking-glass-client
-```
+### To be Continue …
 
-## Configuring and Using Looking Glass
-
-After starting the Looking Glass client, you'll need to configure it to connect to your VM. This involves specifying the host's address and port where the Looking Glass server is running. Detailed configuration instructions can be found in the official documentation.
-
-### To be Continue ...
-
-```shell
 ...
-<devices>
-    ...
-  <shmem name='looking-glass'>
-    <model type='ivshmem-plain'/>
-    <size unit='M'>32</size>
-  </shmem>
-</devices>
-...
-```
-
-```shell
-/etc/tmpfiles.d/10-looking-glass.conf
-f	/dev/shm/looking-glass	0660	$USER	kvm	-
-```
-
-```shell
-systemd-tmpfiles --create /etc/tmpfiles.d/10-looking-glass.conf
-```
 
 ## Conclusion
 
 With Looking Glass, the virtualization landscape is evolving to provide a superior graphics experience for VMs. Whether you're a gamer, content creator, or developer, this open-source gem opens up a world of possibilities for harnessing the full potential of your GPU within virtual environments. Unlock high-performance graphics for your virtual machines and redefine what's possible in the world of virtualization.
-
-## References
-
-- [PCI passthrough via OVMF](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
-- [Install Looking Glass on Fedora – VFIO Tutorial](https://www.youtube.com/watch?v=8oh9_Ai-zgk)
-- [Easiest Looking Glass Tutorial for Virtual Machines (2022)](https://www.youtube.com/watch?v=SYPjgfNym18)
-- [Running looking-glass-host in a linux guest vm](https://forum.level1techs.com/t/running-looking-glass-host-in-a-linux-guest-vm/183122)
-- [Looking Glass Host for Linux，Linux實體機GPU直通給Linux虛擬機玩遊戲](https://ivonblog.com/posts/looking-glass-host-for-linux/)
-- [[Partially Solved] Can’t figure out how to get looking glass to work with gvt-g](https://forum.level1techs.com/t/partially-solved-cant-figure-out-how-to-get-looking-glass-to-work-with-gvt-g/176771)
-- [[閒聊] 教學：如何在Linux上玩LOL](https://www.ptt.cc/bbs/LoL/M.1565890497.A.4CF.html)
-- [Download Looking Glass](https://looking-glass.io/downloads)
-- [如何在Windows虛擬機玩遊戲 ～ Linux QEMU/KVM雙GPU直通 ＋ Looking Glass安裝過程](https://ivonblog.com/posts/qemu-kvm-vfio-gaming/)
