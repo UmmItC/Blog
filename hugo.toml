@@ -101,7 +101,7 @@ DefaultContentLanguageInSubdir = true
   ]
 
   # Custom copyright - optional
-  copyright = "Copyright © 2023 - Arcsly"
+  copyright = "Copyright © 2020-2023 - Arcsly"
   favicon = "/linux.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
