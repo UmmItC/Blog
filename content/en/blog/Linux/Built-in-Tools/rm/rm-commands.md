@@ -5,6 +5,7 @@ description: "Explore the versatile rm command in Linux, and learn various optio
 tags: ["Linux", "rm"]
 date: 2022-01-09T03:01:14+0800
 thumbnail: https://vegastack.com/tutorials/content/images/2022/06/Rm-Command-in-Linux.png
+lastmod: 2023-09-09T09:52:50+0800
 ---
 
 ## Introduction to the rm Command
@@ -65,15 +66,7 @@ rm -v filename
 
 This option displays each file's name as it's being removed.
 
-## Advanced Techniques: Excluding Files and Wildcards
-
-### Excluding Specific Files
-
-You can exclude specific files from removal using the `!` operator within parentheses. For example, to remove all files from a directory except `file1.txt`, you can use:
-
-```shell
-rm -rf !(file1.txt)
-```
+## Advanced Usage
 
 ### Using Wildcards to Remove Multiple Files
 
@@ -99,6 +92,5 @@ While the `rm` command is a powerful tool for file and directory removal, its ca
 2. Use the interactive mode (`-i`) or verbose mode (`-v`) for extra caution and clarity.
 3. Reserve the `-f` (force) option for situations where you're certain of the files you're deleting.
 4. When removing directories, be mindful of using the `-r` option, as it can lead to the loss of important data.
-5. Explore advanced techniques like excluding files and using wildcards to streamline your removal process.
 
 By mastering the `rm` command and its various options, you can confidently manage your files and directories in Linux while minimizing the risk of unintended consequences.
