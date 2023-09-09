@@ -5,7 +5,7 @@ description: "Transform your Windows terminal experience with Oh My Posh! Follow
 tags: ["Windows", "oh my posh"]
 date: 2022-06-23T02:19:58+0800
 thumbnail: https://raw.githubusercontent.com/jandedobbeleer/oh-my-posh/main/website/static/img/logo.png
-lastmod: 2023-08-30T18:20:59+0800
+lastmod: 2023-09-09T10:00:20+0800
 ---
 
 ## Why Oh My Posh?
@@ -62,7 +62,9 @@ And that's it! Oh My Posh is now successfully installed on your Windows system.
 
 ## Understanding Nerd Fonts
 
-Nerd Fonts are specialized fonts that have been patched to include a wide range of icons and symbols. These fonts are essential for Oh My Posh to display icons associated with themes and prompts correctly. While various Nerd Fonts are compatible with Oh My Posh, we recommend using the Meslo LGM NF font for the best experience.
+Nerd Fonts are specialized fonts that have been patched to include a wide range of icons and symbols. These fonts are essential for Oh My Posh to display icons associated with themes and prompts correctly.
+
+> Notes: While various Nerd Fonts are compatible with Oh My Posh,In the official website, the developer recommends that you use the [Meslo LGM NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip) for the best experience.
 
 ### Installing Fonts for Oh My Posh
 
@@ -86,7 +88,7 @@ Alternatively, you can manually install Nerd Fonts by following these steps:
 
 1. Visit the Nerd Fonts website at [www.nerdfonts.com](https://www.nerdfonts.com/font-downloads).
 
-2. Download the zip archive containing your preferred Nerd Font. [Meslo LGM NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip) is a popular choice.
+2. Download the zip archive containing your preferred Nerd Font.
 
 3. Extract the contents of the zip archive.
 
@@ -160,7 +162,7 @@ After you've found a theme that catches your eye, it's time to make it your own.
 
    The path to the `$PROFILE` script is typically:
 
-   ```
+   ```plain
    C:\Users\<Your_Username>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
    ```
 
