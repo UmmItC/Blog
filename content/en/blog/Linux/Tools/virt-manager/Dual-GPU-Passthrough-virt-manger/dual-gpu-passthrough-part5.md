@@ -5,6 +5,7 @@ description: "Unveil the potential of virt-manager, a crucial instrument for sea
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:58:00+0800
 thumbnail: https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/virt-manager-icon.png
+lastmod: 2023-09-09T10:20:50+0800
 ---
 
 ## Step 1: Install Required Packages
@@ -96,29 +97,33 @@ sudo groups $(whoami)
 
 By completing these steps, you've successfully added your user to the required groups, enabled and started the libvirt service, and verified the updated group membership. This ensures a seamless experience while utilizing `virt-manager` for your virtualization tasks.
 
-## Step 5: Improve QEMU Configuration
+## Step 5: Customize QEMU Configuration
 
-Customize the `qemu.conf` file to further optimize your virtualization environment:
+Ensuring that QEMU processes run securely within your user permissions is crucial for optimizing your virtualization environment. Here's how to achieve this:
 
-1. Edit the `qemu.conf` file using the command:
-```shell
-sudo nano /etc/libvirt/qemu.conf
-```
+1. Begin by opening the `qemu.conf` file for editing using the following command:
 
-2. Within the text editor, locate the lines that resemble the following:
-```plaintext
-user = "your_username"
-group = "your_username"
-```
+   ```shell
+   sudo nano /etc/libvirt/qemu.conf
+   ```
 
-3. Replace `"your_username"` with your actual username on both lines.
+   > TIps: For a convenient way to navigate within the `nano` text editor, you can press `Ctrl + W`, type `user =`, and press `Enter`.
 
-4. By making this adjustment, you're specifying that QEMU processes will execute under your user's privileges.
+2. Inside the text editor, you'll come across lines resembling the following:
 
-For quicker navigation within the `nano` text editor:
-- Press `Ctrl + W`, type `user =`, and press `Enter`.
+   ```shell
+   user = "libvirt"
 
-By following these steps, you ensure that QEMU processes operate securely within the scope of your user's permissions.
+   # The group for QEMU processes run by the system instance. It can be
+
+   # specified in a similar way to user.
+
+   group = "libvirt"
+   ```
+
+3. Replace `"libvirt"` with your actual username on both lines. This simple adjustment ensures that all QEMU processes will execute with your user's privileges.
+
+By following these steps, you guarantee that QEMU processes operate securely within the realm of your user permissions, leading to an optimized and efficient virtualization environment.
 
 ## Step 6: Restart libvirtd Service
 
