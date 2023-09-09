@@ -5,13 +5,18 @@ description: "in this tutorial, you'll gain comprehensive insights into preparin
 tags: ["QEMU/KVM", "GPU-Passthrough", "virt-manager"]
 date: 2023-05-13T05:38:00+0800
 thumbnail: https://cdn.mos.cms.futurecdn.net/hxHC9kET4QctevKmEPgzL.jpg
+lastmod: 2023-09-09T10:31:50+0800
 ---
 
 ## Introduction
 
-Welcome to the realm of GPU passthrough, a gateway to unlocking the full potential of your graphics processing unit (GPU) within a virtual machine (VM). Have you ever yearned to play games or run GPU-intensive applications on a VM? The dream becomes a reality with dual GPU passthrough. In this guide, we're about to embark on a journey where you'll learn to harness the power of dual GPU passthrough. But first, let's understand what it's all about.
+Welcome to the realm of Dual GPU passthrough, a gateway to unlocking the full potential of your graphics processing unit (GPU) within a virtual machine (VM). Have you ever yearned to play games or run GPU-intensive applications on a VM? The dream becomes a reality with dual GPU passthrough. In this guide, we're about to embark on a journey where you'll learn to harness the power of dual GPU passthrough. But first, let's understand what it's all about.
 
-**Note: While single GPU passthrough is an option, our focus here is on the more advanced and versatile dual GPU passthrough.**
+>**Note: While single GPU passthrough is an option, our focus here is on the more advanced and versatile dual GPU passthrough.**
+
+### About the guidelines
+
+[Here](/en/tags/virt-manager/) is the all content about all the Dual-GPU-Passthorugh.
 
 ## 1. Preparations
 
