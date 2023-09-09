@@ -5,7 +5,7 @@ description: "Explore the world of cybersecurity and learn how to checking your 
 tags: ["nmap", "Security"]
 date: 2021-12-14T17:07:28+0800
 thumbnail: https://www.kali.org/tools/nmap/images/nmap-logo.svg
-lastmod: 2023-09-03T20:32:10+0800
+lastmod: 2023-09-09T09:42:50+0800
 ---
 
 ## Introduction
@@ -105,7 +105,7 @@ You can also expand your scanning scope to a larger network using CIDR notation 
 nmap 192.168.0.0/24
 ```
 
-This command scans a massive range of IP addresses from 192.168.0.1 to 192.168.255.254. Be cautious when scanning such large networks, as it can take a considerable amount of time and resources.
+This command scans a massive range of IP addresses from 192.168.0.1 to 192.168.0.255. Be cautious when scanning such large networks, as it can take a considerable amount of time and resources.
 
 When using IP address ranges, CIDR notation (/24, /16, etc.) simplifies specifying large address ranges concisely. It's a handy technique for efficiently scanning multiple hosts within a network.
 
