@@ -5,9 +5,10 @@ description: "Discover the transformative magic of Oh My Zsh, the acclaimed shel
 tags: ["Linux", "zsh"]
 date: 2023-08-11T10:05:30+0800
 thumbnail: https://ohmyz.sh/img/themes/omz-update.png
+date: 2023-09-09T11:06:50+0800
 ---
 
-# Elevate Your Terminal Experience with Oh-My-Zsh Plugins
+## Why use plugins?
 
 Oh-My-Zsh plugins are the secret sauce that can transform your terminal life. Imagine having a terminal that anticipates your needs, boosts your efficiency, and just feels right. Well, with these powerful plugins, you're about to embark on a journey to terminal enlightenment. Ready to explore? Dive in: [Oh-My-Zsh Plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
 
@@ -29,9 +30,9 @@ plugins=( git )
 
 3. Seal your changes and depart from the text editor's realm.
 
-## Embrace the Intuition of zsh-autosuggestions
+## Install zsh-autosuggestions
 
-Prepare to embark on an extraordinary journey into the realm of terminal magic. The zsh-autosuggestions plugin acts as your intuitive guide, enriching your command-line interactions with unparalleled finesse. This remarkable plugin observes your keystrokes, channeling its insights from your command history to offer suggestions tailored to your context. It's akin to conversing with a terminal that understands your intentions, ushering in a realm of swifter, more ingenious command execution.
+The zsh-autosuggestions plugin acts as your intuitive guide, enriching your command-line interactions with unparalleled finesse. This remarkable plugin observes your keystrokes, channeling its insights from your command history to offer suggestions tailored to your context. It's akin to conversing with a terminal that understands your intentions.
 
 1. Begin your odyssey by unlocking your terminal's gateway.
 2. Navigate to the sacred grounds of custom plugins by entering:
@@ -46,7 +47,7 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
 
-### Sculpting zsh-autosuggestions to Your Will
+### Apply zsh-autosuggestions to your shell
 
 Prepare to sculpt your terminal interactions into an intuitive symphony, guided by the zsh-autosuggestions plugin.
 
@@ -65,7 +66,7 @@ plugins=(zsh-autosuggestions)
 
 4. Etch your alterations into existence and retreat from the text editor's realm.
 
-### The Transformation Unveiled
+#### See the effect
 
 1. Close your terminal, allowing the old to merge with the new.
 2. As you reopen your terminal, a new epoch emerges.
