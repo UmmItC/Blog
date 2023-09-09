@@ -8,11 +8,11 @@ thumbnail: https://www.onmsft.com/wp-content/uploads/2019/07/IMG_20190723_153351
 lastmod: 2023-08-30T22:42:00+0800
 ---
 
-# Why Scoop?
+## Why Scoop?
 
 Are you tired of the hassle of managing software installations on your Windows system? If you're looking for an efficient and command-line-based package manager, you're in for a treat! Enter Scoop, a versatile package manager that can simplify your software management tasks. In this guide, we'll walk you through the process of installing Scoop and How to using this package manager.
 
-Before we dive into the details, if you're curious and eager to get started right away, you can find the official Scoop website at [here](https://scoop.sh/). This will be your go-to resource for Scoop.
+Before we dive into the details, if you're curious and eager to get started right away, you can find the official Scoop website at [here](https://scoop.sh/).
 
 ## What is Scoop?
 
@@ -38,11 +38,11 @@ To get started with Scoop, follow these simple steps:
 
    This command retrieves the installation script from the internet and runs it using the `iex` (Invoke-Expression) command.
 
-And that's it! You now have Scoop installed and ready to roll.
+And that's it! You now have Scoop installed and ready to use!
 
-### Basic Usage: Install and Update Database
+### Basic Usage: Package Manage
 
-With Scoop installed, you can start exploring its capabilities:
+With Scoop Package manage, you can start exploring its capabilities:
 
 - **Installing Packages:** Use the `scoop install` command followed by the name of the package to install software effortlessly. For example:
 
@@ -50,7 +50,7 @@ With Scoop installed, you can start exploring its capabilities:
   scoop install git
   ```
 
-- **Updating Packages:** Keep your software up to date with the `scoop update` command:
+- **Updating Packages:** Keep your database up to date with the `scoop update` command:
 
   ```powershell
   scoop update
@@ -102,17 +102,19 @@ Replace `<package>` with the name of the package you want to install.
 
 ### Global Installation: Available System-Wide
 
-On the other hand, if you want a package to be accessible to all users on the system, a global installation is the way to go. This involves using the `-g` flag during installation. By doing so, you're instructing Scoop to install the package globally, making it available from any user account. However, it's important to note that installing a package globally using the `-g` flag requires superuser permissions. This is because global installation involves making system-wide changes that affect all users.
+On the other hand, if you want a package to be accessible to all users on the system, a global installation is the way to go. This involves using the `-g` flag during installation. By doing so, you're instructing Scoop to install the package globally, making it available from any user account. **However, it's important to note that installing a package globally using the `-g` flag requires superuser permissions.** This is because global installation involves making system-wide changes that affect all users.
 
 >**Tip**: If you only need a package to be available for your user account, you can install it locally without using the `-g` flag. This ensures that you won't require superuser permissions for installation, and the package will remain exclusive to your user.
 
 Here's the command for a global installation:
 
+1. **Open the Terminal as Superuser**: Begin by opening the terminal with superuser privileges. This step is crucial as you'll need superuser access to install packages globally.
+
+2. **Install package with Globally -g**: Replace `<package>` with the name of the package you intend to install.
+
 ```shell
 scoop install -g <package>
 ```
-
-Replace `<package>` with the name of the package you intend to install.
 
 By understanding the difference between local and global installations and the role of the `-g` flag, you can tailor your package management approach to suit your needs. With this knowledge, you can make the most of Scoop and efficiently organize your Windows terminal sessions.
 
