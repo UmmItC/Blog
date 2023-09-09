@@ -5,6 +5,7 @@ description: "Oh My Zsh is a popular and powerful shell customization framework 
 tags: ["Linux", "zsh"]
 date: 2023-08-11T09:21:50+0800
 thumbnail: https://camo.githubusercontent.com/4db3e4069e59f51d03dd3e7fa5e89ab8fb95c9f4acda36cd5bfdf58d95269d92/68747470733a2f2f6f686d797a73682e73332e616d617a6f6e6177732e636f6d2f6f6d7a2d616e73692d6769746875622e706e67
+date: 2023-09-09T10:59:30+0800
 ---
 
 ## Oh My Zsh
@@ -48,15 +49,15 @@ Changing themes in Oh My Zsh is a breeze and allows you to transform the appeara
 
 **Step 1: List Available Themes**
 
-Begin by exploring the available themes using the `omz list-themes` command. This command will display a list of all the themes that you can choose from:
+Begin by exploring the available themes using the `omz theme list` command. This command will display a list of all the themes that you can choose from:
 
 ```shell
-omz list-themes
+omz theme list
 ```
 
 **Step 2: Choose a New Theme**
 
-Identify the theme that resonates with your style and workflow from the list provided by the `omz list-themes` command.
+Identify the theme that resonates with your style and workflow from the list provided by the `omz theme list` command.
 
 **Step 3: Update the Theme**
 
@@ -98,8 +99,6 @@ Voila! You've successfully changed the theme of your Oh My Zsh-powered terminal.
 
 ## Essential Commands
 
-Enhancing your terminal experience goes beyond installing Oh My Zsh and a custom theme. To truly harness its power, let's dive into some fundamental built-in commands that can turbocharge your productivity. These commands are designed to effortlessly update your installation, manage themes, and provide valuable information at your fingertips.
-
 ### Command 1: `omz update`
 
 Staying up-to-date is vital, and the `omz update` command is your shortcut to ensuring that your Oh My Zsh installation and its components are current. From plugins to themes, running this command keeps you on the cutting edge, enjoying bug fixes, feature enhancements, and performance boosts.
@@ -110,41 +109,7 @@ To execute the update, simply open your terminal and type:
 omz update
 ```
 
-### Command 2: `omz upgrade`
-
-For a more interactive upgrade experience, meet `omz upgrade`. While similar to `omz update`, this command empowers you to cherry-pick which elements of your Oh My Zsh setup to upgrade. This level of control ensures that your customizations remain intact while benefiting from the latest improvements.
-
-To engage in this interactive upgrade process, enter:
-
-```shell
-omz upgrade
-```
-
-Follow the prompts to tailor the upgrade to your preferences.
-
-### Command 3: `omz list-themes`
-
-Customizing your terminal's appearance is a breeze with Oh My Zsh's myriad of themes. The `omz list-themes` command gives you a bird's-eye view of all available themes, a boon when you're in the mood for a visual refresh. or you can visit theme by this URL: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
-Unveil the array of themes by executing:
-
-```shell
-omz list-themes
-```
-
-### Command 4: `omz theme`
-
-Once you've glimpsed the theme spectrum, the `omz theme` command steps in to simplify the switching process. Say goodbye to manual configuration edits; this command streamlines the transformation of your terminal's look.
-
-To adopt a new theme, type:
-
-```shell
-omz theme [theme-name]
-```
-
-Remember to replace `[theme-name]` with your chosen theme from the list.
-
-### Command 5: `omz help`
+### Command 2: `omz help`
 
 When uncertainty arises, the `omz help` command is your trusty companion. A one-stop repository of Oh My Zsh's commands and features, this command serves as your instant reference guide. It displays a comprehensive list of available commands alongside concise explanations of their purposes.
 
@@ -153,6 +118,27 @@ Access the help documentation with a simple command:
 ```shell
 omz help
 ```
+
+### Command 3: `omz reload`
+
+The `omz reload` command is for applying changes without the need to restart your shell. Whenever you modify your Oh My Zsh configuration or add new plugins, a simple execution of this command refreshes your environment, ensuring that the changes take effect immediately.
+
+type the following command in your terminal:
+
+```shell
+omz reload
+```
+
+### Command 4: `omz version`
+
+Stay informed about your Oh My Zsh installation with the `omz version` command. This handy command reveals the currently installed version of Oh My Zsh, allowing you to monitor your setup's status and track any updates or modifications over time.
+
+```shell
+omz version
+```
+
+With these additional commands at your disposal, you have a more comprehensive grasp of Oh My Zsh's capabilities. These tools enable you to manage your shell environment efficiently and stay updated on its status.
+
 
 ## In Conclusion:
 
