@@ -5,6 +5,7 @@ description: "In the Windows world, to delete startup programs you need to use a
 tags: ["windows", "regedit"]
 date: 2023-09-04T22:28:10+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/33/Registry.svg
+lastmod: 2023-09-09T11:27:50+0800
 ---
 
 ## Introduction
