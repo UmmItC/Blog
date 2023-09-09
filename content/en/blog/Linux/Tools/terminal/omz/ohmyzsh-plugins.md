@@ -5,7 +5,7 @@ description: "Discover the transformative magic of Oh My Zsh, the acclaimed shel
 tags: ["Linux", "zsh"]
 date: 2023-08-11T10:05:30+0800
 thumbnail: https://ohmyz.sh/img/themes/omz-update.png
-date: 2023-09-09T11:06:50+0800
+lastmod: 2023-09-09T11:06:50+0800
 ---
 
 ## Why use plugins?

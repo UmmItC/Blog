@@ -5,7 +5,7 @@ description: "Oh My Zsh is a popular and powerful shell customization framework 
 tags: ["Linux", "zsh"]
 date: 2023-08-11T09:21:50+0800
 thumbnail: https://camo.githubusercontent.com/4db3e4069e59f51d03dd3e7fa5e89ab8fb95c9f4acda36cd5bfdf58d95269d92/68747470733a2f2f6f686d797a73682e73332e616d617a6f6e6177732e636f6d2f6f6d7a2d616e73692d6769746875622e706e67
-date: 2023-09-09T10:59:30+0800
+lastmod: 2023-09-09T10:59:30+0800
 ---
 
 ## Oh My Zsh
