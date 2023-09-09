@@ -5,7 +5,7 @@ description: "Enhance Your Terminal Efficiency with Scoop – Discover How to In
 tags: ["Windows", "scoop", "Package Manager"]
 date: 2021-12-11T03:55:19+0800
 thumbnail: https://www.onmsft.com/wp-content/uploads/2019/07/IMG_20190723_153351.jpg
-lastmod: 2023-08-30T22:42:00+0800
+lastmod: 2023-09-09T09:30:22+0800
 ---
 
 ## Why Scoop?
