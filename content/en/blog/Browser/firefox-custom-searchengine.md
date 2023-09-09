@@ -1,17 +1,17 @@
 ---
 author: "Arcsly"
-title: "Enhance Your Firefox Experience: Customizing the Default Search Engine on Desktop"
+title: "Firefox: Customizing the Default Search Engine on Desktop version"
 description: "Unlock a world of personalized browsing in Firefox with our step-by-step guide. Learn how to easily customize your default search engine on the desktop version."
 tags: ["Browser", "firefox"]
 date: 2023-08-11T08:20:50+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/28/Firefox_logo%2C_2017.svg
 ---
 
-# Customizing Default Search Engines in Firefox Desktop
+## Introduction
 
 If you're a Firefox user looking to set a different default search engine in the desktop version, you might have noticed that while this option is available in the mobile version, it's not as straightforward on desktop. By default, you're limited to a set of preset search engine options such as `DuckDuckGo`, `Google`, and `Bing`. But fear not, we have a workaround that allows you to customize your default search engine on Firefox desktop.
 
-## Modifying Firefox Configuration
+### Modifying Firefox Configuration
 
 Before we dive into the steps, keep in mind that these instructions involve modifying Firefox's configuration settings, which requires a bit of technical know-how. But don't worry, we'll guide you through the process.
 
