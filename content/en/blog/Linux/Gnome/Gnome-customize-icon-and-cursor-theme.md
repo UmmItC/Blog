@@ -1,27 +1,28 @@
 ---
 author: "Arcsly"
-title: "Customizing Your GNOME Desktop: Installing Icon Themes"
-description: "Personalize your GNOME desktop on Linux by installing icon themes. Easily transform your desktop's appearance using the GNOME Tweaks tool."
+title: "Customizing Your GNOME Desktop: Installing Icon and cursor themes"
+description: "Personalize your GNOME desktop on Linux by installing icon and cursor themes. Easily transform your desktop's appearance using the GNOME Tweaks tool."
 tags: ["GNOME", "Linux"]
 date: 2023-08-14T08:47:50+0800
 thumbnail: https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/preview.png
+lastmod: 2023-09-11T02:25:55+0800
 ---
 
-# Customizing Your GNOME Desktop: Installing Icon Themes
+## Introduction
 
-Customizing your GNOME desktop environment is a great way to add a personal touch and make your Linux experience truly your own. One of the easiest and most visually impactful ways to do this is by installing icon themes. In this guide, we'll walk you through the process of installing an icon theme on your GNOME desktop using the GNOME Tweaks tool.
+Customizing your GNOME desktop environment is a great way to add a personal touch and make your Linux experience truly your own. One of the easiest and most visually impactful ways to do this is by installing icon and cursor themes. In this guide, we'll walk you through the process of installing an icon and cursor theme on your GNOME desktop using the GNOME Tweaks tool.
 
-## Why Install Icon Themes?
+### Why Install Icon Themes?
 
-Icon themes provide a quick and effective way to transform the look and feel of your GNOME desktop. By changing the icons used for applications, folders, and system elements, you can give your desktop a fresh and unique appearance that reflects your style.
+Icon themes provide a quick and effective way to transform the look and feel of your GNOME desktop. By changing the icons used for applications, folders, system elements and cursor themes, you can give your desktop a fresh and unique appearance that reflects your style.
 
-## Where is the Location Path?
+### Where is the Location Path?
 
 When you install icon themes, they are stored in specific directories on your system. Here are the paths where these themes are located:
 
 > **Note:** The global path applies changes system-wide for all users, while the local path affects only the current user.
 
-### Global Path
+#### Global Path
 
 The following is the directory where system-wide icon themes are stored:
 
@@ -29,7 +30,7 @@ The following is the directory where system-wide icon themes are stored:
 /usr/share/icons/
 ```
 
-### Local Path
+#### Local Path
 
 For individual user-specific icon themes, the path is:
 
@@ -71,11 +72,11 @@ sudo pacman -S gnome-tweaks
 
 Before you start the installation process, you need to choose an icon theme that resonates with you. There are numerous icon themes available, each with its own design and aesthetic. For this guide, we'll demonstrate the installation of the popular "Papirus" icon theme.
 
-## Step 3: Installation
+## Step 3: Installation - Icon theme
 
 Once you have GNOME Tweaks installed, it's time to add a new icon theme to your system. Follow these steps to use the Linux Pacman package manager for a seamless installation process.
 
-### Option 1: Using Pacman (Arch Linux)
+### Option 1: Using Pacman (Arch Linux - Community)
 
 If you're using Arch Linux or an Arch-based distribution, you can install the Papirus icon theme using the package manager. Open your terminal and enter the following command:
 
@@ -85,7 +86,7 @@ sudo pacman -S papirus-icon-theme
 
 This command will fetch and install the Papirus icon theme from the official Arch Linux repositories. Please note that the `papirus-icon-theme` package is available in the community repository.
 
-### Option 2: Using AUR (Arch User Repository)
+### Option 2: Using AUR (Arch User Repository - Official)
 
 Alternatively, you can install the `papirus-icon-theme-git` package from the Arch User Repository (AUR). First, ensure you have an AUR helper like `yay` installed. Then, use the following command:
 
@@ -95,6 +96,18 @@ yay -S papirus-icon-theme-git
 
 The AUR version might provide the latest updates and features of the Papirus icon theme.
 
+## Step 4: Installation - Cursor theme
+
+>Cursor also is the same install method and the same path.
+
+[Bibata Modern Ice theme](https://github.com/ful1e5/Bibata_Cursor) is great for me. install by using this command:
+
+```shell
+yay -S bibata-cursor-theme
+```
+
+## Step 5: Update cache
+
 After installing the icon theme, you'll want to update the icon cache to ensure that your system recognizes the new icons. This is important because sometimes newly installed themes might not work immediately. To update the icon cache, run the following command:
 
 ```shell
@@ -103,8 +116,7 @@ sudo gtk-update-icon-cache -q -t -f /usr/share/icons/Papirus
 
 By following either of these options and updating the icon cache, you can easily enhance your GNOME desktop with the stylish Papirus icon theme, giving your system a fresh and visually appealing look.
 
-
-## Step 4: Applying the Icon Theme
+## Step 6: Applying the Icon Theme
 
 Once you have successfully installed the icon theme, you can apply it to your GNOME desktop using GNOME Tweaks.
 
@@ -124,4 +136,7 @@ Remember that the world of Linux offers a plethora of icon themes to choose from
 
 Customizing your GNOME desktop with icon themes using the GNOME Tweaks tool is a fantastic way to express your creativity and personalize your Linux experience. The process is straightforward, and you can easily switch between different themes to find the one that suits you best. Whether you prefer a sleek and modern look or a more playful and artistic vibe, icon themes allow you to transform your desktop into a visual masterpiece.
 
-So go ahead, install GNOME Tweaks, choose an icon theme, Happy customizing!
+## References
+
+- [10 Best Cursor Themes for Linux Desktops](https://www.debugpoint.com/best-cursor-themes/)
+- [Bibata Modern Ice](https://www.gnome-look.org/p/1197198/)
