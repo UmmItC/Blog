@@ -108,3 +108,7 @@ This configuration will lock the user account for 10 minutes if there are 10 con
 ## Conclusion
 
 Linux provides robust security features to protect user accounts, including the ability to lock accounts temporarily after too many failed login attempts. By understanding how to use the `faillock` command, you can easily reset failed login attempts and unlock a Linux user account without requiring sudo privileges. This knowledge empowers you to maintain the security of your Linux system effectively.
+
+## Reference
+
+- [How to unlock linux user after too many failed login attempts](https://superuser.com/questions/1597162/how-to-unlock-linux-user-after-too-many-failed-login-attempts)
