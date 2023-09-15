@@ -14,6 +14,14 @@ Ensure that you have `git` installed on your computer, and then clone the reposi
 git clone https://codeberg.org/Arcsly/Arcsly-server.git
 ```
 
+### Install Hugo
+
+You need install hugo, type the following commnad:
+
+```shell
+sudo pacman -S hugo
+```
+
 ### Install Required Packages
 
 Make sure `nodejs` and `npm` are installed on your computer:
