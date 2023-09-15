@@ -5,16 +5,24 @@ description: "Unlock the Power of Gnome with These Must-Have Extensions!"
 tags: ["GNOME", "Linux"]
 date: 2023-08-05T01:47:00+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/23/MediaWiki-extensions-icon.svg
-lastmod: 2023-09-03T19:44:01+0800
+lastmod: 2023-09-15T12:20:40+0800
 ---
 
-## Simplifying GNOME Extension Installation Using a Web Browser
+## Introduction
+
+Gnome extensions are plug-ins designed for gnome users to enhance your experience when using gnome. In this article I will list some gnome plug-ins that I find useful.
+
+## How to install
 
 Enhance your GNOME desktop experience by effortlessly installing useful extensions through your web browser. Follow these steps for a smooth setup:
 
-### 1. Install the GNOME Browser Connector
+### 1. Install Browser Extensions
 
-To enable seamless extension installation, start by installing the necessary package:
+First go this [website](https://extensions.gnome.org/)install the extensions GNOME Shell integration. Without this extensions you cannot install from browser.
+
+### 2. Install the GNOME Browser Connector
+
+To enable seamless extension installation and connect the extensions from browser, you need install this package on your system, start by installing the necessary package:
 
 ```shell
 sudo pacman -S gnome-browser-connector
