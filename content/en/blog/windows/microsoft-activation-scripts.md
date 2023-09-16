@@ -1,6 +1,6 @@
 ---
 author: "Arcsly"
-title: "Microsoft Activation Scripts (MAS): A Safe way to Active your windows and office without 3rd-party software"
+title: "Microsoft Activation Scripts (MAS): A Safe way to Active your windows and office without 3rd-party unknown software"
 description: "Using unknown software to activate your windows or office may cause your computer to become infected. In this article, we will introduce a tool called Microsoft Activation Scripts."
 tags: ["Windows", "MAS"]
 date: 2023-09-11T02:52:00+0800
@@ -9,9 +9,9 @@ thumbnail: https://massgrave.dev/MAS_AIO.png
 
 ## Introduction
 
-Do you feel idiotic that you have to spend more than a hundred dollars to buy Windows, and you don't understand why you have to watch the built-in advertisements of Windows after you buy it? This article will teach you how to use the [MAS](https://github.com/massgravel/Microsoft-Activation-Scripts) tool to enable Windows without installing any third-party software.
+Do you feel idiotic that you have to spend more than a hundred dollars to buy Windows, and you don't understand why you have to watch the built-in advertisements of Windows after you buy it? This article will teach you how to use the [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts) tool to enable Windows without installing any third-party unknown software.
 
-In addition, [MAS](https://github.com/massgravel/Microsoft-Activation-Scripts) can activate Office and all Windows versions.
+In addition, [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts) can activate Office and all Windows versions.
 
 
 ## Getting Started: Active Windows Step
@@ -47,7 +47,11 @@ Click the link to download the mirror you want, download office and open the MAS
 irm https://massgrave.dev/get | iex
 ```
 
-4. You will see the option menu on your terminal screen, type `3` for Office / Windows, that will active your Office 180 Days.
+4. You will see the options menu on the terminal screen, enter "3" for Office/Windows and select Office. Then, wait a moment and your Office 180 days will be activated.
+
+>Notes: After 180 days you will need to do active again.
+
+
 
 ![](https://massgrave.dev/MAS_AIO.png)
 
