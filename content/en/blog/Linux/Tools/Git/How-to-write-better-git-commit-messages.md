@@ -1,4 +1,5 @@
 ---
+author: "Arcsly"
 title: "How to Write Better Git Commit Messages"
 description: "Learn the importance of well-crafted Git commit messages and discover whether simple or detailed commit messages are right for your projects. Explore various commit message styles and best practices to enhance collaboration and codebase documentation."
 tags: ["Git"]
