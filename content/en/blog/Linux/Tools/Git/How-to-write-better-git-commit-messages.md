@@ -4,6 +4,7 @@ description: "Learn the importance of well-crafted Git commit messages and disco
 tags: ["Git"]
 date: 2023-09-15T09:03:30+0800
 thumbnail: https://www.aviator.co/blog/wp-content/uploads/2023/01/git-commit.png
+lastmod: 2023-09-16T11:25:30+0800
 ---
 
 ## Introduction
@@ -100,23 +101,43 @@ To further illustrate the principles of effective commit messages, let's take a 
 
 ### 1. Updating Documentation
 
-- Correct: "docs: Update installation guide for Linux"
-  - In this commit, we're updating documentation related to the installation guide specifically for Linux. Using the "docs" prefix clarifies the nature of the change.
+The following is an example of updating the Linux documentation (README.md)
+
+```plain
+docs: Update installation guide for Linux
+
+In this commit, we're updating documentation related to the installation guide specifically for Linux.
+
+- Using the 'docs' prefix clarifies the nature of the change.
+```
 
 ### 2. Fixing a Typo
 
-- Correct: "Fix typo in user manual"
-  - This commit addresses a straightforward issue—a typographical error in the user manual. A simple, clear message is sufficient for such changes.
+Here is an example of fixing documentation typos in the user manual
+
+```plain
+docs: Fix typo in user manual
+
+This commit addresses a straightforward issue — a typographical error in the user manual. A simple, clear message is sufficient for such changes.
+```
 
 ### 3. Adding a New Functionality
 
-- Correct: "feat(auth): Implement two-factor authentication"
-  - Here, we're adding a new feature related to authentication, and the commit message follows the conventional commit format. The "feat" type indicates it's a new feature, and "(auth)" specifies the scope.
+Here is an example of adding a new feature 2fa
+
+```plain
+feat(auth): Implement two-factor authentication
+```
 
 ### 4. Adding a New Markdown Blog Post
 
-- Correct: "docs(blog): Add 'How-to-Write-Better-Commit-Messages.md' blog post"
-  - In this case, we're adding a new Markdown blog post to the documentation. The commit message provides information about the type of change (documentation) and the specific scope (blog).
+Here is an exmple of adding a new blog post
+
+```plain
+docs(blog): Add 'How-to-Write-Better-Commit-Messages.md' blog post
+
+In this case, we're adding a new Markdown blog post to the documentation
+```
 
 These examples showcase how commit messages can effectively convey the nature of changes, whether they are documentation updates, bug fixes, new features, or additions to the project's content.
 
