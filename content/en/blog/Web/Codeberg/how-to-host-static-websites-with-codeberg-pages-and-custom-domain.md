@@ -1,10 +1,11 @@
 ---
 author: "Arcsly"
-title: "Hosting Static Websites with Codeberg Pages: A Guide to Custom Domain Setup"
-description: "Learn how to leverage Codeberg Pages to host static websites for free and seamlessly integrate your custom domain. Explore the power of hassle-free web hosting with this comprehensive guide."
+title: "Codeberg Pages: A Guide to Hosting Static Websites for free and Custom Domain Setup"
+description: "Learn how to using Codeberg Pages to host static websites for free and seamlessly integrate your custom domain. Explore the power of hassle-free web hosting with this comprehensive guide."
 tags: ["Git", "Codeberg", "Web"]
 date: 2023-09-03T19:50:04+0800
 thumbnail: https://design.codeberg.org/logo-kit/icon_inverted.svg
+lastmod: 2023-09-16T10:45:30+0800
 ---
 
 ## Host with Codeberg Page
@@ -85,9 +86,9 @@ Your website content is now uploaded to your 'pages' repository on Codeberg, mak
 
 ## Adding Your Custom Domain
 
-Now, let's customize your website's domain.
+Now, let's personalize your website's domain name. Before proceeding, ensure you've already acquired your domain name through a domain provider like Cloudflare or Namecheap. We won't delve into the domain purchase process here, so let's begin the customization.
 
-### Step 1: Purchase a Domain
+### Step 1: DNS Setting
 
 To use a custom domain with your Codeberg Pages site, you'll need to purchase a domain from a domain registrar like [Cloudflare](https://www.cloudflare.com/) or [Namecheap](https://www.namecheap.com/).
 
@@ -170,8 +171,10 @@ git commit -m "Create domain"
 git push origin pages
 ```
 
-### Final Step: Test Your Custom Domain
+### Final Step: Testing Your Custom Domain
 
-It may take a few minutes for your DNS changes to propagate fully. Afterward, you can visit your custom domain to see your website live with your custom domain.
+It might take a few minutes for your DNS changes to fully propagate. Once that's done, you can visit your website using your custom domain to see it live. Alternatively, a quick way to check if the DNS changes have taken effect is to visit a site like this [site](enter your domain here). If the results display the IP you've pointed to, it means your changes are working.
 
-That's it! You've successfully hosted your static website with Codeberg Pages and customized it with your own domain.
+> **Tips**: If you're using Cloudflare CDN, make sure your DNS points to Cloudflare's DNS rather than your specific IP address. Afterward, if you decide to disable the proxy, simply click on the orange icon to turn it grey.
+
+And that's it! Congratulations on successfully hosting your static website with Codeberg Pages and customizing it with your own domain. Thank you for following these steps!
