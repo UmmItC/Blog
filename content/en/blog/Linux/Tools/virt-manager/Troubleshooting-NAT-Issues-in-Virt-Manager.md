@@ -57,3 +57,8 @@ ensure that you can use local network sharing and that you are not being blocked
 Network Address Translation (NAT) is a vital feature in virtualization, enabling virtual machines to access the internet and communicate with other devices on the local network. When NAT issues arise in Virt-Manager, it can be frustrating, but they are often solvable.
 
 To troubleshoot and resolve NAT problems, consider factors like VPN usage, firewall settings, Virt-Manager configurations, and network disruptions. By addressing these issues and making necessary adjustments, you can ensure that NAT works seamlessly within Virt-Manager, allowing your virtual machines to function as intended.
+
+## References
+
+- [qemu/kvm bridge and NAT networking](https://onion.tube/watch?v=DYpaX4BnNlg)
+- [libvirt QEMU/KVM guest cannot connect to network (NAT)](https://unix.stackexchange.com/questions/696940/libvirt-qemu-kvm-guest-cannot-connect-to-network-nat)
