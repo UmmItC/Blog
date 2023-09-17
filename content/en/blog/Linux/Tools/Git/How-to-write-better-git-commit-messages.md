@@ -5,7 +5,7 @@ description: "Learn the importance of well-crafted Git commit messages and disco
 tags: ["Git"]
 date: 2023-09-15T09:03:30+0800
 thumbnail: https://www.aviator.co/blog/wp-content/uploads/2023/01/git-commit.png
-lastmod: 2023-09-16T11:25:30+0800
+lastmod: 2023-09-16T12:10:45+0800
 ---
 
 ## Introduction
