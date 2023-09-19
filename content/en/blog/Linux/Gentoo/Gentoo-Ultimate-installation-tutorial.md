@@ -1,16 +1,18 @@
 ---
 author: "Arcsly"
-title: "A Comprehensive Guide to Installing Gentoo Linux (XORG, XFCE and Open-RC)"
+title: "A Comprehensive Guide to Installing Gentoo Linux on Open-RC: Including XORG, XFCE and some Additional Software"
 description: "Gentoo Linux with our comprehensive guide. Learn how to install Gentoo with XFCE and OpenRC, covering every step from initial setup to post-installation configuration. This hands-on tutorial empowers you to create a highly customizable and powerful Gentoo Linux environment."
 tags: ["xfce", "Gentoo", "Linux"]
 date: 2023-09-16T17:30:34+0800
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/e/ee/Deus_Gentoo_linux.png
-lastmod: 2023-09-17T17:10:30+0800
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/35/Faenza-distributor-logo-gentoo.svg
+lastmod: 2023-09-19T16:55:20+0800
 ---
 
 ## Introduction
 
 Gentoo Linux is a distribution known for its flexibility, performance, and robustness. In this comprehensive guide, we will walk you through the process of installing Gentoo Linux step by step. By the end of this tutorial, you will have a fully functional Gentoo Linux system ready for your customization.
+
+>Notes: This article has only the most basic settings.
 
 ## Prerequisites
 
@@ -36,73 +38,121 @@ With these prerequisites addressed,  Lets Boot your ISO on your machine!
 
 ## Step 1: Initial Setup
 
-### Test Internet Connectivity
+Before delving into the installation process, there are a few critical preliminary steps to ensure a smooth Gentoo Linux installation:
+
+### Choose Keyboard Layout
+
+As you boot up the Gentoo Linux ISO, your first decision is to select the appropriate keyboard layout. The default setting is a US keyboard layout. To confirm this choice, simply press Enter.
+
+### Verify Internet Connectivity
 ```bash
 ping gentoo.org
 ```
-Begin your Gentoo installation by checking your internet connectivity. This simple command tests whether you have a functioning internet connection. If you receive a response, it indicates that your network is up and running.
+To begin the Gentoo installation, it's crucial to confirm that you have a working internet connection. You can quickly check this by running the following command. A successful response indicates that your network connection is functional and ready for the installation process.
 
-### List Block Devices
+### List Available Block Devices
 ```bash
 lsblk
 ```
-To proceed with the installation, you'll need to identify the target device where you intend to install Gentoo. The `lsblk` command provides a clear list of available block devices on your system. Take note of the device you plan to use for the installation.
+To proceed with the installation, you need to identify the specific storage device where you'll install Gentoo. The `lsblk` command provides a comprehensive list of available block devices on your system. Take note of the device you intend to use for the Gentoo installation.
 
 ### Initialize GPT Partition Table
+
+Now, let's initialize the GUID Partition Table (GPT) on your chosen device:
 
 ```bash
 gdisk /dev/vda
 ```
 
-Inside `gdisk`, follow these steps:
+Once inside the `gdisk` utility, follow these steps:
 
-1. Type "o" to create a GPT partition table. Be aware that this operation will format all existing files on the selected device.
+1. Type "o" to create a new GPT partition table. Please note that this action will erase all existing data on the selected device.
 
-2. Type "n" to create a new partition. Specify "ef00" as the partition type and allocate +1G in size. This partition is intended for EFI.
+2. Press "n" to create a new partition. Specify the partition type as "ef00" (EFI system partition) and allocate a size of at least +1G. This partition is essential for EFI booting.
 
-3. Type "n" again to create another partition. Search for "swap" by type, and allocate +10G in size for the swap partition.
+3. Use "n" once more to create another partition. Search for "swap" by specifying the code "8200" and allocate at least +10G in size for the swap partition.
 
-4. Once more, type "n" to create a partition, but this time, allocate the remaining space to it. This partition will be used for the root file system.
+4. Again, press "n" to create a partition. This time, allocate the remaining space for it. This partition will serve as the root filesystem.
 
-5. To confirm the partition table, type "p" to view it. Ensure that it has been created correctly.
+5. Confirm the partition table by typing "p" to review its contents. Ensure that all partitions have been created correctly.
 
-6. If everything looks correct, type "w" to write the changes to all partitions.
+6. If everything appears as expected, save your changes by typing "w." This action will write the new partition table to all partitions.
 
-Using the `+` notation allows you to add space to the existing size when defining partition sizes during the GPT partition table initialization.
+When defining partition sizes during GPT initialization, the `+` notation allows you to add space to the existing size.
+
+Upon completion, your partition layout should resemble the following example (based on my configuration):
+
+| Number   | Size                 | Code | Name                 |
+|----------|----------------------|------|----------------------|
+| 1 (vda1) | +1G (1024.0MiB)      | ef00 | EFI system partition |
+| 2 (vda2) | +10G (9.0 GiB)      | 8200 | Linux swap           |
+| 3 (vda3) | All Remaining Space (90.0 GiB) | 8300 | Linux filesystem     |
+
+This sets the stage for the partitioning of your device to host the Gentoo Linux installation.
 
 ## Step 2: Partitioning
 
-With the initial setup complete, it's time to create the necessary partitions for Gentoo. These partitions will serve specific purposes, such as EFI, root, and swap.
+In this step, you will create and format the necessary partitions for your Gentoo installation. These partitions will serve distinct roles, including EFI booting, housing the core filesystem, and providing swap space.
 
 ### Format EFI Partition
+
+To ensure your system supports EFI booting, the EFI partition needs to be correctly formatted with the FAT32 file system. Use the following command:
+
 ```bash
 mkfs.fat -F32 /dev/vda1
 ```
-Format the EFI partition with the FAT32 file system using this command. This partition will be used for EFI booting.
+
+This command prepares the EFI partition (/dev/vda1) with the FAT32 file system, a requirement for EFI-based booting.
 
 ### Format Root Partition
+
+The root partition is where the core Gentoo filesystem will reside. Format it with the Btrfs file system using this command:
+
 ```bash
 mkfs.btrfs /dev/vda3
 ```
-Format the root partition with the Btrfs file system. This partition will house the core filesystem for your Gentoo installation.
+
+By running this command, you're configuring the root partition (/dev/vda3) with the Btrfs file system, a modern and flexible choice for managing your Gentoo installation.
 
 ### Create Swap Partition
+
+Swap space is essential for memory management in your system. Begin by initializing the swap partition with this command:
+
 ```bash
 mkswap /dev/vda2
 ```
-Prepare the swap partition for use by initializing it with this command.
+
+This command prepares the swap partition (/dev/vda2) for use in your Gentoo system.
 
 ### Enable Swap
+
+Activate the swap partition to make it available for use in your system:
+
 ```bash
 swapon /dev/vda2
 ```
-Activate the swap partition, making it available for use in your system.
+
+This step ensures that your Gentoo installation can effectively manage system memory.
 
 ### Create a Mount Point
+
+Before proceeding, create the required directory structure for your Gentoo filesystem:
+
 ```bash
 mkdir --parents /mnt/gentoo
 ```
-Generate the necessary directory structure for mounting your Gentoo installation. This structure will be used to organize your Gentoo filesystem.
+
+This command establishes the necessary directory structure within the `/mnt` directory, specifically the `/mnt/gentoo` directory, which will serve as the mount point for your Gentoo installation.
+
+### Mount the Root Partition
+
+Now, it's time to associate the root partition with the mount point:
+
+```shell
+mount /dev/vda3 /mnt/gentoo
+```
+
+By executing this command, you're linking your Gentoo root partition (/dev/vda3) with the `/mnt/gentoo` directory. This association allows you to access and configure the contents of your Gentoo installation within this directory. It's a pivotal step in setting up your Gentoo Linux system.
 
 ## Step 3: Setting the System Clock
 
@@ -114,28 +164,28 @@ Set the system clock to the current date and time by replacing `<MMDD><HHMM><YYY
 ## Step 4: Downloading the Stage3 Tarball
 
 ### Navigate to the Installation Directory
+
+Begin by changing your working directory to `/mnt/gentoo`, which is where you'll install Gentoo. This location serves as the foundation for your Gentoo Linux system.
+
 ```bash
 cd /mnt/gentoo
 ```
-Change your working directory to `/mnt/gentoo`, where you will install Gentoo.
 
 ### Download the Stage3 Tarball
-```bash
-links
-```
-Use the `links` text-based web browser to access the official Gentoo website and download the Stage3 tarball for your architecture. Follow these steps:
 
-1. Run the command `links`.
+The Stage3 tarball is a crucial component of your Gentoo installation, containing the base system files. To obtain it, we'll use the text-based web browser called `links`. Follow these steps to access the official Gentoo website and download the Stage3 tarball tailored to your architecture:
 
-2. Type `g`, and then enter the link to [gentoo.org](https://www.gentoo.org/).
+1. Launch `links` by typing `links` into the terminal and pressing Enter.
 
-3. In command line mode, select the Stage3 OpenRC file suitable for your architecture (e.g., amd64).
+2. In `links`, enter `g` to access the URL prompt, and then type the URL for [gentoo.org](https://www.gentoo.org/).
 
-4. Download the file and save it to your system.
+3. Once you've entered the Gentoo website, navigate to the Stage3 tarball download section. Look for the appropriate Stage3 OpenRC file corresponding to your architecture (e.g., amd64).
 
-5. Once the download is complete, exit the `links` program using `ctrl+c`.
+4. Select the desired tarball file, initiate the download process, and save it to your system.
 
-With these steps, you're ready to proceed with the Gentoo Linux installation process.
+5. After the download completes successfully, exit the `links` program by pressing `ctrl+c`.
+
+With these actions, you've obtained the necessary Stage3 tarball, a foundational component for your Gentoo Linux installation. This tarball provides the core system files required to build and customize your Gentoo environment.
 
 ## Step 5: Configuring make.conf
 
@@ -289,9 +339,9 @@ After creating the "efi" directory, we proceed to mount the EFI partition onto t
 
 In summary, this step is crucial for UEFI-based systems, as it sets up the directory structure and mounting point needed for successful UEFI booting, allowing Gentoo Linux to start correctly in such environments.
 
-In this step, we are focusing on initializing and updating your Gentoo Linux system. Here's a breakdown of each part:
-
 ## Step 11: Initial Configuration
+
+In this step, you'll perform the initial configuration tasks to prepare your Gentoo Linux system for optimal operation. Let's break down each action:
 
 ### Synchronize Portage Tree
 
@@ -299,7 +349,7 @@ In this step, we are focusing on initializing and updating your Gentoo Linux sys
 emerge-webrsync
 ```
 
-- `emerge-webrsync`: This command initiates the synchronization of the Portage tree. The Portage tree is a collection of files and metadata that Gentoo uses to manage packages. Synchronizing it ensures that you have access to the latest package information and updates. Keep in mind that this process may take some time, so you might want to use this time for a break or a meal.
+- The `emerge-webrsync` command is essential for keeping your Gentoo system up to date. It initiates the synchronization of the Portage tree, a critical component that manages packages and their metadata. By synchronizing the Portage tree, you ensure that your system has access to the latest package information and updates. Keep in mind that this process may take some time, so consider using this period for a break or a meal.
 
 ### Read Gentoo News
 
@@ -307,7 +357,7 @@ emerge-webrsync
 eselect news read
 ```
 
-- `eselect news read`: After completing the Portage tree synchronization, you can use this command to read important Gentoo news. It provides updates and information about changes in the Gentoo system. Staying informed about Gentoo news is crucial for understanding system updates and potential issues.
+- Once the Portage tree synchronization is complete, you can use the `eselect news read` command to stay informed about important Gentoo news. This command provides access to updates and information regarding changes in the Gentoo system. Staying up-to-date with Gentoo news is crucial for understanding system updates and potential issues.
 
 ### Update the System Profile
 
@@ -315,19 +365,19 @@ eselect news read
 eselect profile list
 ```
 
-- `eselect profile list`: This command lists the available system profiles that you can choose from. System profiles define various settings and configurations for your Gentoo system.
+- The `eselect profile list` command displays a list of available system profiles. System profiles define various settings and configurations for your Gentoo system. You can choose from different profiles based on your requirements.
 
 ```bash
 eselect profile set 5
 ```
 
-- `eselect profile set 5`: Use this command to select a specific system profile based on your preferences. The number (in this case, "5") represents the profile you want to set. The available profiles may vary, so choose the one that best suits your requirements.
+- Use the `eselect profile set` command to select a specific system profile that aligns with your preferences. The number associated with this command (in this case, "5") represents the profile you wish to set. Keep in mind that the available profiles may vary, so select the one that best suits your needs.
 
 ```bash
 eselect profile list
 ```
 
-- `eselect profile list`: After setting the profile, use this command to confirm that the correct profile has been selected. Ensuring the right profile is set helps configure your Gentoo system as intended.
+- After setting the profile, it's essential to verify that the correct profile has been selected. Confirming the profile ensures that your Gentoo system is configured as intended and aligns with your chosen specifications.
 
 ## Step 12: Updating the System
 
@@ -350,54 +400,6 @@ emerge --depclean
 - `emerge --depclean`: After the system update, this command removes any unnecessary dependencies and packages from your Gentoo system. Cleaning up unused packages helps free up disk space and optimize your system's performance.
 
 In summary, these steps ensure that your Gentoo system is properly configured, up to date, and optimized for performance. They are essential for maintaining a healthy and well-functioning Gentoo Linux environment.
-
-## Step 13: Customizing USE Flags
-
-### Edit make.conf Again
-
-```bash
-nano /etc/portage/make.conf
-```
-
-- `nano /etc/portage/make.conf`: Open the `make.conf` file for further customization. This file allows you to configure USE flags, which determine the features and functionality enabled or disabled for packages during installation.
-
-### Adjust USE Flags
-
-```bash
-USE="-gnome -kde alsa"
-```
-
-- `USE="-gnome -kde alsa"`: Modify the USE flags to tailor your system to your specific needs. In this example, the `-gnome` flag disables GNOME-related features, the `-kde` flag disables KDE-related features, and the `-alsa` flag disables ALSA sound support. Customize these flags based on your desktop environment and hardware requirements.
-
-## Step 14: CPU Flags
-
-### Install CPUID2CPUFLAGS
-
-```bash
-emerge --ask app-portage/cpuid2cpuflags
-```
-
-- `emerge --ask app-portage/cpuid2cpuflags`: Install the `cpuid2cpuflags` utility, which helps identify CPU-specific flags. These flags are essential for optimizing software performance for your specific CPU architecture.
-
-### Set CPU Flags
-
-```bash
-cpuid2cpuflags
-```
-
-- `cpuid2cpuflags`: Run the `cpuid2cpuflags` command to determine the CPU flags specific to your system. This utility detects your CPU's capabilities and outputs the appropriate flags.
-
-```bash
-echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags
-```
-
-- `echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags`: Create a file (`00cpu-flags`) that specifies CPU flags for all packages. This ensures that software compiled on your system takes full advantage of your CPU's capabilities.
-
-```bash
-cat /etc/portage/package.use/00cpu-flags
-```
-
-- `cat /etc/portage/package.use/00cpu-flags`: Confirm the content of the CPU flags file to ensure that the flags are correctly configured for your system. This step verifies that the correct flags will be used during package compilation.
 
 ## Step 15: Licensing
 
@@ -524,21 +526,72 @@ nano /etc/fstab
 
 ```bash
 # EFI Partition
-/dev/sda1   /efi        vfat    defaults    0 2
+/dev/vda1   /efi        vfat    defaults    0 2
 # Swap Partition
-/dev/sda2   none        swap    sw          0 0
+/dev/vda2   none        swap    sw          0 0
 # Root Partition
-/dev/sda3   /           btrfs   defaults,noatime  0 1
+/dev/vda3   /           btrfs   defaults,noatime  0 1
 ```
 
 Add entries for different partitions to the `/etc/fstab` file:
-  - `/dev/sda1` is mounted at `/efi` with a VFAT filesystem.
-  - `/dev/sda2` is used as a swap partition.
-  - `/dev/sda3` is mounted as the root directory with a Btrfs filesystem and specified mount options.
+  - `/dev/vda1` is mounted at `/efi` with a VFAT filesystem.
+  - `/dev/vda2` is used as a swap partition.
+  - `/dev/vda3` is mounted as the root directory with a Btrfs filesystem and specified mount options.
 
   Adjust these entries according to your disk partitioning and filesystem choices.
 
-## Step 22: Network Configuration (Continued)
+## Step 21: Setting Network Information
+
+In this step, you will configure network-related settings to ensure proper communication and connectivity on your Gentoo Linux system. Each command provided is independent of the others.
+
+### Edit the Hosts File
+
+```shell
+nano /etc/hosts
+```
+
+- `nano /etc/hosts`: Use this command to open and edit the `/etc/hosts` file. This file is responsible for mapping hostnames to IP addresses and is crucial for network communication.
+
+Add the following lines to the file:
+
+```shell
+127.0.0.1   gentoo   localhost
+::1         localhost
+```
+
+These lines define the loopback address (`127.0.0.1`) and the IPv6 loopback address (`::1`) with corresponding hostnames. The "gentoo" hostname is associated with the loopback address.
+
+### Set the Hostname
+
+```shell
+echo gentoo > /etc/hostname
+```
+
+- `echo gentoo > /etc/hostname`: Use this command to set the hostname of your Gentoo system. In this example, the hostname is set to "gentoo." Make sure to replace "gentoo" with your desired hostname if needed.
+
+### Install and Configure DHCP
+
+```shell
+emerge --ask net-misc/dhcpcd
+```
+
+- `emerge --ask net-misc/dhcpcd`: This command installs `dhcpcd`, a DHCP (Dynamic Host Configuration Protocol) client, which is essential for automatically configuring network interfaces.
+
+```shell
+rc-update add dhcpcd default
+```
+
+- `rc-update add dhcpcd default`: Add `dhcpcd` to the list of services that start automatically at boot. This ensures that the DHCP client service runs during system startup, enabling automatic network configuration.
+
+```shell
+rc-service dhcpcd start 
+```
+
+- `rc-service dhcpcd start`: Use this command to start the `dhcpcd` service immediately. It will configure network interfaces and establish network connectivity.
+
+By following these steps, you've configured network-related settings on your Gentoo Linux system, including hostname setup, host file editing, and the installation and configuration of a DHCP client for automatic network configuration. Your system should now be ready to communicate over the network.
+
+## Step 22: Network Configuration
 
 ### Identify Network Interfaces
 
@@ -555,6 +608,14 @@ nano /etc/conf.d/net
 ```
 
 - `nano /etc/conf.d/net`: Edit the network interface configurations in the `/etc/conf.d/net` file to suit your specific requirements. For example, you can set up DHCP for your Ethernet interface or configure static IP addresses if needed.
+
+Here's an example configuration:
+
+```shell
+config_enp1s0="dhcp"
+```
+
+Replace "enp1s0" with the actual name of your network interface and configure it for DHCP or static IP as necessary.
 
 ### Create a Symbolic Link
 
@@ -573,298 +634,289 @@ rc-update add net.enp1s0 default
 
 - `rc-update add net.enp1s0 default`: Ensure that the network interface starts automatically with the system by adding it to the default runlevel. Make sure to use the correct interface name for your system configuration.
 
-These steps help you set up firmware, kernel, and filesystem configurations, as well as manage network interfaces, to create a stable and functional Gentoo Linux environment.
+These steps are crucial for configuring your network interface, making sure it starts correctly at boot, and establishing a stable and functional Gentoo Linux network environment.
 
-## Step 24: Root Password
+## Step 24: Setting the Root Password
+
+Securing your Gentoo system starts with setting a strong and secure root password. The root account is a powerful administrative account that should only be accessed by authorized users when necessary. Follow these steps to set the root password:
 
 ### Set Root Password
+
+To set a secure root password, use the `passwd` command:
 
 ```bash
 passwd
 ```
 
-- `passwd`: Set a secure root password for your Gentoo system. The root password is essential for administrative tasks and system management.
+After entering this command, you'll be prompted to enter and confirm your new root password. Make sure to choose a password that is both strong and memorable. A strong password typically includes a combination of uppercase and lowercase letters, numbers, and special characters. It's important to keep this password confidential and not share it with unauthorized users.
 
-## Step 25: System Logging
+Setting a strong root password is a critical security measure for your Gentoo system, as it helps protect your system from unauthorized access and ensures that only trusted users can perform administrative tasks.
 
-### Install sysklogd
+## Step 27: File System Support
 
-```bash
-emerge --ask app-admin/sysklogd
-```
+To effectively manage various filesystems on your Gentoo system, it's important to have the necessary tools and utilities installed. This step focuses on installing `sys-fs/btrfs-progs` and `sys-fs/dosfstools` to support Btrfs and DOSFAT filesystems, respectively. Follow these instructions to ensure you have the required filesystem support:
 
-- `emerge --ask app-admin/sysklogd`: Install `sysklogd`, which is responsible for system logging. This tool captures log messages and provides a record of system events and activities.
+### Install Btrfs Tools
 
-```bash
-rc-update add sysklogd default
-```
-
-- `rc-update add sysklogd default`: Add `sysklogd` to the list of services that start automatically at boot. This ensures that system logs are managed from the beginning of the system's boot process.
-
-## Step 26: Time Synchronization
-
-### Install Chrony
+[Btrfs](https://btrfs.readthedocs.io/en/latest/) is a modern and feature-rich filesystem that offers benefits like snapshots and data integrity. To manage Btrfs filesystems on your Gentoo system, you'll need the `btrfs-progs` package. Use the following command to install it:
 
 ```bash
-emerge --ask net-misc/chrony
+emerge -av sys-fs/btrfs-progs
 ```
 
-- `emerge --ask net-misc/chrony`: Install `chrony`, a tool used for time synchronization. Accurate timekeeping is crucial for various system functions and services.
+This command will install the Btrfs tools, enabling you to create, manage, and maintain Btrfs filesystems on your Gentoo installation.
+
+### Install DOSFAT Tools
+
+DOSFAT (also known as FAT) is a filesystem format commonly used for removable storage devices such as USB drives and SD cards. To interact with DOSFAT filesystems on your Gentoo system, you'll need the `dosfstools` package. Use the following command to install it:
 
 ```bash
-rc-update add chronyd default
+emerge -av sys-fs/dosfstools
 ```
 
-- `rc-update add chronyd default`: Add `chronyd` to the startup services to ensure that your system's time stays accurate. `chronyd` will synchronize your system's time with time servers on the internet.
+Installing `dosfstools` provides utilities like `mkfs.fat` for formatting DOSFAT filesystems and `fsck.fat` for checking and repairing them.
 
-## Step 27: Additional Tools
+With both `sys-fs/btrfs-progs` and `sys-fs/dosfstools` installed, your Gentoo system will have comprehensive filesystem support, allowing you to work with a variety of filesystem formats as needed. This flexibility is essential for managing data on different storage devices and maintaining the integrity of your files.
 
-### Install Additional Tools
+## Step 28: Configuring the GRUB Bootloader
 
-```bash
-emerge -av sys-fs/btrfs-progs sys-fs/dosfstools wireless-tools
-```
+Configuring the GRUB bootloader is a crucial step in setting up your Gentoo Linux system for booting. GRUB (GRand Unified Bootloader) is responsible for managing the boot process and allows you to choose which operating system to start. In this step, we'll configure and install GRUB for your Gentoo installation.
 
-- `emerge -av sys-fs/btrfs-progs sys-fs/dosfstools wireless-tools`: Install additional tools that are useful for managing filesystems (Btrfs and DOSFAT) and handling wireless networking. These tools expand the functionality of your Gentoo system.
+### Edit make.conf for GRUB
 
-## Step 28: GRUB Bootloader
-
-### Edit make.conf (GRUB)
+First, we need to specify the GRUB platform as "efi-64" in your `make.conf` file. This is essential for systems that use EFI for booting. To do this, execute the following command:
 
 ```bash
 echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
 ```
 
-- `echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf`: Edit your `make.conf` file to specify the GRUB platform as "efi-64." This setting is essential for systems that use EFI for booting.
+This command appends the `GRUB_PLATFORMS` setting to your `make.conf` file, ensuring that GRUB is configured correctly for EFI booting.
 
 ### Install GRUB
+
+Now that we've configured GRUB, we need to install it on your system. Use the following command to install the GRUB bootloader:
 
 ```bash
 emerge --ask --verbose sys-boot/grub
 ```
 
-- `emerge --ask --verbose sys-boot/grub`: Install the GRUB bootloader using this command. GRUB is responsible for managing the boot process and allows you to choose which operating system to start.
+This command tells Gentoo's package manager, Portage, to install the `sys-boot/grub` package, which includes the GRUB bootloader.
+
+#### Install GRUB to the EFI Partition
+
+To ensure that your system can boot using the UEFI firmware, we'll install GRUB to the EFI partition. Use the following command to accomplish this:
 
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/efi
 ```
 
-- `grub-install --target=x86_64-efi --efi-directory=/efi`: Install GRUB to the EFI partition of your system. This ensures that the system can boot using the UEFI firmware.
+This command installs GRUB for the x86_64 EFI target architecture and specifies the EFI directory as `/efi`. It ensures that the necessary GRUB files are placed in the EFI partition, making them accessible to the UEFI firmware during the boot process.
+
+#### Generate the GRUB Configuration File
+
+The final step in configuring GRUB is to generate the GRUB configuration file, `grub.cfg`. This file contains the menu entries and settings required for booting into your Gentoo installation. Use the following command to generate the configuration file:
 
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-- `grub-mkconfig -o /boot/grub/grub.cfg`: Generate the GRUB configuration file (`grub.cfg`). This file contains the menu entries and settings required for booting into your Gentoo installation.
+This command creates the `grub.cfg` file in the `/boot/grub` directory. It detects the installed operating systems and generates a boot menu based on the available options.
 
-With these configurations and tools in place, your Gentoo Linux system is well-prepared for use. You're almost ready to finalize the installation and set up your user account.
+With these configurations and tools in place, your Gentoo Linux system is well-prepared for use. The GRUB bootloader is set up to handle the boot process, allowing you to select Gentoo Linux or other operating systems when you start your computer. You're now ready to finalize the installation and configure your user account.
 
 ## Step 30: Unmounting Partitions
 
-### Unmount Partitions
+As you near the completion of your Gentoo Linux installation, it's essential to unmount the various partitions and directories associated with the installation process. This ensures that your system is prepared for a clean and successful reboot.
+
+```shell
+exit
+cd ~
+```
+
+### Unmounting Specific Directories
+
+To begin, unmount specific directories within the Gentoo installation by executing the following command:
 
 ```bash
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 ```
 
-- `umount -l /mnt/gentoo/dev{/shm,/pts,}`: Unmount various directories within the Gentoo installation. This step ensures that these directories are no longer linked to the installation environment.
+- `umount -l /mnt/gentoo/dev{/shm,/pts,}`: This command unmounts several directories within the Gentoo installation, including `/dev`, `/dev/shm`, and `/dev/pts`. Unmounting these directories is essential to detach them from the installation environment.
+
+### Unmounting the Entire Gentoo Installation
+
+Next, unmount the entire Gentoo installation from the `/mnt/gentoo` directory using the following command:
 
 ```bash
 umount -R /mnt/gentoo
 ```
 
-- `umount -R /mnt/gentoo`: Unmount the entire Gentoo installation from the `/mnt/gentoo` directory. This is a crucial step before rebooting to ensure that all filesystems are properly unmounted.
+- `umount -R /mnt/gentoo`: This command recursively unmounts all filesystems and directories within the `/mnt/gentoo` directory. It ensures that every component of the Gentoo installation is properly detached from the system.
 
-## Step 31: Reboot
+## Step 31: Reboot Your System
 
-### Reboot Your System
+With all the necessary unmounting completed, it's time to reboot your system to initiate the use of the newly installed Gentoo Linux.
 
 ```bash
 reboot
 ```
 
-- `reboot`: Reboot your system to initiate the use of the newly installed Gentoo Linux. After the reboot, you'll see the GRUB menu. Use the arrow keys to select "Gentoo" and boot into your freshly installed Gentoo Linux system.
+- `reboot`: Execute this command to reboot your system gracefully. After the reboot, you'll encounter the GRUB menu, which allows you to select your desired operating system. Use the arrow keys to highlight "Gentoo" and then press Enter to boot into your freshly installed Gentoo Linux system.
+
+Rebooting is the final step in the installation process, and once your system restarts, you'll have access to your new Gentoo Linux environment. Congratulations on successfully installing Gentoo!
 
 ![Grub has been installed!](/blog/linux/Gentoo/grub-done.png)
 
 ## Step 32: Post-Installation
 
+Congratulations! Your Gentoo Linux system is now successfully installed. During the installation process, you used the root account for all configuration tasks. However, it's important to create a dedicated user account for your day-to-day use to enhance the security and manageability of your system.
+
 ### Create a User Account
 
-To enhance system security, it's recommended to create a regular user account and use it for day-to-day tasks rather than relying on the root account. Replace `<username>` with your desired username.
+To create a new user account, and for added security and convenience, follow these steps. Replace `<username>` with your desired username:
 
 ```bash
 # Create a new user with necessary group memberships and set the shell to /bin/bash
 useradd -m -G users,wheel,audio -s /bin/bash <username>
 ```
 
+- `useradd -m -G users,wheel,audio -s /bin/bash <username>`: This command creates a new user account with the specified username (`<username>`) and assigns it to the necessary groups, including "users," "wheel," and "audio." The `-m` flag ensures that a home directory is created for the user, and the `-s /bin/bash` flag sets the user's default shell to `/bin/bash`.
+
+Next set the password of username
+
+```shell
+passwd <username> 
+```
+
+### Install `sudo` for Administrative Tasks
+
+By default, Gentoo doesn't come with `sudo` pre-installed. However, `sudo` is a valuable tool for performing administrative tasks with elevated privileges. To install `sudo`, follow these instructions:
+
+```bash
+emerge -av sudo
+```
+
+This command will install `sudo` on your system, allowing you to execute administrative commands securely. With `sudo`, you can perform tasks like package management and system configuration without needing to log in as the root user.
+
 ### Set sudo Configuration
 
-Edit the sudoers file to configure sudo access for your user. You can use the `visudo` command to safely edit the sudoers file.
+To configure sudo access for your newly created user, follow these steps:
 
 ```bash
 visudo
 ```
 
-Within the sudoers file, locate the line `%wheel ALL=(ALL) ALL` and uncomment it by removing the `#` symbol at the beginning of the line. This action allows users in the "wheel" group to execute commands with sudo privileges.
+- `visudo`: Use the `visudo` command to safely edit the sudoers file, which controls who has access to administrative privileges through `sudo`.
+
+Within the sudoers file, locate the line `%wheel ALL=(ALL) ALL` and uncomment it by removing the `#` symbol at the beginning of the line. This action allows users in the "wheel" group to execute commands with sudo privileges:
 
 ```bash
 # Uncomment the line below to allow users in the wheel group to execute commands with sudo privileges
 %wheel ALL=(ALL) ALL
 ```
 
-You can also set `Defaults timestamp_timeout=0` in the sudoers file to require a password every time sudo is used:
+Next, this is recommend to do, apply a flag `Defaults timestamp_timeout=0` in the sudoers file to time after you wait for the time after entering sudo.
 
 ```bash
 Defaults timestamp_timeout=0
 ```
 
+After completing this step, you have a complete daily user. However, you do n’t have to wait when you need to enter the instructions after each sudo. The time is 0 seconds.
+
 ### Switch to the New User
+
+To complete the user setup and start using your new user account, switch to the newly created user with the following command:
 
 ```bash
 # Switch to the newly created user
 su - <username>
 ```
 
-By creating a new user account, uncommenting the `%wheel ALL=(ALL) ALL` line, and setting `Defaults timestamp_timeout=0`, you enhance the security of your Gentoo Linux system. Users in the "wheel" group will have the ability to execute commands with sudo privileges, and a password will be required every time `sudo` is used, providing an extra layer of security for your system.
+By creating a new user account, uncommenting the `%wheel ALL=(ALL) ALL` line in the sudoers file, and setting `Defaults timestamp_timeout=0`, you've significantly enhanced the security of your Gentoo Linux system. Users in the "wheel" group will have the ability to execute commands with sudo privileges, and a password will be required every time `sudo` is used, providing an extra layer of security for your system.
 
-## Step 33: Xorg and Desktop Environment
+## Final: Install Additional Software
 
-### 1. Edit make.conf (Xorg and Desktop)
+As you finalize your Gentoo Linux installation, there are some important packages you may want to add to enhance your system's functionality and convenience. Here's a step-by-step guide to installing these packages:
 
-Open the `make.conf` file to configure Xorg and desktop environment options:
+### 2. Install `neofetch` for System Information
 
-```bash
-nano /etc/portage/make.conf
-```
-
-Within `make.conf`, locate the relevant sections and add or modify the lines as specified below. Be careful not to overwrite any existing content in `make.conf`. Here's what you should add or modify:
+`neofetch` is a handy utility that provides detailed information about your Gentoo system in a visually appealing way. To install `neofetch`, use the following command:
 
 ```bash
-# Add or modify these lines for mouse, keyboard, Synaptics touchpad support, and Elogind
-INPUT_DEVICES="libinput"
-VIDEO_CARDS="qxl"
-USE="elogind dbus"
+emerge -av neofetch
 ```
 
-Additionally, add Elogind to startup services:
+Once installed, you can run `neofetch` to quickly view system information, including your distribution, kernel version, CPU, memory, and more. It's a useful tool for getting an overview of your system's configuration.
+
+![neofetch](/blog/linux/Gentoo/neofetch.png)
+
+### 3. Install CPUID2CPUFLAGS for CPU Optimization
+
+Optimizing software performance for your specific CPU architecture is essential for getting the most out of your hardware. The `CPUID2CPUFLAGS` utility helps identify CPU-specific flags, which are crucial for compiling software tailored to your CPU. To install it, use this command:
 
 ```bash
-rc-update add elogind boot
+emerge --ask app-portage/cpuid2cpuflags
 ```
 
-### 2. Install Xorg Drivers
-
-To install Xorg drivers, use the following command:
+After installation, run the following command to determine the CPU flags specific to your system:
 
 ```bash
-emerge --pretend --verbose x11-base/xorg-drivers
+cpuid2cpuflags
 ```
 
-This command will prepare to install Xorg drivers without actually executing the installation.
+This utility detects your CPU's capabilities and outputs the appropriate flags. These flags will be used during package compilation to ensure optimized performance.
 
-## Step 34: Cleanup and Final Configuration
+To configure Gentoo to use these CPU flags for all packages, create a file named `00cpu-flags` in the `/etc/portage/package.use/` directory:
 
-In some cases, the installation might encounter issues. If that happens, it's important to perform a deep clean and update your system to ensure everything is set up correctly.
+```bash
+echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags
+```
 
-### Cleanup and Final Configuration
+This file specifies the CPU flags for all packages, ensuring that software is compiled to take full advantage of your CPU's capabilities.
 
-1. Remove any unused dependencies and packages to free up disk space:
+### 4. Install `sysklogd` for System Logging
 
-   ```bash
-   emerge --ask --depclean --verbose
-   ```
+System logging is crucial for keeping track of system events and activities. `sysklogd` is a reliable tool for managing system logs. To install it, run the following command:
 
-   This command will identify and remove packages that are no longer required, helping you reclaim disk space.
+```bash
+emerge --ask app-admin/sysklogd
+```
 
-2. Synchronize your Gentoo system with the Gentoo repository:
+After installation, add `sysklogd` to the list of services that start automatically at boot with the following command:
 
-   ```bash
-   emerge --sync
-   ```
+```bash
+rc-update add sysklogd default
+```
 
-   This step ensures that your package database is up-to-date with the latest information from the Gentoo repository.
+By doing this, `sysklogd` will begin capturing log messages from the early stages of system startup, providing you with a comprehensive record of system events.
 
-3. Edit or create package.use files as needed. For example, you can configure packages like Poppler and libdbusmenu:
+### 5. Install `chrony` for Time Synchronization
 
-   ```bash
-   echo "app-text/poppler -qt5" > /etc/portage/package.use/poppler
-   echo ">=dev-libs/libdbusmenu-16.04.0-r2 gtk3" >> /etc/portage/package.use/libdbusmenu
-   ```
+Accurate timekeeping is crucial for various system functions and services. `chrony` is a reliable tool for time synchronization. To install it, use the following command:
 
-   These commands allow you to specify package use flags for specific packages.
+```bash
+emerge --ask net-misc/chrony
+```
 
-4. Install the XFCE desktop environment and related packages:
+Once `chrony` is installed, add it to the startup services to ensure that your system's time stays accurate:
 
-   ```bash
-   emerge -av xfce-base/xfce-meta
-   ```
+```bash
+rc-update add chronyd default
+```
 
-   This will install the XFCE desktop environment along with its default set of applications.
+`chronyd` will synchronize your system's time with time servers on the internet, helping to maintain accurate time for various system operations.
 
-5. Install the XFCE terminal:
+### 6. Install `wireless-tools` for Wi-Fi Management (Optional)
 
-   ```bash
-   emerge --ask x11-terms/xfce4-terminal
-   ```
+If you use Wi-Fi for your network connection, installing `wireless-tools` can be helpful for managing wireless networking. However, if you prefer using a wired LAN connection or don't need Wi-Fi support, you can skip this step.
 
-   This command installs the XFCE terminal emulator.
+To install `wireless-tools`, use the following command:
 
-With these instructions, you will correctly configure your system for Xorg and a desktop environment, clean up any unnecessary packages, and ensure your system is up-to-date with the latest package information from the Gentoo repository.
+```bash
+emerge -av wireless-tools
+```
 
-## Step 35: Configure XFCE to Start
-
-After successfully installing the XFCE desktop environment, follow these steps to configure it to start when you boot into Gentoo:
-
-### Configure XFCE to Start
-
-1. Create or edit the `~/.xinitrc` file for your user:
-
-   ```bash
-   echo "exec startxfce4" > ~/.xinitrc
-   ```
-
-   This command creates or overwrites the `~/.xinitrc` file with a line that instructs the system to start XFCE when you run `startx`.
-
-2. Start XFCE:
-
-   ```bash
-   startx
-   ```
-
-   Running `startx` will initiate the XFCE desktop environment, allowing you to start using it after logging in.
-
-   ![xfce-start](/blog/linux/Gentoo/xfce-start.png)
-
-These steps ensure that your Gentoo system is properly configured with the XFCE desktop environment, and you can start using it as your graphical user interface.
-
-## Step 36: Install Additional Software
-
-By default, Gentoo doesn't come with `sudo` pre-installed. To use `sudo` for administrative tasks and to install `neofetch` for displaying system information, follow these instructions:
-
-### Install `sudo`
-
-1. Install `sudo` using the `emerge` command:
-
-   ```bash
-   emerge -av sudo
-   ```
-
-   This command will install `sudo` on your system, which allows you to execute administrative commands with elevated privileges.
-
-### Install `neofetch`
-
-1. Install `neofetch` to display system information:
-
-   ```bash
-   emerge -av neofetch
-   ```
-
-   This command installs `neofetch`, a handy utility that provides detailed information about your Gentoo system in a visually appealing way.
-   
-   ![neofetch](/blog/linux/Gentoo/neofetch.png)
-
-With these packages installed, you'll have `sudo` available for performing administrative tasks, and you can use `neofetch` to quickly view system information on your Gentoo system.
+These additional software installations will enhance your Gentoo Linux system, providing you with greater flexibility, system information visibility, and optimization options. Customizing your system with these packages helps tailor it to your specific needs and preferences.
 
 ## Conclusion
 
@@ -916,3 +968,4 @@ Become a Linux master!
 ## References
 
 - [Ultimate guide to installing Gentoo Linux for new users](https://onion.tube/watch?v=_50MJv4Dc40)
+- [Gentoo AMD64 Handbook](https://wiki.gentoo.org/wiki/Handbook:AMD64)
