@@ -5,7 +5,6 @@ description: "Gentoo Linux of installing XORG and XFCE with the OpenRC init syst
 tags: ["Open-RC", "Gentoo", "Linux", "XFCE", "XORG"]
 date: 2023-09-20T16:40:21+0800
 thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/neofetch.png
-lastmod: 2023-09-20T13:27:10+0800
 ---
 
 ## Introduction
