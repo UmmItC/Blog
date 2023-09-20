@@ -4,7 +4,7 @@ title: "Comprehensive Guide to Gentoo Linux: Installing XORG and XFCE with OpenR
 description: "Gentoo Linux of installing XORG and XFCE with the OpenRC init system. Dive into the realm of open-source customization and create a powerful and tailored desktop environment on your Gentoo system."
 tags: ["Open-RC", "Gentoo", "Linux", "XFCE", "XORG"]
 date: 2023-09-20T16:40:21+0800
-thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/neofetch.png
+thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/xfce-start.png
 ---
 
 ## Introduction
