@@ -61,7 +61,7 @@ DefaultContentLanguageInSubdir = true
     languageName = "English"
     [languages.en.params]
       introTitle = "9upper"
-      introSubtitle = "Hi i come form Hong Kong. i love writing and tech. and i use Arch btw :)"
+      introSubtitle = "This website is about my diary and study record. i use Arch btw :)"
       introPhoto = "https://vignette.wikia.nocookie.net/logopedia/images/0/04/Linux_logo.png/revision/latest?cb=20120814052336"
       logo = "/linux.png"
     [[languages.en.menu.main]]
