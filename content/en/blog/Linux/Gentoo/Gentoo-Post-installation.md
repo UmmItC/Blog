@@ -1,7 +1,7 @@
 ---
 author: "Arcsly"
 title: "Enhancing Your Gentoo Linux Installation: Post-Installation"
-description: "Take your Gentoo Linux system to the next level with user management, sudo, system logging, NTP time synchronization, CPU optimization, Neofetch, and optional Wi-Fi support."
+description: "Take your Gentoo Linux system to the next level with user management, sudo, system logging, NTP time synchronization, CPU optimization, Neofetch, Wi-Fi support. and Others."
 tags: ["Open-RC", "Gentoo", "Linux"]
 date: 2023-09-20T16:40:21+0800
 thumbnail: https://wallpapercave.com/wp/wp11345838.png
