@@ -1,19 +1,22 @@
 ---
 author: "Arcsly"
-title: "Enhancing Your Gentoo Linux Installation: Post-Installation Guide"
+title: "Enhancing Your Gentoo Linux Installation: Post-Installation"
 description: "Take your Gentoo Linux system to the next level with user management, sudo, system logging, NTP time synchronization, CPU optimization, Neofetch, and optional Wi-Fi support."
 tags: ["Open-RC", "Gentoo", "Linux"]
-date: 2023-09-20T21:56:40+0800
+date: 2023-09-20T16:40:21+0800
 thumbnail: https://wallpapercave.com/wp/wp11345838.png
+lastmod: 2023-09-21T16:40:24+0800
 ---
 
 ## Introduction
 
- In this comprehensive post-installation guide, we'll take you through crucial steps to enhance the security, functionality, and performance of your Gentoo system. By the end, you'll have a finely-tuned Gentoo installation tailored to your needs.
+In our previous article, we accomplished the installation of XFCE with XORG, setting the stage for a functional Gentoo Linux system. Now, as we delve into this comprehensive post-installation guide, we'll lead you through pivotal steps aimed at elevating the security, functionality, and performance of your Gentoo setup. By the time we wrap up, you'll have a fully operational Gentoo Linux system tailored to meet your daily computing needs.
 
 ## User Management
 
 During the installation process, you primarily used the root account for configuration tasks. However, for improved security and easier system management, it's essential to create a dedicated user account for everyday use.
+
+In addition, As a long-time Linux user, I don’t think there is any need to explain why it is necessary to use normal user as your daily account.
 
 ### Create a User Account
 
@@ -45,12 +48,12 @@ su - <username>
 
 So that you can switch your current user with `su` command.
 
-### Installing `sudo` for Administrative Tasks
+### 2. Installing `sudo` for Administrative Tasks
 
-By default, Gentoo doesn't include `sudo`. However, `sudo` is invaluable for performing administrative tasks with elevated privileges. To install `sudo`, use this command:
+It’s really troublesome without the sudo tool, so it must be installed. By default, Gentoo doesn't include `sudo`. However, `sudo` is invaluable for performing administrative tasks with elevated privileges. To install `sudo`, use this command:
 
 ```bash
-emerge -av sudo
+emerge --ask --verbose sudo
 ```
 
 This command installs `sudo` on your system, allowing you to execute administrative commands securely. With `sudo`, you can perform tasks like package management and system configuration without needing to log in as the root user.
@@ -80,7 +83,7 @@ Defaults timestamp_timeout=0
 
 After completing these steps, you have a fully functional user account with sudo privileges. The timeout for password entry when using `sudo` is set to 0 seconds, providing an extra layer of security for your system.
 
-## Final Steps: Installing Additional Software
+## Useful tools
 
 As you finalize your Gentoo Linux installation, consider adding essential packages to enhance your system's functionality and convenience.
 
@@ -162,4 +165,74 @@ Once installed, you can run `neofetch` to quickly view system information, inclu
 
 ![neofetch](/blog/linux/Gentoo/gentoo-post-installation/neofetch.png)
 
-These additional software installations will enhance your Gentoo Linux system, providing you with greater flexibility, system information visibility, and optimization options. Customizing your system with these packages helps tailor it to your specific needs
+### 6. Install Gentoolkit
+
+To assist in managing your Gentoo system and packages, installing Gentoolkit is a wise choice. Gentoolkit provides various helpful utilities for package management and system analysis. You can install it using the following command:
+
+```shell
+emerge --ask --verbose app-portage/gentoolkit
+```
+
+Once installed, you can leverage Gentoolkit to perform various tasks, including searching for package information, checking for reverse dependencies, and more. For instance, if you want to find out which packages depend on `www-client/firefox`, you can use the `equery` utility as follows:
+
+```shell
+equery uses www-client/firefox
+```
+
+This command will provide you with a list of packages that reference or rely on `www-client/firefox` in your Gentoo system.
+
+### 7. Install Firefox
+
+Certain packages may require manual configuration to ensure compatibility and functionality. One such example is configuring `alsa-plugins` for Firefox. The required version of `alsa-plugins` may change over time, so it's essential to follow the prompts during the installation process.
+
+#### Manual Configuration for Firefox
+
+To set up `alsa-plugins` with the correct version for Firefox, use the following command:
+
+```shell
+echo ">=media-plugins/alsa-plugins-1.2.7.1-r1 pulseaudio" > /etc/portage/package.use/alsa-plugins
+```
+
+This command specifies the version and configuration for `alsa-plugins` to work seamlessly with Firefox. If the version changes in the future, running the installation command again will prompt you with the updated version, allowing you to input the correct information.
+
+#### Proceed to Install Firefox
+
+Now, you can proceed to install Firefox. Gentoo offers two options: building it from source or installing a pre-built binary version. Here are the commands for both options:
+
+To build Firefox from source:
+
+```shell
+emerge --ask --verbose www-client/firefox
+```
+
+To install the pre-built binary version:
+
+```shell
+emerge --ask --verbose www-client/firefox-bin
+```
+
+#### Launching Firefox
+
+Once Firefox is installed, you can easily launch it by typing the following command in your terminal:
+
+For the source-built Firefox:
+
+```shell
+firefox
+```
+
+For the pre-built binary version of Firefox:
+
+```shell
+firefox-bin
+```
+
+By following these steps, you'll have a fully configured Firefox web browser on your Gentoo system, ready for all your browsing needs.
+
+## Summarize
+
+These tools are useful for your daily use of gentoo. Installation is not required, but they will definitely help your future work or experience.
+
+## References
+
+- [Gentoo: Finalizing](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Finalizing)

@@ -4,7 +4,8 @@ title: "Comprehensive Guide to Gentoo Linux: Installing XORG and XFCE with OpenR
 description: "Gentoo Linux of installing XORG and XFCE with the OpenRC init system. Dive into the realm of open-source customization and create a powerful and tailored desktop environment on your Gentoo system."
 tags: ["Open-RC", "Gentoo", "Linux", "XFCE", "XORG"]
 date: 2023-09-20T16:40:21+0800
-thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/xfce-start.png
+thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/Gentoo-xfce-start.png
+lastmod: 2023-09-21T15:30:21+0800
 ---
 
 ## Introduction
@@ -15,7 +16,7 @@ In our previous blog, we successfully installed Gentoo Linux and set up the syst
 
 XFCE is an excellent choice for those seeking a lightweight and efficient desktop environment. Unlike resource-intensive alternatives like GNOME or KDE, XFCE is incredibly light on system resources, requiring less than 200MB of RAM to run smoothly. Its minimalistic design and efficient performance make it ideal for older hardware or users who prefer a snappy and responsive desktop experience. Additionally, XFCE has shorter compilation times during the installation process, making it an attractive option for Gentoo users. Let's dive into the installation process and get XFCE up and running on your Gentoo Linux system.
 
-## Step 1: Update Your System
+## Step 0: Update Your System
 
 Before diving into the XFCE installation, it's crucial to ensure that your Gentoo system is up to date with the latest package information. You can achieve this by running the following commands:
 
@@ -24,82 +25,141 @@ sudo emerge --sync
 sudo emerge --ask --update --deep --newuse @world
 ```
 
-These commands serve the purpose of synchronizing your Portage tree, updating all installed packages, and resolving any new dependencies that may have emerged since your last update.
+### Step 1: Adjust Your `make.conf`
 
-## Step 2: Configure USE Flags
-
-USE flags are an integral part of Gentoo's package management system, allowing you to specify the features and functionalities you want for your packages. To configure USE flags for XFCE, you'll need to edit the `make.conf` file:
+Gentoo's strength lies in its USE flags, which allow us to fine-tune package compilation to meet our specific requirements. To get XFCE up and running, we need to enable specific USE flags.
 
 ```shell
 nano /etc/portage/make.conf
 ```
 
-Now, let's configure the USE flags:
-
-### Enabling X Support
-
-For XFCE to work with X, you need to enable X support in your USE flags. Add the following line to your `make.conf`:
+Add the following lines to your `make.conf`:
 
 ```shell
-USE="X"
-```
-
-This ensures that X support is enabled when you install XFCE.
-
-### Configuring Input Devices
-
-Next, specify the input devices you want to use. In this example, we'll use the "libinput" driver for keyboards and mice:
-
-```shell
+USE="X elogind dbus"
 INPUT_DEVICES="libinput"
-```
-
-### Selecting Graphics Drivers
-
-For graphics card support, set the "VIDEO_CARDS" variable to the appropriate driver. In this case, we're using the "qxl" driver:
-
-```shell
 VIDEO_CARDS="qxl"
 ```
 
-These settings ensure that your Gentoo system is configured to work seamlessly with XFCE's graphical components and input devices.
+These flags enable X support, integrate elogind for session management, and set up D-Bus communication. They also configure input devices to use libinput and specify video cards to support QXL.
 
-## Step 3: Install X.Org Server
+### Step 2: Configure elogind to Start on Boot
 
-X.Org Server is the foundation of your graphical environment. To install it, execute the following command:
+Elogind is essential for session management in XFCE. Ensure that it starts automatically during boot:
 
-```bash
-sudo emerge -av x11-base/xorg-server
+```shell
+rc-update add elogind boot
 ```
 
-This command installs the X.Org server along with any necessary graphics drivers, setting the stage for the XFCE installation.
+### Step 3: Ensuring Graphics Driver Compatibility
 
-By following these steps, you've configured your Gentoo system to support XFCE and have installed the essential X.Org Server components to enable the graphical interface. Now, let's proceed with the XFCE installation.
+Before we dive into the XFCE installation, it's vital to confirm that our system has the requisite graphics drivers in place. This step helps us avoid potential issues and ensures a smooth XFCE installation.
 
-## Step 3: ...
+Run the following command to perform a dry run and simulate the installation of essential graphics drivers:
 
-Not finished yet
-
-...
-
-## Step 5: Configure XFCE
-
-Create the `~/.xinitrc` file for your user:
-
-```bash
-echo "exec startxfce4" >> ~/.xinitrc
+```shell
+emerge --pretend --verbose --ask x11-base/xorg-drivers
 ```
 
-This file specifies the command to start XFCE when you launch X.
+>Tips: This command meticulously checks and confirms that we have the necessary graphics drivers ready to support XFCE. Ensuring the compatibility of these drivers is paramount to a successful XFCE setup.
 
-## Step 6: Start X
+Now, let's proceed confidently, knowing that our system is well-prepared for the XFCE installation journey.
 
-To start the XFCE desktop environment, use the `startx` command:
+### Step 4: Declutter for a Pristine System
 
-```bash
+A well-maintained system is a happy system. It's time to declutter your Gentoo environment and bid farewell to any unnecessary packages. This not only keeps your system running smoothly but also frees up precious space. 
+
+Let's get started with the cleanup:
+
+```shell
+emerge --ask --depclean --verbose
+```
+
+> **Tips:** While this step might not always be mandatory, it's a good practice to keep your system tidy and avoid any potential errors down the road. Plus, who doesn't love a clean and efficient system? 😉🌟
+
+### Step 5: Fine-Tune Poppler Settings
+
+To ensure compatibility and prevent conflicts, we'll instruct the Poppler library not to use Qt5:
+
+```shell
+echo "app-text/poppler -qt5" > /etc/portage/package.use/poppler
+```
+
+### Step 6: Manual Configuration for libdbusmenu
+
+In some cases, manual configuration is necessary, and libdbusmenu is no exception. Let's ensure libdbusmenu is properly set up:
+
+Please note that over time, the required version may change. (At this time is `v16.09.0-r2`)If you encounter any issues, run the installation command once, and the terminal will provide prompts with the necessary commands to echo. Simply follow the prompts to resolve any version-related discrepancies.
+
+Run the following command to set up libdbusmenu with the appropriate configuration:
+
+```shell
+echo ">=dev-libs/libdbusmenu-16.04.0-r2 gtk3" > /etc/portage/package.use/libdbusmenu
+```
+
+With these steps complete, your Gentoo system is now primed and ready to welcome the XFCE desktop environment.
+
+## Gentoo: Installing XFCE
+
+Now comes the exciting part—installing XFCE on your Gentoo system.
+
+### Step 7: Installing XFCE
+
+Execute the following command to install XFCE:
+
+```shell
+emerge --ask --verbose xfce-base/xfce4-meta
+```
+
+This command installs the XFCE meta-package, which includes all the core components of the XFCE desktop environment. It ensures that you have a complete XFCE experience with all the necessary applications and utilities.
+
+### Step 8: Don't Forget the Terminal
+
+In the world of Linux, the terminal is your trusty companion, your guiding star through the vast universe of commands and tasks. Just like having hands and feet, you can't navigate Linux comfortably without it. So, let's make sure you have your terminal ready for action!
+
+>Tips: May not need to be installed, xfce4-meta is already included.
+
+```shell
+emerge --ask --verbose x11-terms/xfce4-terminal
+```
+
+### Step 9: Configuring Your XFCE Session - (Optional)
+
+Before we dive into your XFCE desktop, let's ensure that your system knows how to start it. We'll create a command to initiate XFCE.
+
+```shell
+echo "exec startxfce4" > ~/.xinitrc
+```
+
+Alternatively, if you prefer a quicker way, you can directly enter this command:
+
+```shell
+exec startxfce4
+```
+
+With this configuration in place, you're all set to experience the XFCE desktop environment. Simply execute the command, and you'll be greeted by the XFCE screen on your system. Enjoy the XFCE experience tailored to your liking!
+
+## Final Step: Launching XFCE
+
+With everything set up and ready, it's time to explore the world of XFCE on your Gentoo system. When you log in to your user account, simply type the following command to start your XFCE session:
+
+```shell
 startx
 ```
 
-You should now be greeted by the XFCE desktop!
+And there you have it—your Gentoo system has DE installed (As shown in the image below):
 
-![xfce](/blog/linux/Gentoo/Gentoo-xfce-xorg/xfce-start.png)
+![Started XFCE](/blog/linux/Gentoo/Gentoo-xfce-xorg/Gentoo-xfce-start.png)
+
+## What Comes After?
+
+Congratulations! You've successfully set up your Gentoo system and are now equipped with a powerful foundation for your Linux journey. However, this isn't the end; it's just the beginning.
+
+For a detailed guide on these post-installation steps, check out [this link](/en/blog/linux/gentoo/gentoo-post-installation/) to take your Gentoo experience to the next level.
+
+
+## References
+
+- [Gentoo: Xorg/Guide](https://wiki.gentoo.org/wiki/Xorg/Guide)
+- [Gentoo: Xfce](https://wiki.gentoo.org/wiki/Xfce)
+- [Gentoo: Firefox](https://wiki.gentoo.org/wiki/Firefox)
