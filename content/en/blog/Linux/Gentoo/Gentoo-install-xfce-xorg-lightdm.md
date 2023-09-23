@@ -1,11 +1,11 @@
 ---
 author: "Arcsly"
-title: "Comprehensive Guide to Gentoo Linux: Installing XORG and XFCE with OpenRC"
-description: "Gentoo Linux of installing XORG and XFCE with the OpenRC init system. Dive into the realm of open-source customization and create a powerful and tailored desktop environment on your Gentoo system."
+title: "Comprehensive Guide to Gentoo Linux: Installing XORG, XFCE and LightDM with OpenRC"
+description: "Gentoo Linux of installing XORG, XFCE and LightDM with the OpenRC init system. Dive into the realm of open-source customization and create a powerful and tailored desktop environment on your Gentoo system."
 tags: ["Open-RC", "Gentoo", "Linux", "XFCE", "XORG"]
 date: 2023-09-20T16:40:21+0800
-thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg/Gentoo-xfce-start.png
-lastmod: 2023-09-21T15:30:21+0800
+thumbnail: /blog/linux/Gentoo/Gentoo-xfce-xorg-lightdm/Gentoo-xfce-start.png
+lastmod: 2023-09-23T21:30:50+0800
 ---
 
 ## Introduction
@@ -101,7 +101,7 @@ With these steps complete, your Gentoo system is now primed and ready to welcome
 
 ## Gentoo: Installing XFCE
 
-Now comes the exciting part—installing XFCE on your Gentoo system.
+Now comes the exciting part—installing XFCE, XORG and LightDM on your Gentoo system.
 
 ### Step 7: Installing XFCE
 
@@ -117,13 +117,13 @@ This command installs the XFCE meta-package, which includes all the core compone
 
 In the world of Linux, the terminal is your trusty companion, your guiding star through the vast universe of commands and tasks. Just like having hands and feet, you can't navigate Linux comfortably without it. So, let's make sure you have your terminal ready for action!
 
->Tips: May not need to be installed, xfce4-meta is already included.
+>Just skip this part, no need to be installed, xfce4-meta is already included.
 
 ```shell
 emerge --ask --verbose x11-terms/xfce4-terminal
 ```
 
-### Step 9: Configuring Your XFCE Session - (Optional)
+### Step 9: Configuring Your XFCE Session
 
 Before we dive into your XFCE desktop, let's ensure that your system knows how to start it. We'll create a command to initiate XFCE.
 
@@ -139,9 +139,9 @@ exec startxfce4
 
 With this configuration in place, you're all set to experience the XFCE desktop environment. Simply execute the command, and you'll be greeted by the XFCE screen on your system. Enjoy the XFCE experience tailored to your liking!
 
-## Final Step: Launching XFCE
+#### Testing Launching XFCE
 
-With everything set up and ready, it's time to explore the world of XFCE on your Gentoo system. When you log in to your user account, simply type the following command to start your XFCE session:
+With everything set up and ready, it's time to test your Configuring XFCE on your Gentoo system. When you log in to your user account, simply type the following command to start your XFCE session:
 
 ```shell
 startx
@@ -149,7 +149,100 @@ startx
 
 And there you have it—your Gentoo system has DE installed (As shown in the image below):
 
-![Started XFCE](/blog/linux/Gentoo/Gentoo-xfce-xorg/Gentoo-xfce-start.png)
+![Started XFCE](/blog/linux/Gentoo/Gentoo-xfce-xorg-lightdm/Gentoo-xfce-start.png)
+
+## Step 10: Creating a Normal User
+
+Before we proceed with the installation of LightDM for XFCE, it's essential to create a dedicated normal user. By default, LightDM does not permit root user login, so having a normal user is necessary. Additionally, it's not recommended to perform everyday tasks as the root user for security reasons. Here's a quick guide on creating a normal user:
+
+```shell
+# Create a new user with necessary group memberships and set the shell to /bin/bash
+useradd -m -G users,wheel,audio -s /bin/bash <username>
+```
+
+- `useradd -m -G users,wheel,audio -s /bin/bash <username>`: This command creates a new user account with the specified `<username>` and assigns it to essential groups, including "users," "wheel," and "audio." The `-m` flag ensures a home directory is created for the user, and the `-s /bin/bash` flag sets the user's default shell to `/bin/bash`.
+
+Next, set the user's password:
+
+```shell
+passwd <username>
+```
+
+
+## Step 11: Installing LightDM Display Manager
+
+If you've noticed that some essential functions, such as power off or logout, are not working in your XFCE environment, it's likely due to the absence of a Display Manager. For XFCE, LightDM is a highly recommended Display Manager. Follow these steps to install it:
+
+```shell
+emerge --ask x11-misc/lightdm
+```
+
+### Step 12: Edit the `display-manager` File
+
+Now, let's configure LightDM as the default Display Manager. Open the `display-manager` file and check its content. set the value to `lightdm`:
+
+```shell
+nano /etc/conf.d/display-manager
+```
+
+The file should look like this:
+
+```shell
+DISPLAYMANAGER="lightdm"
+```
+
+### Step 13: Start LightDM on Boot
+
+To ensure LightDM starts automatically with your system, add both `dbus` and `display-manager` to the default runlevel. The `dbus` service is essential as LightDM depends on it for passing messages:
+
+```shell
+rc-update add dbus default
+rc-update add display-manager default
+```
+
+### Step 14: Start LightDM
+
+It's time to start LightDM:
+
+```shell
+rc-service dbus start
+rc-service display-manager start
+```
+
+Once LightDM is successfully started, your system should look similar to the image below:
+
+![lightdm](/blog/linux/Gentoo/Gentoo-xfce-xorg-lightdm/LightDM-start.png)
+
+## Accessing Terminal in TTY Mode
+
+In some cases, you might encounter issues logging into your desktop session or accessing the terminal from within the desktop environment. Here's a quick workaround to access the terminal using TTY (Teletype) mode:
+
+1. Press the following key combination to access TTY mode:
+
+   ```shell
+   Ctrl + Alt + F1
+   ```
+
+   This key combination will take you to the first virtual terminal (TTY1).
+
+2. In the TTY1 terminal, you can create your user account if needed or perform other tasks as necessary. To create a user account, you can follow the steps mentioned in a previous section.
+
+3. Once you've completed your tasks in TTY1, you can return to your desktop environment by pressing the following key combination:
+
+   ```shell
+   logout
+   ```
+
+   or
+
+   ```shell
+   exit
+   ```
+
+   This will take you back to your graphical desktop session.
+
+Using TTY mode provides an alternative way to access your system and perform tasks when you encounter issues within your desktop environment.
+
 
 ## What Comes After?
 
