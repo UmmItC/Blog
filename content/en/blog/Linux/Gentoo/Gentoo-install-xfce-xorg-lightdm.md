@@ -256,3 +256,4 @@ For a detailed guide on these post-installation steps, check out [this link](/en
 - [Gentoo: Xorg/Guide](https://wiki.gentoo.org/wiki/Xorg/Guide)
 - [Gentoo: Xfce](https://wiki.gentoo.org/wiki/Xfce)
 - [Gentoo: Firefox](https://wiki.gentoo.org/wiki/Firefox)
+- [Gentoo: LightDM](https://wiki.gentoo.org/wiki/LightDM)
