@@ -95,3 +95,8 @@ By following the steps in this guide, you've achieved the following:
 4. **Optional: Shortened Path Display:** Learned how to shorten the display of the current directory in your terminal for a cleaner and more efficient prompt.
 
 Now, your terminal not only looks great but is also a powerful tool that can boost your productivity. You can use it for coding, system administration, or any other tasks with ease.
+
+## References
+
+- [Github: Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [zsh: Customizing Powerleve10k prompt](https://stackoverflow.com/questions/61176257/customizing-powerleve10k-prompt)
