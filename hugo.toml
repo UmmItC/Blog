@@ -79,6 +79,30 @@ DefaultContentLanguageInSubdir = true
         url = "tags"
         weight = 3
 
+  [languages.me]
+    contentDir = "content/me" #講故台
+    weight = 1
+    languageName = "講故台"
+    [languages.me.params]
+      introTitle = "Yooolooooo"
+      introSubtitle = "Blog 主我嘅叫春地方，另類 IG FB Story :3"
+      introPhoto = "https://vignette.wikia.nocookie.net/logopedia/images/0/04/Linux_logo.png/revision/latest?cb=20120814052336"
+      logo = "/linux.png"
+    [[languages.me.menu.main]]
+        name = "Blog"
+        url = "blog"
+        weight = 1
+
+    [[languages.me.menu.main]]
+        name = "About"
+        url = "page/about/"
+        weight = 2
+
+    [[languages.me.menu.main]]
+        name = "Tags"
+        url = "tags"
+        weight = 3
+
 [params]
   # Enable the darkmode toggle in header
   darkModeToggle = true
