@@ -8,8 +8,8 @@ DefaultContentLanguage = "tw"
 DefaultContentLanguageInSubdir = true
 [languages]
   [languages.tw]
-    contentDir = "content/tw" #Example language
-    weight = 3
+    contentDir = "content/tw"
+    weight = 1
     languageName = "Taiwan"
     [languages.tw.params]
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
@@ -32,8 +32,8 @@ DefaultContentLanguageInSubdir = true
         weight = 3
 
   [languages.hk]
-    contentDir = "content/hk" #Example language
-    weight = 3
+    contentDir = "content/hk"
+    weight = 2
     languageName = "HongKong"
     [languages.hk.params]
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
@@ -57,7 +57,7 @@ DefaultContentLanguageInSubdir = true
     
   [languages.en]
     contentDir = "content/en" #English
-    weight = 1
+    weight = 3
     languageName = "English"
     [languages.en.params]
       introTitle = "9upper"
@@ -81,7 +81,7 @@ DefaultContentLanguageInSubdir = true
 
   [languages.me]
     contentDir = "content/me" #講故台
-    weight = 1
+    weight = 4
     languageName = "講故台"
     [languages.me.params]
       introTitle = "Yooolooooo"
