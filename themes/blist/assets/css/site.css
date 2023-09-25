@@ -139,6 +139,30 @@ html[lang="hk"] .params-description-custom-01 {
   font-family: SourceHanSansHWTC-Regular;
 }
 
+/*  講故台 Font Styles */
+
+html[lang="me"] h1,
+html[lang="me"] h2,
+html[lang="me"] h3,
+html[lang="me"] h4,
+html[lang="me"] h5,
+html[lang="me"] h6 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="me"] p{
+  font-family: SourceHanSansHWTC-Regular;
+}
+
+html[lang="me"] .header-li-custom-01,
+html[lang="me"] .params-title-custom-01 {
+  font-family: SourceHanSansHWTC-Bold;
+}
+
+html[lang="me"] .params-description-custom-01 {
+  font-family: SourceHanSansHWTC-Regular;
+}
+
 /* Styles specific to the Code-Block */ 
 
 div.highlight pre {
