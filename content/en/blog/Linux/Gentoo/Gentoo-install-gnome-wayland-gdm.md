@@ -5,6 +5,7 @@ description: "Learn how to set up GNOME on your Gentoo system with Wayland and t
 tags: ["Open-RC", "Gentoo", "Linux", "GNOME", "Wayland"]
 date: 2023-09-26T21:22:21+0800
 thumbnail: /blog/linux/Gentoo/Gentoo-gnome-wayland-gdm/neofetch.png
+lastmod: 2023-09-27T17:10:50+0800
 ---
 
 # Introduction
@@ -29,28 +30,49 @@ eselect profile set 6
 
 ## Step 2: Configuring make.conf for GNOME Installation
 
-With your chosen Gentoo profile set, it's time to fine-tune your system to ensure a flawless GNOME installation. This step involves configuring your `make.conf` file, which plays a pivotal role in managing package compilation and runtime behavior. Below, we'll delve into each variable to provide you with a comprehensive understanding of their significance in achieving an optimized GNOME setup:
+With your chosen Gentoo profile set, it's time to fine-tune your system to ensure a flawless GNOME installation. This step involves configuring your `make.conf` file, which plays a pivotal role in managing package compilation and runtime behavior. Follow these instructions to adjust the necessary settings:
 
-- **USE (User Flag for Portage):** The "USE" flag stands at the core of Gentoo's package management system. It exerts influence over compilation options and runtime behaviors for packages. In the context of our GNOME installation, let's explore the purpose of each flag:
+### 1. Open your `make.conf` file
 
-  - **wayland:** Enabling this flag extends support for the Wayland display protocol, a contemporary alternative to the aging X11.
-  - **gtk:** Inclusion of this flag guarantees compatibility with the GTK toolkit, a fundamental requirement for running GNOME applications.
-  - **gnome:** The presence of this flag communicates your intent to install GNOME, prompting the system to fetch the necessary dependencies.
-  - **dbus:** Activation of D-Bus support is crucial for establishing seamless communication between applications and the GNOME desktop environment.
-  - **minimal:** Opting for a minimal installation ensures that only essential GNOME components are included, effectively sidestepping unnecessary bloat.
-  - **X:** Despite the transition to Wayland, retaining compatibility with the X Window System is essential for running graphical applications when required.
-
-- **INPUT_DEVICES:** This variable dictates the input device drivers that your system should employ. By specifying "libinput" as the driver, you're opting for excellent compatibility with a wide range of input devices.
-
-- **VIDEO_CARDS:** In this section, we specify the video card driver to be utilized. "qxl" emerges as the preferred driver, particularly well-suited for virtualized environments, making it an ideal choice for seamless integration with QEMU/KVM setups.
-
-By meticulously configuring these variables within your `make.conf` file using the provided settings, you're effectively preparing your system's package management system for a seamless GNOME installation. Each flag serves a distinct purpose, collectively ensuring that GNOME functions optimally within the Gentoo ecosystem.
+Begin by opening your `make.conf` file in a text editor. You can utilize the "nano" text editor for this task:
 
 ```shell
-USE="... wayland gtk gnome dbus minimal X"
+nano /etc/portage/make.conf
+```
+
+### 2. Modify your USE flags
+
+Inside the `make.conf` file, you'll find a section for your USE flags. Modify this section to include the following flags, which are essential for an optimized GNOME installation:
+
+```shell
+USE="... wayland gtk gnome dbus elogind minimal -X"
 INPUT_DEVICES="libinput"
 VIDEO_CARDS="qxl"
 ```
+
+Let's delve into the purpose of each USE flag:
+
+- **wayland:** Enabling this flag extends support for the Wayland display protocol, a contemporary alternative to the aging X11.
+
+- **gtk:** Inclusion of this flag guarantees compatibility with the GTK toolkit, a fundamental requirement for running GNOME applications.
+
+- **gnome:** The presence of this flag communicates your intent to install GNOME, prompting the system to fetch the necessary dependencies.
+
+- **dbus:** Activation of D-Bus support is crucial for establishing seamless communication between applications and the GNOME desktop environment.
+
+- **elogind:** Enabling this flag ensures proper integration with elogind, a critical component for managing user sessions in Gentoo.
+
+- **minimal:** Opting for a minimal installation ensures that only essential GNOME components are included, effectively sidestepping unnecessary bloat.
+
+- **-X:** The exclusion of the `-X` flag signifies that you're not enabling X Window System compatibility, as Wayland serves as the primary display protocol.
+
+By meticulously configuring these variables within your `make.conf` file using the provided settings, you're effectively preparing your system's package management system for a seamless GNOME installation. Each flag serves a distinct purpose, collectively ensuring that GNOME functions optimally within the Gentoo ecosystem.
+
+### 3. Save your changes
+
+After making these modifications, save the changes to your `make.conf` file. In the "nano" text editor, you can typically save changes by pressing "Ctrl + O" and then confirming the file name with "Enter." To exit the editor, press "Ctrl + X."
+
+By meticulously configuring these variables within your `make.conf` file using the provided settings, you're effectively preparing your system's package management system for a seamless GNOME installation. Each flag serves a distinct purpose, collectively ensuring that GNOME functions optimally within the Gentoo ecosystem.
 
 ## Step 3: Set Package Versions
 
@@ -82,61 +104,71 @@ With GNOME base successfully installed, update your environment and profile sett
 env-update && source /etc/profile
 ```
 
-## Step 6: Enabling GDM (GNOME Display Manager)
+## Step 6: Enabling Elogind for Enhanced GNOME Experience
 
-The GDM (GNOME Display Manager) plays a pivotal role in managing your GNOME desktop environment. In Gentoo, unlike some other distributions, GDM comes bundled with the GNOME base package, eliminating the need for a separate installation. All that's left is to enable it seamlessly.
+Elogind is a vital component that enhances your GNOME desktop environment, ensuring a seamless and feature-rich experience. It provides essential services for managing user sessions, enabling features like auto-login and power management. Here's how to enable Elogind:
 
-### Add GDM to the System Startup
+### Add Elogind to the System Startup
 
-To starts GDM with your system during boot-up, use the following command:
+Begin by adding Elogind to your system's startup processes. This ensures that Elogind launches with your system during boot-up. Execute the following command:
 
 ```shell
 rc-update add elogind boot
 ```
 
-### Start GDM Now
+### Start Elogind Now
 
-You can initiate GDM immediately with this command:
+You can initiate Elogind immediately using the following command:
 
 ```shell
 rc-service elogind start
 ```
 
-### Installing the Display Manager Initialization Script
+Enabling Elogind is a crucial step in preparing your Gentoo system to deliver a flawless GNOME desktop experience. Its role in managing user sessions is pivotal, and it paves the way for the activation of various GNOME features.
 
-To complete the process, you'll need to install the display manager initialization script:
+## Step 7: Installing the Display Manager Initialization Script
+
+To finalize your GNOME setup, you'll need to install the display manager initialization script. This script ensures that your GNOME desktop environment starts efficiently and securely with each system boot:
 
 ```shell
 emerge --ask --noreplace gui-libs/display-manager-init
 ```
 
-By following these steps, you'll enable GDM on your Gentoo system, providing you with a seamless GNOME desktop experience. GDM ensures that your GNOME environment starts efficiently and securely every time you boot your system.
+## Step 8: Configuring the Display Manager
 
-## Step 7: Configure Display Manager
+To make GDM (GNOME Display Manager) the default display manager for your system, a quick configuration change is required. Follow these steps:
 
-To ensure that GDM is the default display manager for your system, make a quick configuration change:
+### Open the Configuration File
+
+Use the nano text editor to open the configuration file for editing:
 
 ```shell
 nano /etc/conf.d/display-manager
 ```
 
-Inside the file, set the `DISPLAYMANAGER` variable to "gdm":
+### Set GDM as the Default Display Manager
+
+Within the file, locate the `DISPLAYMANAGER` variable and set it to "gdm" like this:
 
 ```shell
 DISPLAYMANAGER="gdm"
 ```
 
-To make sure GDM starts automatically during boot, add it to the default runlevel:
+### Ensure Automatic Start at Boot
+
+To guarantee that GDM starts automatically during system boot, add it to the default runlevel with the following command:
 
 ```shell
 rc-update add display-manager default
 ```
 
-Now, start the display manager:
+With these configurations in place, you're ready to start the display manager:
 
 ```shell
 rc-service display-manager start
 ```
+
+These final steps solidify GDM as your default display manager, ensuring a smooth and reliable GNOME desktop experience.
 
 ## Optional: Disabling GNOME Online Accounts
 
