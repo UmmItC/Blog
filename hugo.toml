@@ -4,7 +4,7 @@ title = "Arcsly - 9up blogger"
 theme = "blist"
 disableKinds = ["sitemap", "RSS", "robotsTXT"]
 
-DefaultContentLanguage = "tw"
+DefaultContentLanguage = "en"
 DefaultContentLanguageInSubdir = true
 [languages]
   [languages.tw]
