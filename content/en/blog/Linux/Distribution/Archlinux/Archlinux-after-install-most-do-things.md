@@ -5,6 +5,7 @@ description: "top 10 crucial tasks to perform after installing Arch Linux for an
 tags: ["Arch Linux"]
 date: 2023-08-05T01:08:00+0800
 thumbnail: https://i.redd.it/jsh32mpidhuy.png
+lastmod: 2023-08-28T23:00:20+0800
 ---
 
 ## Setting Up Arch Linux (Keep update)
@@ -44,7 +45,7 @@ By completing these steps, you've successfully activated the multilib repositori
 
 ### 2. Optimize Package Mirrors with Reflector
 
-let's enhance your package management by optimizing your mirrorlist. 
+Using the original mirrorlist is not the best approach. Since this is not a file location close to your location, however using Reflector you can download these packages directly using the location of the country you want. Here is step:
 
 1. Run the following command to install reflector:
 
@@ -75,27 +76,31 @@ By running this command, you'll efficiently optimize your mirrorlist, ensuring f
 
 Elevate your Arch Linux environment with captivating visual enhancements. Follow these simple steps to breathe life into your interface:
 
-#### 3.2 Enable "ILoveCandy" Animation
+#### 3.2 Enable "Candy" Animation with `ILoveCandy`
 
-1. Type the following command and press Enter:
+Enhance your download progress visualization with the playful "Candy" animation, reminiscent of a snake eating your progress bar. Follow these steps to enable it:
 
-```shell
-sudo nano /etc/pacman.conf
-```
+1. Open your terminal and type the following command, then press Enter:
 
-2. In the text editor that opens, navigate using the arrow keys to find the `[options]` section.
+   ```shell
+   sudo nano /etc/pacman.conf
+   ```
 
-3. Add the following line at the end of the `[options]` section:
+2. Inside the text editor, navigate to the `[options]` section.
 
-```shell
-ILoveCandy
-```
+3. Uncomment this flag to enable the "Candy" Animation:
+
+   ```shell
+   ILoveCandy
+   ```
 
 4. Save the file by pressing `Ctrl + S`, then exit the text editor by pressing `Ctrl + X`.
 
-5. Now the process bar will shown the `c` animation!
+5. Your process bar will now display the engaging "Candy" animation!
 
 #### 3.3 Infuse Vibrancy with "Color"
+
+Enhance the clarity of your verbose information by enabling colorful output with the "Color" setting. Say goodbye to plain black and white text:
 
 1. Open your terminal application.
 
@@ -107,26 +112,69 @@ ILoveCandy
 
 3. In the text editor, locate the `[options]` section.
 
-4. Add the following line to enable colorful output:
+4. Uncomment this flag to enable colorful output:
 
-```shell
-Color
-```
+   ```shell
+   Color
+   ```
 
 5. Save the file by pressing `Ctrl + S`, then exit the text editor by pressing `Ctrl + X`.
 
-By following these steps, you'll inject a playful touch with "ILoveCandy" animation and add vibrant colors to your Arch Linux interface. Enjoy a more visually engaging experience!
+#### 3.4 Clearer Verbose Information with "VerbosePkgLists"
 
-### 4. Install Game Drivers (AMDGPU Users)
+Make your package information crystal clear by enabling "VerbosePkgLists." This option separates each package onto its own line, displaying both the old and new versions distinctly:
+
+1. Open your terminal and type the following command, then press Enter:
+
+   ```shell
+   sudo nano /etc/pacman.conf
+   ```
+
+2. Inside the text editor, locate the `[options]` section.
+
+3. Uncomment this flag to enable VerbosePkgLists output:
+
+   ```shell
+   VerbosePkgLists
+   ```
+
+4. Save the file by pressing `Ctrl + S`, then exit the text editor by pressing `Ctrl + X`.
+
+### 4. Multi-threaded Package Downloads with `ParallelDownload`
+
+Optimize your package downloads by utilizing multiple threads with `ParallelDownload`. Instead of downloading one file at a time, you can specify the number of concurrent downloads to speed up the process:
+
+1. Open your terminal and type the following command, then press Enter:
+
+   ```shell
+   sudo nano /etc/pacman.conf
+   ```
+
+2. Inside the text editor, locate the `[options]` section.
+
+3. Add the following line to enable ParallelDownload with, for example, 5 concurrent downloads:
+
+   ```shell
+   ParallelDownload 5
+   ```
+
+4. Save the file by pressing `Ctrl + S`, then exit the text editor by pressing `Ctrl + X`.
+
+Now you can enjoy faster downloads with the ability to retrieve multiple files simultaneously!
+
+### 5. Install Game Drivers (AMDGPU Users)
 
 For those using AMDGPU, elevate your gaming potential. Execute:
 
 ```shell
 sudo pacman -Sy
-sudo pacman -S lib32-mesa mesa lib32-vulkan-radeon vulkan-radeon amdvlk xf86-video-amdgpu
+sudo pacman -S lib32-mesa mesa \
+lib32-vulkan-radeon vulkan-radeon \
+amdvlk \
+xf86-video-amdgpu
 ```
 
-### 5. Gnome Users: Enhance Browsing Experience
+### 6. Gnome Users: Enhance Browsing Experience
 
 For Gnome users, elevate your browsing capabilities with the gnome-browser-connector. Install it using:
 
@@ -138,11 +186,11 @@ Once installed, you'll be able to effortlessly install extensions from [https://
 
 By completing these tasks, you'll optimize your Arch Linux environment, enriching your experience and unleashing its full potential. Enjoy your enhanced system!
 
-### 6. Customize Your GNOME Environment
+### 7. Customize Your GNOME Environment
 
 Arch Linux offers a default GNOME environment that's visually appealing, but you still can customize it to reflect your unique style and preferences.
 
-### 7: Install Yay AUR Helper and Yay-bin for Different Needs
+### 8: Install Yay AUR Helper
 
 Simplifying software management on Arch Linux is the `yay` package manager, designed to streamline the acquisition and organization of software from the Arch User Repository (AUR)—a vibrant hub of community-contributed packages. Depending on your preference for customization and speed, you have two choices: `yay` and `yay-bin`.
 
@@ -212,7 +260,7 @@ Here's a comprehensive guide to installing both `yay` and `yay-bin` using Git, a
 
 By providing separate installation paths for `yay` and `yay-bin` while maintaining a consistent command for usage, you have the flexibility to personalize your Arch Linux experience with either the meticulousness of source-based installation or the swiftness of pre-compiled binaries.
 
-### 8. Install Your Daily Software
+### 9. Install Your Daily Software
 
 With your Arch Linux system set up and customized, it's time to install some essential software that you use on a daily basis.
 Install the Firefox web browser and VLC media player using the `yay` AUR helper.
@@ -235,11 +283,11 @@ Install the Firefox web browser and VLC media player using the `yay` AUR helper.
 
 With Firefox and VLC installed, you now have access to a web browser and media player, allowing you to browse the web and enjoy multimedia content on your Arch Linux system.
 
-### 9. Install Firewall (UFW)
+### 10. Install Firewall (UFW)
 
 When it comes to securing your system, a firewall plays a crucial role in controlling incoming and outgoing network traffic. While Arch Linux doesn't come with a pre-installed firewall, you can easily set up the Uncomplicated Firewall (UFW) to manage network access.
 
-   #### 1. Install UFW 
+   #### Install UFW 
    
    open a terminal and enter the following command:
 
@@ -247,7 +295,7 @@ When it comes to securing your system, a firewall plays a crucial role in contro
    sudo pacman -S ufw
    ```
 
-   #### 2. Enable UFW
+   #### Enable UFW
    
    After installing UFW, enable it with the following command:
 
@@ -256,5 +304,8 @@ When it comes to securing your system, a firewall plays a crucial role in contro
    ```
 
 Once UFW is enabled, you can start managing your firewall rules to enhance the security of your Arch Linux system. Don't forget to configure UFW rules to allow necessary network services while blocking unauthorized access.
+
+
+## Conclusion
 
 By following these steps, you've covered some of the most essential tasks to set up and optimize your Arch Linux system for daily use. Whether you're browsing the web, enjoying multimedia, or ensuring network security, you're well-equipped to make the most out of your Arch Linux experience.
