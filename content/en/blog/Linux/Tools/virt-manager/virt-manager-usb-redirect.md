@@ -37,7 +37,7 @@ Now, you'll see a list of available USB devices. Each device will have a checkbo
 
 ## Step 5: Apply and Use
 
-Once you've selected the desired USB device(s), click the "Apply" or "OK" button in the window. Virt-Manager will now redirect the chosen USB device(s) to your virtual machine.
+Once you've selected the desired USB device(s), click the "Close" button to close this windows. Now Virt-Manager will now redirect the chosen USB device(s) to your virtual machine.
 
 ### Is USB Working?
 
