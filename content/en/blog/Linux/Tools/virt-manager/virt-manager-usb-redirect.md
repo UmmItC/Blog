@@ -29,13 +29,13 @@ In the top menu bar, click on "Virtual Machine." A dropdown menu will appear. Th
 
 ![USB](/blog/linux/linux-tools/virt-manager/virt-manger-usb-redirect/open-menu-2.png)
 
-## Step 4: Select USB Devices
+## Step 3: Select USB Devices
 
 Now, you'll see a list of available USB devices. Each device will have a checkbox next to it. Simply click on the checkbox next to the USB device you want to redirect into your virtual machine.
 
 ![USB](/blog/linux/linux-tools/virt-manager/virt-manger-usb-redirect/select.png)
 
-## Step 5: Apply and Use
+## Step 4: Apply and Use
 
 Once you've selected the desired USB device(s), click the "Close" button to close this windows. Now Virt-Manager will now redirect the chosen USB device(s) to your virtual machine.
 
