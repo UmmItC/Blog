@@ -74,8 +74,6 @@ and Now Save the file and exit Vim using `:wq`.
 
 Now, reboot your system, and you should see the `/sharedata` folder automatically mounted on your system.
 
-This revised version includes the step to create a shared directory in the virtual machine, ensuring a complete and detailed guide for file sharing.
-
 ## References
 
 - [QEMU/KVM - Virt-Manager | Folder sharing and USB Redirection](https://onion.tube/watch?v=crDuKm6XNv4)
