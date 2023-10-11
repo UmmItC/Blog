@@ -13,7 +13,7 @@ Windows operating systems often come with a lot of pre-installed software, which
 
 ### How Can ReviOS Help?
 
-In this article, I will introduce you to ReviOS, a program designed to strip down unnecessary elements from your Windows installation, including applications like EDGE and Internet Explorer. By removing these programs, ReviOS can potentially double your Windows system's speed. It achieves this by eliminating up to 70 built-in applications that often slow down your computer.
+In this article, I will introduce you to ReviOS, a program designed specifically for Windows 10/11 to strip down unnecessary elements from your installation, including applications like EDGE and Internet Explorer. By removing these programs, ReviOS can potentially double your Windows system’s speed. It achieves this by eliminating up to 70 built-in applications that often slow down your Windows 10/11 computer.
 
 ### What Exactly is ReviOS?
 
