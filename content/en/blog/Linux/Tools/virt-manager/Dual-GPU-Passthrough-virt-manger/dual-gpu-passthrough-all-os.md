@@ -16,18 +16,18 @@ List the general prerequisites for setting up QEMU/KVM, such as hardware and sof
 ### Windows 10 on QEMU/KVM
 Provide a brief introduction and guide users to an external guide for detailed instructions on installing Windows 10 on QEMU/KVM.
 
-Follow this guide: [Dual GPU Passthrough Guided Part 7: Installing Windows and Enabling Full Passthrough](/en/blog/linux/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part7)
+Follow this guide: [Dual GPU Passthrough Guided Part 7: Installing Windows and Enabling Full Passthrough](/en/blog/linux/tools/virt-manager/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part7/)
 
 ###  Windows 11 on QEMU/KVM
 Introduce the process of installing Windows 11 on QEMU/KVM and direct users to a specific guide for step-by-step instructions.
 
-Follow this guide: [Dual GPU Passthrough Guided Part 8: Installing Windows 11 via Virtual TPM](/en/blog/linux/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part8/)
+Follow this guide: [Dual GPU Passthrough Guided Part 8: Installing Windows 11 via Virtual TPM](/en/blog/linux/tools/virt-manager/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part8/)
 
 ### Linux on QEMU/KVM (UEFI Only)
 
 Explain the straightforward process of installing Linux on QEMU/KVM, focusing on the UEFI-based installation method.
 
-Follow this guide: [Dual GPU Passthrough Guided Part 9: Installing Linux and Enabling Full Passthrough](/en/blog/linux/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part9/)
+Follow this guide: [Dual GPU Passthrough Guided Part 9: Installing Linux and Enabling Full Passthrough](/en/blog/linux/tools/virt-manager/dual-gpu-passthrough-virt-manger/dual-gpu-passthrough-part9/)
 
 >Note:  only Make sure to use a UEFI-compatible ISO for the installation. for  real monitor switching to  `Ramfb`.
 
