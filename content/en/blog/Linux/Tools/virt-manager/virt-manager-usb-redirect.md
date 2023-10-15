@@ -41,7 +41,7 @@ Once you've selected the desired USB device(s), click the "Close" button to clos
 
 ### Is USB Working?
 
-This function is effective immediately, you can enter `lsblk` command to check whether it has been effective or not.
+This function is effective immediately, you can enter `lsusb` command to check whether it has been effective or not.
 
 ![lsusb](/blog/linux/linux-tools/virt-manager/virt-manger-usb-redirect/lsusb.png)
 
