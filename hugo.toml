@@ -15,7 +15,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
       introSubtitle = "i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
-      logo = "/linux.png"
+      logo = "/linux-logo.png"
     [[languages.tw.menu.main]]
         name = "文章"
         url = "blog"
@@ -39,7 +39,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "中學生一個。來自香港，喜歡寫文章和學習科技。"
       introSubtitle = "i use Arch btw :)"
       introPhoto = "https://www.raspberryitaly.com/wp-content/uploads/2015/04/Arch-linux-logo.png"
-      logo = "/linux.png"
+      logo = "/linux-logo.png"
     [[languages.hk.menu.main]]
         name = "文章"
         url = "blog"
@@ -63,7 +63,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "9upper"
       introSubtitle = "This website is about my diary and study record. i use Arch btw :)"
       introPhoto = "https://vignette.wikia.nocookie.net/logopedia/images/0/04/Linux_logo.png/revision/latest?cb=20120814052336"
-      logo = "/linux.png"
+      logo = "/linux-logo.png"
     [[languages.en.menu.main]]
         name = "Blog"
         url = "blog"
@@ -87,7 +87,7 @@ DefaultContentLanguageInSubdir = true
       introTitle = "Yooolooooo"
       introSubtitle = "Blog 主我嘅叫春地方，另類 IG FB Story :3"
       introPhoto = "https://vignette.wikia.nocookie.net/logopedia/images/0/04/Linux_logo.png/revision/latest?cb=20120814052336"
-      logo = "/linux.png"
+      logo = "/linux-logo.png"
     [[languages.me.menu.main]]
         name = "Blog"
         url = "blog"
@@ -126,7 +126,7 @@ DefaultContentLanguageInSubdir = true
 
   # Custom copyright - optional
   copyright = "Copyright © 2020-2023 - Arcsly"
-  favicon = "/linux.png"
+  favicon = "/linux-logo.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
