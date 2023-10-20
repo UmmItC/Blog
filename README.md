@@ -1,20 +1,34 @@
 # Introduction
 
-Arcsly blog server was using Hugo and [Blist](https://blist.vercel.app/en/) themes. but i modify something.
+Arcsly blog server was using [Hugo](https://gohugo.io/) and [Blist](https://blist.vercel.app/en/) themes. but i modify something.
 
 ## Usage
 
 Follow these steps to host this website:
 
-### 1. Install Hugo
+### 1. Install Required Packages
 
-You need install hugo, git, nodejs and npm , type the following commnad:
+You need install hugo, git, nodejs and npm, type the following commnad:
 
 ```shell
 sudo pacman -S hugo git nodejs npm
 ```
 
-### 2. Install Required Packages
+### 2. Clone the Repository
+
+Clone the repository:
+
+```shell
+git clone --recursive https://codeberg.org/Arcsly/Arcsly-server.git
+```
+
+Now navigate to the git repo repository.
+
+```shell
+cd Arcsly-server
+```
+
+### 3. Install Required node modules
 
 Make sure `nodejs` and `npm` are installed on your computer:
 
@@ -24,21 +38,12 @@ npm install postcss-cli
 npx browserslist@latest --update-db
 ```
 
-### 3. Clone the Repository
-
-Ensure that you have `git` installed on your computer, and then clone the repository:
-
-```shell
-git clone https://codeberg.org/Arcsly/Arcsly-server.git
-```
-
-#### Start the Server
+## Start the Server
 
 To run your server, use the following command:
 
 ```shell
-npm start  # Use npm to run
-hugo server --watch --verbose # Use Hugo to run
+hugo server --watch --logLevel debug
 ```
 
 ## Build HTML Files
@@ -46,5 +51,5 @@ hugo server --watch --verbose # Use Hugo to run
 The HTML files are built to the default paths in `./public/`. After building, upload them to your server:
 
 ```shell
-hugo -v
+hugo --logLevel debug
 ```
