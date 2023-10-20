@@ -5,7 +5,7 @@ description: "Explore this in-depth guide to installing Gentoo Linux using OpenR
 tags: ["Open-RC", "Gentoo", "Linux"]
 date: 2023-09-16T17:30:34+0800
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/35/Faenza-distributor-logo-gentoo.svg
-lastmod: 2023-09-20T13:27:10+0800
+lastmod: 2023-10-20T15:50:30+0800
 ---
 
 ## Introduction
@@ -156,10 +156,47 @@ By executing this command, you're linking your Gentoo root partition (/dev/vda3)
 
 ## Step 3: Setting the System Clock
 
-```bash
-date <MMDD><HHMM><YYYY>
+Now, ensuring your system's clock is accurate is crucial. An incorrect system time can cause download errors and lead to issues post-installation. Here's a quick guide on how to verify and set the date and time in Gentoo.
+
+### Checking Current Date and Time
+
+Firstly, check your system's date and time by running the date command:
+
+```shell
+date
 ```
-Set the system clock to the current date and time by replacing `<MMDD><HHMM><YYYY>` with the appropriate values.
+
+if the displayed date and time are significantly off, it needs to be corrected.
+
+### Automatic Time Sync
+
+Automatic time synchronization using a time server is the best option. Gentoo's official live environments include the `chronyd` command, which can sync your system clock to UTC time using a time server. (`ntp.org`) Note that this method requires a working network configuration.
+
+>Warning: Automatic time sync reveals your system's IP address to the time server.
+
+```shell
+chronyd -q
+```
+
+### Manual Time Setting
+
+The date command can manually set the system clock. Use the following format: `MMDDhhmmYYYY (Month, Day, Hour, Minute, and Year)`.
+
+```bash
+date <MMDD><hhmm><YYYY>
+```
+
+Set the system clock to the current date and time by replacing `<MMDD><hhmm><YYYY>` with the appropriate values.
+
+#### Example for Setting day
+
+To set the date to Friday October 20, 16:40:
+
+```shell
+102016402023
+```
+
+Now, it’s time to download Stage3 Tarball.
 
 ## Step 4: Downloading the Stage3 Tarball
 
@@ -248,6 +285,35 @@ In Gentoo Linux, the `make.conf` file is a critical configuration file that empo
 
 These settings in `make.conf` empower you to fine-tune the compilation process on your Gentoo system, resulting in optimized software performance and efficient resource utilization. While the provided values are suitable for many setups, feel free to customize them to better match your hardware and preferences.
 
+## Selecting Fast Mirrors for Source Downloads (Optional)
+
+To optimize your source downloads and ensure a swift installation process, choosing a fast mirror is highly recommended. Portage, Gentoo's package manager, relies on the `GENTOO_MIRRORS` variable in the `make.conf` file to determine the mirrors to use. Here's how you can conveniently select mirrors using the `mirrorselect` tool:
+
+### Using `mirrorselect` Tool
+
+1. **Install `mirrorselect` Tool:**
+   Ensure you have the `mirrorselect` tool installed. If not, you can install it using:
+
+   ```bash
+   emerge --ask app-portage/mirrorselect
+   ```
+
+2. **Run `mirrorselect`:**
+   Execute the following command to initiate `mirrorselect`:
+
+   ```bash
+   mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+   ```
+
+   This command queries the available mirrors and appends the selected mirrors to your `make.conf` file, optimizing your source downloads.
+
+3. **Selecting Mirrors:**
+   - Use the arrow keys to navigate to your preferred mirror(s) in the list displayed.
+   - Press the spacebar to select one or more mirrors.
+   - Once selected, press `Enter` to confirm your choice(s).
+
+By using `mirrorselect`, you ensure that Portage fetches packages from nearby mirrors, significantly enhancing download speeds. This step is optional but highly recommended for a smoother Gentoo installation experience.
+
 ## Step 7: Repository Configuration
 
 In this step, we establish the necessary configuration for managing package repositories using Portage, Gentoo's package manager. This allows you to define additional repositories beyond the defaults.
@@ -271,8 +337,6 @@ cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos
 ```
 
 This command copies the default repository settings from their typical location in `/usr/share/portage/config/repos.conf` to the specific location `/mnt/gentoo/etc/portage/repos.conf/gentoo.conf`. By doing this, you provide Portage with the necessary information to access software repositories.
-
-Setting up the repository configuration correctly is essential for Gentoo's package management system to function effectively.
 
 ## Step 8: Network Configuration files
 
