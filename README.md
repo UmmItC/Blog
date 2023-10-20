@@ -19,7 +19,7 @@ sudo pacman -S hugo git nodejs npm
 Clone the repository:
 
 ```shell
-git clone --recursive https://codeberg.org/Arcsly/Arcsly-server.git
+git clone --recursive https://codeberg.org/Arcsly/Server.git
 ```
 
 Now navigate to the git repo repository.
