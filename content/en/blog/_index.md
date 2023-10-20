@@ -1,4 +1,0 @@
----
-author: Arcsly
-title: Blog
----

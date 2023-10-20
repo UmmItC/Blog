@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = git@codeberg.org:Arcsly/Article.git
