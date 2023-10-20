@@ -35,7 +35,7 @@ Make sure `nodejs` and `npm` are installed on your computer:
 ```shell
 npm install
 npm install postcss-cli
-npx browserslist@latest --update-db
+npx update-browserslist-db@latest
 ```
 
 ## Start the Server
