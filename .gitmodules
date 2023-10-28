@@ -1,3 +1,6 @@
 [submodule "content"]
 	path = content
 	url = git@codeberg.org:Arcsly/Article.git
+[submodule "themes/blist"]
+	path = themes/blist
+	url = git@codeberg.org:Arcsly/Blist-theme.git
