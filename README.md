@@ -22,20 +22,20 @@ Clone the repository:
 git clone --recursive https://codeberg.org/Arcsly/Server.git
 ```
 
-### 3. Update submodule
-
-Make sure submodule are updated to lastest commits.
-
-```shell
-git submodule update --remote --merge
-```
-
-### 4. Navigate to the directory
+### 3. Navigate to the directory
 
 Now navigate to the git repo repository.
 
 ```shell
 cd Server
+```
+
+### 4. Update submodule
+
+Make sure submodule are updated to lastest commits.
+
+```shell
+git submodule update --remote --merge
 ```
 
 ### 5. Install Required node modules
