@@ -25,7 +25,7 @@ git clone --recursive https://codeberg.org/Arcsly/Server.git
 Now navigate to the git repo repository.
 
 ```shell
-cd Arcsly-server
+cd Server
 ```
 
 ### 3. Install Required node modules
