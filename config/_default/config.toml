@@ -32,7 +32,7 @@ buildFuture = false
 #  priority = 0.5
 
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "JSON"]
 
 [related]
   threshold = 0
