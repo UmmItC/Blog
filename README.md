@@ -1,4 +1,8 @@
-# Introduction
+# IMPORTANT
+
+⚠️  This is a past version of the blist theme used on my blog server. I am using TAG to archive my previous blog versions. But if you prefer to use this older version, that is fine. Just please ensure that you are using the 'blist-theme' tag version of this, otherwise, it will not function properly.
+
+## Introduction
 
 Arcsly blog server was using [Hugo](https://gohugo.io/) and [Blist](https://blist.vercel.app/en/) themes. but i modify something.
 
