@@ -1,7 +1,6 @@
 [submodule "content"]
 	path = content
-	url = https://codeberg.org/Arcsly/Article.git
-	branch = blist-theme
+	url = git@codeberg.org:Arcsly/Article.git
 [submodule "themes/blist"]
 	path = themes/blist
-	url = https://codeberg.org/Arcsly/Blist-theme.git
+	url = git@codeberg.org:Arcsly/Blist-theme.git
