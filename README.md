@@ -23,7 +23,7 @@ sudo pacman -S hugo git nodejs npm
 Clone the repository:
 
 ```shell
-git clone --recursive https://codeberg.org/Arcsly/Server.git
+git clone --branch blist-theme --single-branch --recursive https://codeberg.org/Arcsly/Server.git
 ```
 
 ### 3. Navigate to the directory
