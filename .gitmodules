@@ -2,3 +2,6 @@
 	path = themes/blowfish
 	url = https://github.com/nunocoracao/blowfish.git
 	branch = main
+[submodule "content/posts"]
+	path = content/posts
+	url = git@codeberg.org:Arcsly/Article.git
