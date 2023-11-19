@@ -89,8 +89,8 @@ disableImageOptimization = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
 
-[sitemap]
-  excludedKinds = ["taxonomy", "term"]
+#[sitemap]
+ # excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
   showTermCount = true
