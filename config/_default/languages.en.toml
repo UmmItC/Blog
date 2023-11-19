@@ -11,7 +11,7 @@ title = "9upper"
    logo = "img/logo.png"
    secondaryLogo = "img/secondary-logo.png"
    description = "My awesome website"
-   copyright = "Copy, _right?_ :thinking_face:"
+   copyright = "Copyright © 2020-2023 - Arcsly"
 
  [author]
    name = "9upper"
