@@ -14,10 +14,10 @@ title = "Blowfish"
    copyright = "Copy, _right?_ :thinking_face:"
 
  [author]
-   name = "Your name here"
-   image = "img/blowfish_logo.png"
-   headline = "I'm only human"
-   bio = "A little bit about you"
+   name = "9upper"
+   image = "../assets/linux-logo.png"
+   headline = "i use linux btw"
+   bio = "eat, sleep and code."
    links = [
      { email = "mailto:hello@your_domain.com" },
      { link = "https://link-to-some-website.com/" },
