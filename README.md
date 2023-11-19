@@ -34,15 +34,7 @@ Now navigate to the git repo repository.
 cd Server
 ```
 
-### 4. Update submodule
-
-Make sure submodule are updated to lastest commits.
-
-```shell
-git submodule update --remote --merge
-```
-
-### 5. Install Required node modules
+### 4. Install Required node modules
 
 Make sure `nodejs` and `npm` are installed on your computer:
 
