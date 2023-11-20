@@ -8,20 +8,17 @@ title = "9upper"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-   logo = "img/logo.png"
+   logo = "img/linux-logo.png"
    secondaryLogo = "img/secondary-logo.png"
-   description = "My awesome website"
+   description = "Welcome to my blog."
    copyright = "Copyright © 2020-2023 - Arcsly"
 
  [author]
    name = "9upper"
-   image = "../assets/linux-logo.png"
+   image = "img/linux-logo.png"
    headline = "i use linux btw"
    bio = "eat, sleep and code."
    links = [
-     { email = "mailto:hello@your_domain.com" },
-     { link = "https://link-to-some-website.com/" },
      { discord = "https://discord.gg/invitecode" },
      { gitlab = "https://gitlab.com/username" },
-     { mastodon = "https://mastodon.instance/@username" }
    ]
