@@ -113,19 +113,6 @@ defaultFeaturedImage = "img/Linux/Distro/Gentoo/official-gentoo-logo.svg" # used
   cardView = false
   cardViewScreenWidth = false
 
-[firebase]
-  # apiKey = "XXXXXX"
-  # authDomain = "XXXXXX"
-  # projectId = "XXXXXX"
-  # storageBucket = "XXXXXX"
-  # messagingSenderId = "XXXXXX"
-  # appId = "XXXXXX"
-  # measurementId = "XXXXXX"
-
-[fathomAnalytics]
-  # site = "ABC12345"
-  # domain = "llama.yoursite.com"
-
 [buymeacoffee]
   # identifier = ""
   # globalWidget = true
