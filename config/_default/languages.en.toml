@@ -16,7 +16,7 @@ title = "9upper"
  [author]
    name = "9upper"
    image = "img/Tux/Tux-cute.png"
-   headline = "I use linux btw. Peguins so cute."
+   headline = "I use linux btw. Penguin so cute."
    bio = "eat, sleep and code."
    links = [
      { email = "mailto:hello@your_domain.com" },
