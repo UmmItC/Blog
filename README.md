@@ -30,6 +30,14 @@ Now navigate to the git repo repository.
 cd Server
 ```
 
+### 4. Update submodules
+
+Ensure the submodules are lastest version.
+
+```shell
+git submodule update --recursive --remote
+```
+
 ## Start the Server
 
 To run your server, use the following command:
