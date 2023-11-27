@@ -25,8 +25,13 @@ Penguin for sure. really cute :3
 
 ### Core
 
-- Hugo for SSG and blowfish theme.
-- Umami for web analytics
+Umami for web analytics, Hugo SSG and blowfish theme.
+
+{{< github repo="gohugoio/hugo" >}}
+
+{{< github repo="nunocoracao/blowfish" >}}
+
+{{< github repo="umami-software/umami" >}}
 
 ### Privacy policy
 
