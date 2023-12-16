@@ -1,14 +1,12 @@
 ## Introduction
 
-Arcsly blog server was using [Hugo](https://gohugo.io/) and [Blowfish](https://blowfish.page/) themes.
+UmmIt server utilizes [Hugo](https://gohugo.io/) with the [Blowfish](https://blowfish.page/) theme to power its website. Follow the steps below to host this website on your server.
 
-## Usage
-
-Follow these steps to host this website:
+## Usage Guide
 
 ### 1. Install Required Packages
 
-You need install hugo and git, type the following commnad:
+Ensure you have the necessary packages installed by running the following command:
 
 ```shell
 sudo pacman -S hugo git
@@ -16,23 +14,23 @@ sudo pacman -S hugo git
 
 ### 2. Clone the Repository
 
-Clone the repository:
+Clone the repository, including its submodules:
 
 ```shell
-git clone --recursive git@codeberg.org:Arcsly/Server.git
+git clone --recursive git@codeberg.org:UmmIt/Blog.git
 ```
 
-### 3. Navigate to the directory
+### 3. Navigate to the Repository
 
-Now navigate to the git repo repository.
+Move into the cloned repository directory:
 
 ```shell
 cd Server
 ```
 
-### 4. Update submodules
+### 4. Update Submodules
 
-Ensure the submodules are lastest version.
+Ensure all submodules are up to date:
 
 ```shell
 git submodule update --recursive --remote
@@ -48,8 +46,10 @@ hugo server --watch --logLevel debug
 
 ## Build HTML Files
 
-The HTML files are built to the default paths in `./public/`. After building, upload them to your server:
+Build the HTML files to the default path `./public/`. After building, upload them to your server:
 
 ```shell
 hugo --logLevel debug
 ```
+
+If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) for additional support.
