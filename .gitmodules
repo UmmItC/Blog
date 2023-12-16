@@ -1,7 +1,7 @@
 [submodule "content/posts"]
 	path = content/posts
-	url = git@codeberg.org:Arcsly/Article.git
+	url = git@codeberg.org:UmmIt/Article.git
 [submodule "themes/blowfish"]
 	path = themes/blowfish
-	url = git@codeberg.org:Arcsly/Blowfish-theme.git
+	url = git@codeberg.org:Ummit/Blowfish-theme.git
 	branch = custom-branch
