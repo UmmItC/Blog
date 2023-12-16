@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "9upper"
+title = "UmmIt"
 
 [params]
   displayName = "EN"
@@ -11,7 +11,7 @@ title = "9upper"
    logo = "img/Tux/Tux-cute.png"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to my blog."
-   copyright = "Copyright © 2020-2023 - Arcsly"
+   copyright = "Copyright © 2020-2023 - UmmIt"
 
  [author]
    name = "9upper"
