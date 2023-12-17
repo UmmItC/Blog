@@ -51,3 +51,9 @@ To block these things, I recommend using uBlock Origin or a similar tool. If you
 Additionally, this blog site is completely open source. See [here](https://codeberg.org/UmmIt/Blog).
 
 Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://analytics.eu.umami.is/share/HCL1bUSg0XgAfLOv/UmmIt).
+
+### Contact Us
+
+The contact method currently accepts `Email only`, email please send via: `blog@ummit.dev`
+
+For email please mention that you're from my blog site. otherwise I might think you're Bot Spam.
