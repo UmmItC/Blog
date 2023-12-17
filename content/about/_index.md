@@ -1,6 +1,8 @@
 ---
+author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
+lastmod: 2023-12-17T21:07:30+08:00
 ---
 
 ## Who are you?
@@ -11,11 +13,11 @@ I'm an Arch Linux & Gentoo user. Also a FOSS user. I blog for fun and interest.
 
 ## Why this blog?
 
-This blog is all about sharing my experiences. Like how to install arch linux. well, there is a lot of documentation out there, but there is too much to read and think about how to do it. So I wrote a blog post to make it easier for you to follow along.
+This blog aims to share my experiences and provide a guide on how to install Arch Linux.  This blog aims to share my experiences. There are many articles that guide you on how to install Arch Linux. and my article provides simple and concise instructions, making it easy for readers to follow. Happy to help you guys!
 
 ### Blog in general
 
-90% of the time I will also be writing about Linux. The other 10% is games, windows, mac.
+I will mainly write about Linux, with occasional posts about games, Windows, Mac, and other topics.
 
 ### Favourite animal
 
@@ -35,8 +37,15 @@ Umami for web analytics, Hugo SSG and blowfish theme.
 
 ### Privacy policy
 
-I use [umami](https://github.com/umami-software/umami) to track some content for me. Also, cloudflare for CDN. and I don't have the cloudflare web analytics enabled. And that's it.
+To ensure the transparency of my site, I'll explain what this site uses. This will make it easier for you to understand and trust my site, thank you :))
 
-But basically, using ublock origin or something else that just blocks this thing. and if you don't belive me, press your F12 to see the network active analysis :)
+1. I track some content using [Umami](https://github.com/umami-software/umami) and use Cloudflare for CDN.
+2. I have not enabled Cloudflare web analytics.
 
-And this blog site is completely open source. See [Here](https://codeberg.org/Arcsly/Server)
+And that's it.
+
+To block these things, I recommend using uBlock Origin or a similar tool. If you don't believe me, press F12 to see the network activity analysis :)
+
+Additionally, this blog site is completely open source. See [here](https://codeberg.org/UmmIt/Blog).
+
+Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://analytics.eu.umami.is/share/HCL1bUSg0XgAfLOv/UmmIt).
