@@ -2,7 +2,7 @@
 author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2023-12-17T21:07:30+08:00
+lastmod: 2023-12-17T21:35:40+08:00
 ---
 
 ## Who are you?
@@ -13,11 +13,13 @@ I'm an Arch Linux & Gentoo user. Also a FOSS user. I blog for fun and interest.
 
 ## Why this blog?
 
-This blog aims to share my experiences and provide a guide on how to install Arch Linux.  This blog aims to share my experiences. There are many articles that guide you on how to install Arch Linux. and my article provides simple and concise instructions, making it easy for readers to follow. Happy to help you guys!
+This blog is intended to share my experiences, for example there are a number of articles that guide you on how to install Arch Linux, the installation process can be overwhelming due to the amount of documentation available. Therefore, my articles make it easier for you by explaining the installation method in a simple and clear way. Happy to help you guys!
 
 ### Blog in general
 
 I will mainly write about Linux, with occasional posts about games, Windows, Mac, and other topics.
+
+This blog is open source, transparency, and no spam.
 
 ### Favourite animal
 
