@@ -21,7 +21,5 @@ title = "UmmIt"
    links = [
      { email = "mailto:blog@ummit.dev" },
      { link = "https://ummit.dev" },
-     { discord = "https://discord.gg/invitecode" },
-     { gitlab = "https://gitlab.com/username" },
-     { mastodon = "https://mastodon.instance/@username" }
+     { gitlab = "https://gitlab.com/username" }
    ]
