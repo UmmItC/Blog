@@ -25,7 +25,7 @@ git clone --recursive git@codeberg.org:UmmIt/Blog.git
 Move into the cloned repository directory:
 
 ```shell
-cd Server
+cd Blog
 ```
 
 ### 4. Update Submodules
