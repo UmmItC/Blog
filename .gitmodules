@@ -1,6 +1,7 @@
 [submodule "content/posts"]
 	path = content/posts
 	url = git@codeberg.org:UmmIt/Article.git
+	branch = master
 [submodule "themes/blowfish"]
 	path = themes/blowfish
 	url = git@codeberg.org:Ummit/Blowfish-theme.git
