@@ -52,4 +52,4 @@ Build the HTML files to the default path `./public/`. After building, upload the
 hugo --logLevel debug
 ```
 
-If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) for additional support. Also, if you need help, feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog).
+If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) for additional support. Also, if you need help, feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues).
