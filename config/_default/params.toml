@@ -18,7 +18,7 @@ enableCodeCopy = true
 disableImageOptimization = true
 
 defaultBackgroundImage = "img/Penguin/Penguins-Background-2.jpg" # used as default for background images 
-defaultFeaturedImage = "img/Linux/Distro/Gentoo/official-gentoo-logo.svg" # used as default for featured images in all articles
+defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
