@@ -3,10 +3,8 @@ on: [push]
 
 jobs:
   push:
-    runs-on: debian
+    runs-on: alpine
     steps:
-      - run: apt update -y && apt upgrade -y && apt install hugo
+      - run: apk update -U && apk add make gnupg patch python3 bash xz nodejs git
         shell: sh
       - uses: actions/checkout@v3
-      - run: hugo server --loglevel debug
-
