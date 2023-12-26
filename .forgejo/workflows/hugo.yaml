@@ -1,6 +1,12 @@
+name: Push
 on: [push]
+
 jobs:
-  test:
-    runs-on: alpine
+  push:
+    runs-on: debian
     steps:
-      - run: echo All Good
+      - run: apk update -y && apt upgrade -y && apt install hugo
+        shell: sh
+      - uses: actions/checkout@v3
+      - run: hugo server --loglevel debug
+
