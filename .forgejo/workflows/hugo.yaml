@@ -5,7 +5,7 @@ jobs:
   push:
     runs-on: debian
     steps:
-      - run: apk update -y && apt upgrade -y && apt install hugo
+      - run: apt update -y && apt upgrade -y && apt install hugo
         shell: sh
       - uses: actions/checkout@v3
       - run: hugo server --loglevel debug
