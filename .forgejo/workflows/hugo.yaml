@@ -1,6 +1,6 @@
 on: [push]
 jobs:
   test:
-    runs-on: alpine
+    runs-on: docker
     steps:
       - run: echo All Good
