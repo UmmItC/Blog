@@ -1,63 +1,6 @@
-# hugo.yml
-#
-# Takes a repository with Hugo source, generates the static site and
-# pushes the result to Codeberg pages
-#
-# Needs a codeberg access token (codeberg_token) as a secret in Woodpecker config
-# Also uses another secret (mail) with email address for git config
-#
-# .domains file in the repository is copied to the output branch so custom domains work
-#
-# The HUGO_OUTPUT variable must be set to the build output folder configured in Hugo
-#
-
-# Exclude page pipeline to be run on "pages" branch
-on:
-  push:
-    branches:
-      - main
-
-# Recursive cloning is used to fully clone the themes given as Git submodules
+on: [push]
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
+  test:
+    runs-on: alpine
     steps:
-      # Build hugo static files
-      - name: Build
-        uses: klakegg/hugo-action@v3
-        with:
-          args: --minify
-
-      - name: Publish
-        uses: actions/setup-node@v4
-        with:
-          node-version: 14
-        run: |
-          npm install -g bitnami@latest
-          bitnami install git
-          
-          # Must be set in Woodpecker configuration
-          export CODEBERG_TOKEN="${{ secrets.CODEBERG_TOKEN }}"
-          export MAIL="${{ secrets.MAIL }}"
-          export HUGO_OUTPUT=public
-          
-          # Git configuration
-          git config --global user.email $MAIL
-          git config --global user.name "Woodpecker CI"
-          
-          # Clone the pages branch of the Codeberg repository
-          git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
-          
-          # Copy build step output to repository folder
-          cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
-          
-          # Copy .domains file to the repository folder (if it exists)
-          cp .domains $CI_REPO_NAME || true
-          
-          # Commit and push all static files with pipeline started timestamp
-          cd $CI_REPO_NAME
-          git add .
-          git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
-          git push
-
+      - run: echo All Good
