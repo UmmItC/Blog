@@ -12,46 +12,52 @@
 #
 
 # Exclude page pipeline to be run on "pages" branch
-when:
-  branch:
-    exclude: pages
+on:
+  push:
+    branches:
+      - main
 
 # Recursive cloning is used to fully clone the themes given as Git submodules
-clone:
-  git:
-    image: woodpeckerci/plugin-git
-    settings:
-      recursive: true
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-steps:
-  # Build hugo static files
-  build:
-    image: klakegg/hugo
-    commands:
-      - hugo --minify
-    when:
-      event: [ pull_request, push ]
+    steps:
+      # Build hugo static files
+      - name: Build
+        uses: klakegg/hugo-action@v3
+        with:
+          args: --minify
 
-  publish:
-    image: bitnami/git
-    # Must be set in Woodpecker configuration
-    secrets: [ mail, codeberg_token ]
-    environment:
-      - HUGO_OUTPUT=public
-    commands:
-      # Git configuration
-      - git config --global user.email $MAIL
-      - git config --global user.name "Woodpecker CI"
-      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
-      # Copy build step output to repository folder
-      - cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
-      # Needed for custom domains
-      - cp .domains $CI_REPO_NAME || true # Ignore if it doesn't exist
-      # Commit and push all static files with pipeline started timestamp
-      - cd $CI_REPO_NAME
-      - git add .
-      - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
-      - git push
-    when:
-      event: push
+      - name: Publish
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+        run: |
+          npm install -g bitnami@latest
+          bitnami install git
+          
+          # Must be set in Woodpecker configuration
+          export CODEBERG_TOKEN="${{ secrets.CODEBERG_TOKEN }}"
+          export MAIL="${{ secrets.MAIL }}"
+          export HUGO_OUTPUT=public
+          
+          # Git configuration
+          git config --global user.email $MAIL
+          git config --global user.name "Woodpecker CI"
+          
+          # Clone the pages branch of the Codeberg repository
+          git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
+          
+          # Copy build step output to repository folder
+          cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
+          
+          # Copy .domains file to the repository folder (if it exists)
+          cp .domains $CI_REPO_NAME || true
+          
+          # Commit and push all static files with pipeline started timestamp
+          cd $CI_REPO_NAME
+          git add .
+          git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
+          git push
 
