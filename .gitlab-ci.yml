@@ -13,7 +13,7 @@ test:  # builds and tests your site
 pages:  # a predefined job that builds your pages and saves them to the specified path.
   script:
     - hugo
-    - cp -v robots.txt ./public/
+    - cp -v ../robots.txt ./public/
   artifacts:
     paths:
       - public
