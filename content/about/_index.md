@@ -2,7 +2,7 @@
 author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2023-12-25T04:49:59+08:00
+lastmod: 2023-12-29T08:58:50+08:00
 ---
 
 ## Who are you?
@@ -59,3 +59,9 @@ And that's it. Thank you for your supporting my blog. *Frankly, traffic is also 
 The contact method currently accepts `Email only`, email please send via: `blog@ummit.dev`
 
 For email please mention that you're from my blog site. otherwise I might think you're Bot Spam.
+
+## Support me!
+
+I have set up a librepay account if you like my posts and actually want to support me with money. You can support me via [here](https://liberapay.com/UmmIt/) Thank you very much!
+
+>https://liberapay.com/UmmIt/
