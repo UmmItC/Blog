@@ -52,4 +52,29 @@ Build the HTML files to the default path `./public/`. After building, upload the
 hugo --logLevel debug
 ```
 
+### CI/CD
+
+Currently only the gitlab CI/CD action can automatically create HTML files. You can see the `./.gitlab-ci.yml` file.
+
+If you enable it successfully, gitlab pages will be automatically built every time you push them. This is very convenient!
+
+**Action TODO**
+
+- Codeberg action (Forgejo)
+- Github action
+
+## Mirror Server
+
+My glow is using Differnet DevSecOps and Self-hosting to mirror all the servers.
+
+Here are the URL of all my servers. You can visit the same content with different server.
+
+- Codeberg - [blog.ummit.dev] (Manually) - Runnig
+- Gitlab - [gl-blog.ummit.dev](gl-blog.ummit.dev) (Automatically) - Running
+- Github - [gh-blog.ummit.dev](gh-blog.ummit.dev) **Coming soon**
+- Netlify - [nl-blog.ummit.dev](nl-blog.ummit.dev) **Coming soon**
+- Pure VPS Server - ???? **Coming soon**
+
+## Help me
+
 If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) for additional support. Also, if you need help, feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues).
