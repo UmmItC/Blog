@@ -12,9 +12,7 @@ test:  # builds and tests your site
 
 pages:  # a predefined job that builds your pages and saves them to the specified path.
   script:
-    - hugo
-    - pwd && ls
-    - cp -v ./robots.txt ./public/
+    - hugo --loglevel debug
   artifacts:
     paths:
       - public
