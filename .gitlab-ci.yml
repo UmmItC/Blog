@@ -12,7 +12,8 @@ test:  # builds and tests your site
 
 pages:  # a predefined job that builds your pages and saves them to the specified path.
   script:
-    - hugo
+    - hugo 
+    - echo "User-agent: *\nDisallow: /" > public/robots.txt 
   artifacts:
     paths:
       - public
