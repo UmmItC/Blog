@@ -14,6 +14,7 @@ pages:  # a predefined job that builds your pages and saves them to the specifie
   script:
     - hugo
     - pwd && ls
+    - cp -v robots.txt ./public/
   artifacts:
     paths:
       - public
