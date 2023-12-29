@@ -69,10 +69,10 @@ My glow is using Differnet DevSecOps and Self-hosting to mirror all the servers.
 
 Here are the URL of all my servers. You can visit the same content with different server.
 
-- Codeberg - [blog.ummit.dev] (Manually) - Runnig
-- Gitlab - [gl-blog.ummit.dev](gl-blog.ummit.dev) (Automatically) - Running
-- Github - [gh-blog.ummit.dev](gh-blog.ummit.dev) **Coming soon**
-- Netlify - [nl-blog.ummit.dev](nl-blog.ummit.dev) **Coming soon**
+- Codeberg - blog.ummit.dev (Manually) - Runnig
+- Gitlab - gl-blog.ummit.dev (Automatically) - Running
+- Github - gh-blog.ummit.dev - **Coming soon**
+- Netlify - nl-blog.ummit.dev - **Coming soon**
 - Pure VPS Server - ???? **Coming soon**
 
 ## Help me
