@@ -14,10 +14,10 @@ pages:  # a predefined job that builds your pages and saves them to the specifie
   script:
     - hugo
     - pwd && ls
-    - cp -v robots.txt /public/
+    - cp -v ./robots.txt ./public/
   artifacts:
     paths:
-      - /public/
+      - public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   environment: production
