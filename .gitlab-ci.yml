@@ -1,10 +1,10 @@
 default:
-  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:lastest"
+  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:0.121.1"
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-test: 
+test:
   script:
     - hugo -v
   rules:
