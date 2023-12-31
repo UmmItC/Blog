@@ -13,8 +13,7 @@ test:
 
 pages:
   script:
-    - hugo
-    - echo $GL_PAGES_URL
+    - hugo $GL_PAGES_URL
   artifacts:
     paths:
       - public
