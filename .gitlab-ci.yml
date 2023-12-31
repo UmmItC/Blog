@@ -3,7 +3,7 @@ default:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
-  GL_PAGES_URL: "https://gl-blog.ummit.dev"
+  GL_PAGES_URL: https://gl-blog.ummit.dev
 
 test:  # builds and tests your site
   script:
