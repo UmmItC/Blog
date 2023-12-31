@@ -5,12 +5,6 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
   GL_PAGES_URL: gl-blog.ummit.dev
   
-test:
-  script:
-    - hugo -v
-  rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-
 pages:
   script:
     - hugo -b $GL_PAGES_URL
