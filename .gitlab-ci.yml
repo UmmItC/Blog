@@ -1,5 +1,5 @@
 default:
-  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:0.121.1"
+  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:lastest"
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
@@ -13,7 +13,8 @@ test:  # builds and tests your site
 
 pages:  # a predefined job that builds your pages and saves them to the specified path.
   script:
-    - hugo --baseURL "$GL_PAGES_URL"
+    - hugo
+    - echo $GL_PAGES_URL
   artifacts:
     paths:
       - public
