@@ -13,8 +13,7 @@ test:  # builds and tests your site
 
 pages:  # a predefined job that builds your pages and saves them to the specified path.
   script:
-    - hugo
-    - echo $GL_PAGES_URL
+    - hugo -b $GL_PAGES_URL
   artifacts:
     paths:
       - public
