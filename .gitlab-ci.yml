@@ -3,7 +3,8 @@ default:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
-
+  GL_PAGES_URL: gl-blog.ummit.dev
+  
 test:
   script:
     - hugo -v
@@ -13,6 +14,7 @@ test:
 pages:
   script:
     - hugo
+    - echo $GL_PAGES_URL
   artifacts:
     paths:
       - public
