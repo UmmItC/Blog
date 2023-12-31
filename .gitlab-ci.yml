@@ -4,13 +4,13 @@ default:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-test:  # builds and tests your site
+test: 
   script:
     - hugo -v
   rules:
     - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
 
-pages:  # a predefined job that builds your pages and saves them to the specified path.
+pages:
   script:
     - hugo
   artifacts:
@@ -19,4 +19,3 @@ pages:  # a predefined job that builds your pages and saves them to the specifie
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   environment: production
-
