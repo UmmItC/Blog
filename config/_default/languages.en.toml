@@ -11,7 +11,7 @@ title = "UmmIt"
    logo = "img/Tux/Tux-cute.png"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to my blog."
-   copyright = "Copyright © 2020-2023 - UmmIt"
+   copyright = "Copyright © 2020-2024 - UmmIt"
 
  [author]
    name = "UmmIt"
