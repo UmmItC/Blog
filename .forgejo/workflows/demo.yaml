@@ -3,8 +3,10 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 jobs:
   Explore-CI:
-    runs-on: ubuntu-latest
+    runs-on: alpine
     steps:
-      - run: apt install hugo -y 
-      - run: echo "Testing :D"
-      - run: hugo
+      - run: apk update -U && apk add git hugo
+        shell: sh
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
