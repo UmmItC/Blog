@@ -1,0 +1,10 @@
+steps:
+  editor-config:
+    image: mstruebing/editorconfig-checker
+    group: lint
+
+  woodpecker-cli:
+    group: lint
+    image: woodpeckerci/woodpecker-cli:next-alpine
+    commands:
+      - woodpecker-cli lint Hugo/*.yml
