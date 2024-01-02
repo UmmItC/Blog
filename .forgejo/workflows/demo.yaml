@@ -5,5 +5,7 @@ jobs:
   Explore-CI:
     runs-on: ubuntu-latest
     steps:
+      - run: apt update -y && apt upgrade -y && apt dist-upgrade -y
+      - run: apt install hugo
       - run: echo "Testing :D"
       - run: hugo
