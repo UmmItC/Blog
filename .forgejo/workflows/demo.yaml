@@ -3,6 +3,8 @@ on: [push]
 jobs:
   Explore-CI:
     runs-on: ubuntu-latest
+    build:
+      image: klakegg/hugo
     steps:
       - run: apt update
       - run: echo ":D"
