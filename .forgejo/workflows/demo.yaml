@@ -1,13 +1,9 @@
-name: Push
+name: Demo
+run-name: ${{ github.actor }} is testing
 on: [push]
-
 jobs:
-  push:
-    runs-on: ubuntu-lastest
+  Explore-CI:
+    runs-on: ubuntu-latest
     steps:
       - run: apt update && apt install hugo
-        shell: sh
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-      - run: hugo
+      - run: echo "Hugo build done"
