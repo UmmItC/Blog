@@ -3,7 +3,7 @@ on: [push]
 jobs:
   Explore-CI:
     runs-on: ubuntu-lastest
-    steps:
-    bulid:
     image: klakegg/hugo
+    steps:
       - run: hugo
+      - run: echo ":D"
