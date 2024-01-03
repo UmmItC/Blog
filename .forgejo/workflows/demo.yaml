@@ -2,7 +2,7 @@ name: Demo
 on: [push]
 jobs:
   Explore-CI:
-    runs-on: ubuntu-latest
+    runs-on: debian
     steps:
       - run: apt-get update && apt-get install hugo
       - run: echo "update done"
