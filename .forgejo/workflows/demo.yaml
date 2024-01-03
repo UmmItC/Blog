@@ -1,9 +1,8 @@
 name: Demo
-run-name: ${{ github.actor }} is testing
 on: [push]
 jobs:
   Explore-CI:
     runs-on: alpine
     steps:
-      - run: doas apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community hugo
-      - run: echo "Hugo install done"
+      - run: apt update 
+      - run: echo "update done"
