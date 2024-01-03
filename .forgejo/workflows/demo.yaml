@@ -2,7 +2,7 @@ name: Demo
 on: [push]
 jobs:
   Explore-CI:
-    runs-on: alpine
+    runs-on: ubuntu-latest
     steps:
-      - run: apt update 
+      - run: apt update
       - run: echo "update done"
