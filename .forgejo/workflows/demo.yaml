@@ -1,24 +1,13 @@
-name: Demo
+name: Hugo
+
 on: [push]
 
-# Exclude page pipeline to be run on "pages" branch
-when:
-  branch:
-    exclude: pages
-
-# Recursive cloning is used to fully clone the themes given as Git submodules
-clone:
-  git:
-    image: woodpeckerci/plugin-git
-    settings:
-      recursive: true
-
 jobs:
-  Explore-CI:
+  build:
     runs-on: ubuntu-latest
-    build:
-      repository: klakegg/hugo
+
     steps:
-      - run: apt update
-      - run: hugo
-      - run: echo ":D"
+    - uses: actions/checkout@v1
+
+    - name: hugo
+      uses: klakegg/actions-hugo@1.0.0
