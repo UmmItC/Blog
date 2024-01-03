@@ -1,5 +1,18 @@
 name: Demo
 on: [push]
+
+# Exclude page pipeline to be run on "pages" branch
+when:
+  branch:
+    exclude: pages
+
+# Recursive cloning is used to fully clone the themes given as Git submodules
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: true
+
 jobs:
   Explore-CI:
     runs-on: ubuntu-latest
