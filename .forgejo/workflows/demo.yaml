@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing
 on: [push]
 jobs:
   Explore-CI:
-    runs-on: ubuntu-latest
+    runs-on: alpine
     steps:
-      - run: apt update && apt install hugo
-      - run: echo "Hugo build done"
+      - run: doas apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community hugo
+      - run: echo "Hugo install done"
