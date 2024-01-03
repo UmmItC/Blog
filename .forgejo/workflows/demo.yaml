@@ -2,7 +2,8 @@ name: Demo
 on: [push]
 jobs:
   Explore-CI:
-    runs-on: debian
+    runs-on: ubuntu-lastest
     steps:
-      - run: apt-get update && apt-get install hugo
-      - run: echo "update done"
+    bulid:
+    image: klakegg/hugo
+      - run: hugo
