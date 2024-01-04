@@ -1,8 +1,5 @@
 name: Deploy Hugo Blog
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
@@ -11,6 +8,7 @@ jobs:
       HUGO_VERSION: 0.121.1
     steps:
       - name: Install Hugo CLI
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb \
-          && dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb && hugo && echo "Build done"
+        run: wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb
+        run: dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb
+        run: hugo
+        run: echo "Build done"
