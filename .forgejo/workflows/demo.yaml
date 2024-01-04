@@ -1,5 +1,4 @@
 name: Deploy Hugo Blog
-
 on:
   push:
     branches:
