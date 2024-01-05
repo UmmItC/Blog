@@ -8,7 +8,8 @@ jobs:
       HUGO_VERSION: 0.121.1
     steps:
       - name: Install Hugo CLI
-        run: apt update -y 
         shell: sh
-        run: wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb
-        run: dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb
+        run: apt update -y && apt upgrade -y
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb \
+          && dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb && hugo && echo "Build done"
