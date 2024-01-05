@@ -17,4 +17,4 @@ jobs:
       - run: dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb
       - run: pwd && ls
       - run: hugo && echo "done"
-      - run: ls -R public
+      - run: ls -a public
