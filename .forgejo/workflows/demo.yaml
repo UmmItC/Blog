@@ -18,7 +18,3 @@ jobs:
       - run: pwd && ls
       - run: hugo --minify
       - run: ls -a ./public
-
-      - uses: actions/upload-artifact@v3
-        with:
-          path: public
