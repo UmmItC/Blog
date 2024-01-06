@@ -10,5 +10,4 @@ jobs:
     env:
       HUGO_VERSION: 0.121.2
     steps:
-      - run: curl https://codeberg.org
       - run: curl https://archlinux.org
