@@ -80,3 +80,8 @@ Here are the servers of my hosting list. You can visit the same content with dif
 ## Help me
 
 If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) to learn hugo first. Also, if you really need help, feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues).
+
+## LICENSE
+
+All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://codeberg.org/UmmIt
+/Article/src/branch/master/LICENSE.md)
