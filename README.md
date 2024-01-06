@@ -83,5 +83,4 @@ If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io
 
 ## LICENSE
 
-All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://codeberg.org/UmmIt
-/Article/src/branch/master/LICENSE.md)
+All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://codeberg.org/UmmIt/Article/src/branch/master/LICENSE.md)
