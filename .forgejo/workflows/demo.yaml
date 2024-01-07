@@ -2,7 +2,7 @@ name: Deploy Hugo Blog
 on:
   push:
     branches:
-      - 'master'
+      - 'codeberg_action'
 
 jobs:
   build:
