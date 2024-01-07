@@ -18,6 +18,6 @@ jobs:
       - run: pwd && ls
       - run: hugo && echo "done"
       - run: ls -a public
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v2
         with:
           path: public/*
