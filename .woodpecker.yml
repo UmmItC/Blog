@@ -42,13 +42,13 @@ steps:
       # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
-      - git clone -b pages https://codeberg.org/$CI_REPO.git $CI_REPO_NAME
+      - git clone -b pages https://codeberg.org/$CI_REPO.git pages
       # Copy build step output to repository folder
-      - cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
+      - cp -ar $HUGO_OUTPUT/. pages/
       # Needed for custom domains
-      - cp .domains $CI_REPO_NAME || true # Ignore if it doesn't exist
+      - cp .domains pages || true # Ignore if it doesn't exist
       # Commit and push all static files with pipeline started timestamp
-      - cd $CI_REPO_NAME
+      - cd pages
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
       - git push
