@@ -34,23 +34,26 @@ steps:
 
   publish:
     image: bitnami/git
+
     # Must be set in Woodpecker configuration
     secrets: [ mail, codeberg_token ]
+    
     environment:
       - HUGO_OUTPUT=public
+    
     commands:
       # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
+
       - cd ..
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
+
       # Commit and push all static files with pipeline started timestamp
       - cd pages
       - git add .
-      - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
-      - pwd && ls
-      - git remote -v && git config --list
+      - git commit -m "[Woodpecker CI] Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
 
     when:
