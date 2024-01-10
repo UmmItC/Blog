@@ -52,8 +52,8 @@ steps:
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
       - pwd && ls
+      - git remote -v && git config --list
       - git push origin pages
 
     when:
       event: push
-
