@@ -23,7 +23,7 @@ pipeline:
       - git config --global user.name "Woodpecker CI"
       # Clone the "pages" branch
       #
-      - git clone https://codeberg.org/UmmIt/pages.git 
+      - git clone -b master https://codeberg.org/UmmIt/pages.git 
       # Copy build step output to repository folder
       - cp -ar $HUGO_OUTPUT/. pages
       # Commit and push all static files with a pipeline timestamp
