@@ -1,32 +1,54 @@
-pipeline:
-  # Build step: it generates the files for the Hugo site
+# hugo.yml
+#
+# Takes a repository with Hugo source, generates the static site and
+# pushes the result to Codeberg pages
+#
+# Needs a codeberg access token (codeberg_token) as a secret in Woodpecker config
+# Also uses another secret (mail) with email address for git config
+#
+# .domains file in the repository is copied to the output branch so custom domains work
+#
+# The HUGO_OUTPUT variable must be set to the build output folder configured in Hugo
+#
+
+# Exclude page pipeline to be run on "pages" branch
+when:
+  branch:
+    exclude: pages
+
+# Recursive cloning is used to fully clone the themes given as Git submodules
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: true
+
+steps:
+  # Build hugo static files
   build:
     image: klakegg/hugo
     commands:
       - hugo --minify
     when:
-      branch:
-        # Exclude the "pages" branch to avoid infinite loop
-        exclude: pages
-      event: [push]
+      event: [ pull_request, push ]
 
-  # Publish step: it pushes the build output to the "pages" branch
   publish:
     image: bitnami/git
     # Must be set in Woodpecker configuration
-    secrets: [mail, codeberg_token]
+    secrets: [ mail, codeberg_token ]
     environment:
       - HUGO_OUTPUT=public
     commands:
       # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
-      # Clone the "pages" branch
-      - git clone -b pages https://codeberg.org/UmmIt/pages.git 
+      - git clone -b pages https://codeberg.org/$CI_REPO.git $CI_REPO_NAME
       # Copy build step output to repository folder
-      - cp -ar $HUGO_OUTPUT/. pages
-      # Commit and push all static files with a pipeline timestamp
-      - cd pages
+      - cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
+      # Needed for custom domains
+      - cp .domains $CI_REPO_NAME || true # Ignore if it doesn't exist
+      # Commit and push all static files with pipeline started timestamp
+      - cd $CI_REPO_NAME
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
       - git push
