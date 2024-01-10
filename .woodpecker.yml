@@ -30,7 +30,7 @@ pipeline:
       - cd pages
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
-      - git push
+      - git push origin master
     when:
       event: push
 
