@@ -45,8 +45,6 @@ steps:
       - cd ..
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
-      # Needed for custom domains
-      - cp .domains pages || true # Ignore if it doesn't exist
       # Commit and push all static files with pipeline started timestamp
       - cd pages
       - git add .
