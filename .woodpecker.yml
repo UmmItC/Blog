@@ -19,7 +19,7 @@ pipeline:
       - HUGO_OUTPUT=public
     commands:
       # Git configuration
-      - git config --global user.email $mail
+      - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
       # Clone the "pages" branch
       #
