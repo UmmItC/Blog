@@ -16,8 +16,8 @@ title = "UmmIt"
  [author]
    name = "UmmIt"
    image = "img/Tux/Tux-cute.png"
-   headline = "I use linux btw. Penguin so cute."
-   bio = "eat, sleep and code."
+   headline = "I use Linux BTW :D"
+   bio = "Eat, Sleep and Code."
    links = [
      { email = "mailto:blog@ummit.dev" },
      { link = "https://ummit.dev" },
