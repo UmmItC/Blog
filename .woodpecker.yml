@@ -40,7 +40,7 @@ steps:
       - HUGO_OUTPUT=public
     commands:
       # Git configuration
-      - git config --global user.email $MAIL
+      - git config --global user.email UmmIt
       - git config --global user.name "Woodpecker CI"
       - git clone -b pages https://codeberg.org/pages.git pages
       # Copy build step output to repository folder
