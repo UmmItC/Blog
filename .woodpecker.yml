@@ -43,7 +43,7 @@ steps:
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
       - cd ..
-      - git clone -b pages https://codeberg.org/UmmIt/pages.git pages
+      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
       # Needed for custom domains
       - cp .domains pages || true # Ignore if it doesn't exist
