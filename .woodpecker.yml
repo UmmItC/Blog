@@ -1,23 +1,31 @@
 pipeline:
+  # Build step: it generates the files for the Hugo site
   build:
     image: klakegg/hugo
     commands:
       - hugo --minify
     when:
       branch:
+        # Exclude the "pages" branch to avoid infinite loop
         exclude: pages
       event: [push]
 
+  # Publish step: it pushes the build output to the "pages" branch
   publish:
     image: bitnami/git
+    # Must be set in Woodpecker configuration
     secrets: [mail, codeberg_token]
     environment:
       - HUGO_OUTPUT=public
     commands:
+      # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
+      # Clone the "pages" branch
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
+      # Copy build step output to repository folder
       - cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
+      # Commit and push all static files with a pipeline timestamp
       - cd $CI_REPO_NAME
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
