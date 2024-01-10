@@ -52,7 +52,6 @@ steps:
       - git add .
       - git commit -m "Woodpecker CI ${CI_COMMIT_SHA}"
       - pwd && ls
-      - git remote add origin https://codeberg.org/UmmIt/pages.git
       - git push origin pages
     when:
       event: push
