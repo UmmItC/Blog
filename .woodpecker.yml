@@ -40,7 +40,7 @@ steps:
       - HUGO_OUTPUT=public
     commands:
       # Git configuration
-      - git config --global user.email test@test.com
+      - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
       - cd ..
       - git clone -b pages https://codeberg.org/UmmIt/pages.git pages
