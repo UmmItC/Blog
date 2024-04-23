@@ -70,12 +70,11 @@ My glow is using Differnet DevSecOps and hosting all the servers. Including Mirr
 
 Here are the servers of my hosting list. You can visit the same content with different server.
 
-- [Codeberg page](https://blog.ummit.dev) (Main Server) - Running 
+- [Self-Host](https://blog.ummit.dev) (Main Server) - Running
+- [Codeberg page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
 - [Gitlab page](https://gl-blog.ummit.dev) (Mirror Server) - Running
 - Github page (Mirror Server) - **Coming soon**
 - [Cloudflare page](https://cf-blog.ummit.dev) (Mirror Server) - Running
-- Vercel (Mirror Server) - **Coming soon**
-- Netlify (Mirror Server) - **Coming soon**
 
 ## Help me
 
