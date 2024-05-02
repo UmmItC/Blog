@@ -1,5 +1,5 @@
 default:
-  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:0.121.1"
+  image: "${CI_TEMPLATE_REGISTRY_HOST}/pages/hugo:latest"
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
