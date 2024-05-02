@@ -28,7 +28,7 @@ steps:
   build:
     image: klakegg/hugo
     commands:
-      - hugo --minify
+      - hugo --minify -b "https://cb-blog.ummit.dev"
     when:
       event: [ pull_request, push ]
 
