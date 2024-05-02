@@ -1,4 +1,4 @@
-## Introductio
+## Introduction
 
 UmmIt server utilizes [Hugo](https://gohugo.io/) with the [Blowfish](https://blowfish.page/) theme to power its website. Follow the steps below to host this website on your server.
 
@@ -61,7 +61,6 @@ If you enable it successfully, gitlab pages will be automatically built every ti
 
 **Action TODO**
 
-- Codeberg action (Forgejo)
 - Github action
 
 ## Mirror Server
@@ -78,7 +77,7 @@ Here are the servers of my hosting list. You can visit the same content with dif
 
 ## Help me
 
-If you encounter any issues, refer to the [Hugo documentation](https://gohugo.io/documentation/) to learn hugo first. Also, if you really need help, feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues).
+Feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues) :D
 
 ## LICENSE
 
