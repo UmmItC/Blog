@@ -21,5 +21,6 @@ title = "UmmIt"
    links = [
      { email = "mailto:blog@ummit.dev" },
      { link = "https://ummit.dev" },
-     { gitlab = "https://gitlab.com/UmmIt" }
+     { gitlab = "https://gitlab.com/UmmIt" },
+     { github = "https://github.com/UmmItC"}
    ]
