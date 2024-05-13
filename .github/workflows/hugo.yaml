@@ -7,6 +7,10 @@ on:
     branches:
       - master
 
+env:
+  GH_PAGES_URL: gh-blog.ummit.dev
+
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -55,7 +59,6 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-          GH_PAGES_URL: gh-blog.ummit.dev
           TZ: America/Los_Angeles
         run: |
           hugo \
