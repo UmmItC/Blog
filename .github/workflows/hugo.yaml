@@ -61,7 +61,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL $GH_PAGES_URL/
+            --baseURL $GH_PAGES_URL
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
