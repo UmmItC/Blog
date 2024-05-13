@@ -8,7 +8,7 @@ on:
       - master
 
 env:
-  GH_PAGES_URL: gh-blog.ummit.dev
+  GH_PAGES_URL: https://gh-blog.ummit.dev
 
 
   # Allows you to run this workflow manually from the Actions tab
