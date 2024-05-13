@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.125.4
+      GH_PAGES_URL: gh-blog.ummit.dev
     steps:
       - name: Install Hugo CLI
         run: |
@@ -60,7 +61,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL $GH_PAGES_URL/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
