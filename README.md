@@ -55,15 +55,11 @@ hugo --logLevel debug
 
 ### CI/CD
 
-Currently only the gitlab CI/CD action can automatically create HTML files. You can see the `./.gitlab-ci.yml` file.
+Currently, we have CI/CD pipelines set up across multiple platforms: `.woodpecker.yml` on Codeberg, `.gitlab-ci.yml` on GitLab, and `hugo.yaml` within `./github/workflows` on GitHub. Once successfully enabled, these pipelines automatically trigger builds every time you push changes, This is very convenient!
 
-If you enable it successfully, gitlab pages will be automatically built every time you push them. This is very convenient!
+With Cloudflare Pages, just link your GitLab or GitHub repository, clone it, and run the installation commands (See build section)
 
-**Action TODO**
-
-- Github action
-
-## Mirror Server
+## Running Server
 
 My glow is using Differnet DevSecOps and hosting all the servers. Including Mirror servers.
 
@@ -72,7 +68,7 @@ Here are the servers of my hosting list. You can visit the same content with dif
 - [Self-Host](https://blog.ummit.dev) (Main Server) - Running
 - [Codeberg page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
 - [Gitlab page](https://gl-blog.ummit.dev) (Mirror Server) - Running
-- Github page (Mirror Server) - **Coming soon**
+- [Github page](https://gh-blog.ummit.dev) (Mirror Server) - Running
 - [Cloudflare page](https://cf-blog.ummit.dev) (Mirror Server) - Running
 
 ## Help me
