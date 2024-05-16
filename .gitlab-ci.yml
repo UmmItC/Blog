@@ -8,6 +8,8 @@ variables:
 pages:
   script:
     - hugo --minify -b $GL_PAGES_URL
+  only:
+    - master
   artifacts:
     paths:
       - public

@@ -31,6 +31,7 @@ steps:
       - hugo --minify -b "https://cb-blog.ummit.dev"
     when:
       event: [ pull_request, push ]
+      branch: [ master ]
 
   publish:
     image: bitnami/git
