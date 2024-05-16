@@ -7,7 +7,7 @@ variables:
   
 pages:
   script:
-    - hugo -b $GL_PAGES_URL
+    - hugo --minify -b $GL_PAGES_URL
   artifacts:
     paths:
       - public
