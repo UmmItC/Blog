@@ -2,7 +2,7 @@
 author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2023-12-29T08:58:50+08:00
+lastmod: 2024-05-17T02:30:20+08:00
 ---
 
 ## Who are you?
@@ -19,7 +19,7 @@ This blog is intended to share my experiences, for example there are a number of
 
 I will mainly write about Linux, with occasional posts about games, Windows, Mac, and other topics.
 
-This blog is open source, transparency, and no spam.
+This blog is open source, transparency and no spam.
 
 ### Favourite animal
 
@@ -30,14 +30,23 @@ Penguin for sure. really cute :3
 ### Blog Core
 
 1. Umami for web analytics
-2. SSG use Hugo and blowfish theme
-3. Server hosting uses `Codeberg pages`
+2. SSG use Hugo and [Blowfish theme](https://github.com/nunocoracao/blowfish)
 
 {{< github repo="gohugoio/hugo" >}}
 
 {{< github repo="nunocoracao/blowfish" >}}
 
 {{< github repo="umami-software/umami" >}}
+
+### Server Hosting
+
+This website has multiple mirror servers, each hosting the same content but on different servers. Please visit the following:
+
+- [Main Server](https://blog.ummit.dev)
+- [Cloudflare Page](https://cf-blog.ummit.dev)
+- [GitHub Pages](https://gh-blog.ummit.dev)
+- [Codeberg Pages](https://cb-blog.ummit.dev)
+- [GitLab Pages](https://gl-blog.ummit.dev)
 
 ### Privacy policy
 
