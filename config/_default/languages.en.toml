@@ -21,6 +21,7 @@ title = "UmmIt"
    links = [
      { email = "mailto:blog@ummit.dev" },
      { link = "https://ummit.dev" },
+     { pgpkey = "https://gitlab.com/UmmIt.gpg"}
      { gitlab = "https://gitlab.com/UmmIt" },
-     { github = "https://github.com/UmmItC"}
+     { github = "https://github.com/UmmItC"},
    ]
