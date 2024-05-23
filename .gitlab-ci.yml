@@ -8,11 +8,9 @@ variables:
 pages:
   script:
     - hugo --minify -b $GL_PAGES_URL
-  only:
-    - master
   artifacts:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_COMMIT_REF_NAME == "master" && $CI_COMMIT_TAG'
   environment: production
