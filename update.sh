@@ -17,6 +17,7 @@ while [ "$valid_choice" == false ]; do
             # Update submodules recursively
             echo -e "${GREEN}[+] Updating submodules...${NC}"
             git submodule update --init --recursive --remote
+            echo -e "${GREEN}[+] Updated complete.${NC}"
             valid_choice=true
             ;;
         n|N ) 
