@@ -10,7 +10,8 @@ valid_choice=false
 
 while [ "$valid_choice" == false ]; do
     # Prompt user for confirmation
-    read -p "Do you want to update submodules? [y/n]: " choice
+    read -p "Do you want to update submodules? [Y/n]: " choice
+    choice=${choice:-y} # Default to 'yes' if user just presses Enter
     case "$choice" in 
         y|Y ) 
             # Update submodules recursively
