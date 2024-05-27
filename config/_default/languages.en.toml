@@ -8,14 +8,14 @@ title = "UmmIt"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-   logo = "img/Tux/Tux-cute.png"
+   logo = "img/推しの子/cutecute.jpg"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to my blog."
    copyright = "Copyright © 2020-2024 - UmmIt; All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://codeberg.org/UmmIt/Article/src/branch/master/LICENSE.md)"
 
  [author]
    name = "UmmIt"
-   image = "img/Tux/Tux-cute.png"
+   image = "img/推しの子/cutecute.jpg"
    headline = "I use Linux BTW :D"
    bio = "Eat, Sleep and Code."
    links = [
