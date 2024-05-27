@@ -37,6 +37,13 @@ git submodule update --recursive --remote --init # First time only
 git submodule update --recursive --remote
 ```
 
+or run the lazy script :D
+
+```shell
+chmod +x update.sh
+./update.sh
+```
+
 ## Start the Server
 
 To run your server, use the following command:
