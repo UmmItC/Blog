@@ -57,7 +57,9 @@ To ensure the transparency of my site, I'll explain what this site uses. This wi
 
 If you want to block these things, I recommend using uBlock Origin or a similar tool. If you don't believe me, press F12 to see the network activity analysis :)
 
-Additionally, this blog site is completely open source. See [here](https://codeberg.org/UmmIt/Blog).
+Additionally, this blog site is completely open source.
+
+{{< codeberg repo="UmmIt/Blog" >}}
 
 Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://analytics.eu.umami.is/share/HCL1bUSg0XgAfLOv/UmmIt).
 
