@@ -26,7 +26,7 @@ clone:
 steps:
   # Build hugo static files
   build:
-    image: klakegg/hugo
+    image: floryn90/hugo
     commands:
       - hugo --minify -b "https://cb-blog.ummit.dev"
     when:
