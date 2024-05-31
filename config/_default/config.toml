@@ -10,7 +10,7 @@ defaultContentLanguage = "en"
 
 enableRobotsTXT = false
 
-disableKinds = ["sitemap", "RSS", "robotsTXT"]
+#disableKinds = ["sitemap", "RSS", "robotsTXT"]
 
 paginate = 10
 summaryLength = 0
