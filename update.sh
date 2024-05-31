@@ -9,9 +9,15 @@ NC='\033[0m' # No Color
 valid_choice=false
 
 while [ "$valid_choice" == false ]; do
-    # Prompt user for confirmation
-    read -p "Do you want to update submodules? [Y/n]: " choice
-    choice=${choice:-y} # Default to 'yes' if user just presses Enter
+    # Check if --noconfirm is passed as a command-line argument
+    if [[ "$@" == *"--noconfirm"* ]]; then
+        choice="y"
+    else
+        # Prompt user for confirmation
+        read -p "Do you want to update submodules? [Y/n]: " choice
+        choice=${choice:-y} # Default to 'yes' if user just presses Enter
+    fi
+
     case "$choice" in 
         y|Y ) 
             # Update submodules recursively
