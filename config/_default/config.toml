@@ -27,10 +27,10 @@ buildFuture = false
   author = "authors"
   series = "series"
 
-#[sitemap]
-#  changefreq = 'daily'
-#  filename = 'sitemap.xml'
-#  priority = 0.5
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
 
 [outputs]
   home = ["HTML", "JSON"]
