@@ -44,6 +44,14 @@ chmod +x update.sh
 ./update.sh
 ```
 
+#### Skipping Confirmation
+
+You can skip the confirmation prompt for updating submodules and Building hugo site by using the `--noconfirm` option:
+
+```shell
+./update.sh --noconfirm
+```
+
 ## Start the Server
 
 To run your server, use the following command:
