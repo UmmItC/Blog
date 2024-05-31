@@ -61,7 +61,7 @@ Additionally, this blog site is completely open source.
 
 {{< codeberg repo="UmmIt/Blog" >}}
 
-Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://analytics.eu.umami.is/share/HCL1bUSg0XgAfLOv/UmmIt).
+Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://cloud.umami.is/share/HCL1bUSg0XgAfLOv/blog.ummit.dev).
 
 And that's it. Thank you for your supporting my blog. *Frankly, traffic is also my motivation HAHA...*
 
