@@ -11,9 +11,8 @@ title = "UmmIt"
    logo = "img/推しの子/cutecute.jpg"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to my blog."
-   copyright = """Copyright © 2020-2024 - UmmIt;<br/>
-   All articles are under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA.40<a>
-   See <a href="http://codeberg.org/UmmIt/Article/src/branch/master/LICENSE.md">Here
+   copyright = """Copyright © 2020-2024 - UmmIt<br/>
+   All articles are under CC BY-SA.40 License
    """
 
  [author]
