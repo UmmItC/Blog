@@ -11,6 +11,7 @@ build_hugo() {
     echo -e "${GREEN}[+] Building Hugo site...${NC}"
     hugo --minify
     echo -e "${GREEN}[+] Hugo build complete.${NC}"
+    rm -rfv .hugo_build.lock
 }
 
 valid_choice=false
