@@ -12,7 +12,7 @@ title = "UmmIt"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to my blog."
    copyright = """Copyright © 2020-2024 - UmmIt<br/>
-   All articles are under CC BY-SA.40 License
+   All articles are under CC BY-SA 4.0 License
    """
 
  [author]
