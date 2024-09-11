@@ -18,7 +18,7 @@ All articles are under CC BY-SA 4.0 License
 [params.author]
    name = "UmmIt"
    image = "img/推しの子/cutecute.jpg"
-   headline = "I use Linux BTW :D"
+   headline = "I use arch btw"
    bio = "Eat, Sleep and Code."
    links = [
      { email = "mailto:blog@ummit.dev" },
