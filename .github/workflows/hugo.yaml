@@ -8,8 +8,7 @@ on:
       - master
 
 env:
-  GH_PAGES_URL: gh-blog.ummit.dev
-
+  GH_PAGES_URL: blog.ummit.dev
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -81,5 +80,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
