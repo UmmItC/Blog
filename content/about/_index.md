@@ -2,7 +2,7 @@
 author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2024-05-17T02:30:20+08:00
+lastmod: 2024-09-14T11:03+10:00
 ---
 
 ## Who are you?
@@ -42,9 +42,8 @@ Penguin for sure. really cute :3
 
 This website has multiple mirror servers, each hosting the same content but on different servers. Please visit the following:
 
-- [Main Server](https://blog.ummit.dev)
+- [Main Server (Github)](https://blog.ummit.dev)
 - [Cloudflare Page](https://cf-blog.ummit.dev)
-- [GitHub Pages](https://gh-blog.ummit.dev)
 - [Codeberg Pages](https://cb-blog.ummit.dev)
 - [GitLab Pages](https://gl-blog.ummit.dev)
 
