@@ -76,14 +76,13 @@ With Cloudflare Pages, just link your GitLab or GitHub repository, clone it, and
 
 ## Running Server
 
-My glow is using Differnet DevSecOps and hosting all the servers. Including Mirror servers.
+I'm using differnet Devops to hosting my server. Including Mirror servers.
 
 Here are the servers of my hosting list. You can visit the same content with different server.
 
-- [Self-Host](https://blog.ummit.dev) (Main Server) - Running
+- [Github page](https://gh-blog.ummit.dev) (Mirror Server) - Running
 - [Codeberg page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
 - [Gitlab page](https://gl-blog.ummit.dev) (Mirror Server) - Running
-- [Github page](https://gh-blog.ummit.dev) (Mirror Server) - Running
 - [Cloudflare page](https://cf-blog.ummit.dev) (Mirror Server) - Running
 
 ## Help me
