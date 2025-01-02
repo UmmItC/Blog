@@ -8,15 +8,18 @@ defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
-enableRobotsTXT = false
-
-#disableKinds = ["sitemap", "RSS", "robotsTXT"]
-
-paginate = 10
-summaryLength = 0
+enableRobotsTXT = true
+summaryLength = 30
 
 buildDrafts = false
 buildFuture = false
+
+enableEmoji = true
+
+#googleAnalytics = "G-PEDMYR1V0K"
+
+[pagination]
+  pagerSize = 15
 
 [imaging]
   anchor = 'Center'
@@ -28,12 +31,12 @@ buildFuture = false
   series = "series"
 
 [sitemap]
-  changefreq = 'daily'
+  changefreq = 'always'
   filename = 'sitemap.xml'
   priority = 0.5
 
 [outputs]
-  home = ["HTML", "JSON"]
+  home = ["HTML", "RSS", "JSON"]
 
 [related]
   threshold = 0

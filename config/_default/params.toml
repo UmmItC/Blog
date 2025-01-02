@@ -88,8 +88,8 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
   cardViewScreenWidth = false
   constrainItemsWidth = false
 
-#[sitemap]
- # excludedKinds = ["taxonomy", "term"]
+[sitemap]
+  excludedKinds = []
 
 [taxonomy]
   showTermCount = true
@@ -112,10 +112,34 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
   cardView = true
   cardViewScreenWidth = false
 
+[firebase]
+  #apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
+  #authDomain = "blowfish-21fff.firebaseapp.com"
+  #projectId = "blowfish-21fff"
+  #storageBucket = "blowfish-21fff.appspot.com"
+  #messagingSenderId = "60108104191"
+  #appId = "1:60108104191:web:039842ebe1370698b487ca"
+  #measurementId = "G-PEDMYR1V0K"
+
+[fathomAnalytics]
+  # site = "ABC12345"
+  # domain = "llama.yoursite.com"
+
+[umamiAnalytics]
+  websiteid = "37554541-6f3e-48a5-b609-65383997b4ff"
+  domain = "blog.ummit.dev"
+  # dataDomains = "yoursite.com,yoursite2.com"
+  # scriptName = ""
+  enableTrackEvent = true
+
+[selineAnalytics]
+  # token = "XXXXXX"
+  # enableTrackEvent = false
+
 [buymeacoffee]
-  # identifier = ""
+  # identifier = "nunocoracao"
   # globalWidget = true
-  # globalWidgetMessage = "Hello"
+  # globalWidgetMessage = ""
   # globalWidgetColor = "#FFDD00"
   # globalWidgetPosition = "Right"
 
@@ -124,3 +148,7 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
   # bing = ""
   # pinterest = ""
   # yandex = ""
+
+[rssnext]
+  # feedId = ""
+  # userId = ""
