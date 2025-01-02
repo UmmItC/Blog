@@ -2,3 +2,7 @@
 	path = content/posts
 	url = https://codeberg.org/UmmIt/Article.git
 	branch = master
+[submodule "themes/blowfish"]
+	path = themes/blowfish
+	url = https://github.com/UmmItC/blowfish
+	branch = main
