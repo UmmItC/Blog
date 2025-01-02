@@ -5,4 +5,4 @@
 [submodule "themes/blowfish"]
 	path = themes/blowfish
 	url = https://github.com/UmmItC/blowfish
-	branch = main
+	branch = static_custom_main
