@@ -17,8 +17,8 @@ enableCodeCopy = true
 
 disableImageOptimization = true
 
-defaultBackgroundImage = "img/Penguin/Penguins-Background-2.jpg" # used as default for background images 
-defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featured images in all articles
+defaultBackgroundImage = "img/推しの子/1329792.png" # used as default for background images 
+defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
@@ -36,14 +36,13 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = true
-  showRecentItems = 10
+  showRecentItems = 15
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = false
   cardViewScreenWidth = false
-  layoutBackgroundBlur = true # only used when layout equals background
+  layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = true
@@ -51,8 +50,8 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
   showLikes = false
   showDateUpdated = true
   showAuthor = true
-  showHero = false
-  # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -71,11 +70,11 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
   showTaxonomies = true
   showAuthorsBadges = false
   showWordCount = true
-  # sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
+  sharingLinks = [ "mastodon", "telegram", "twitter", "reddit", "facebook","whatsapp", ]
 
 [list]
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -85,7 +84,7 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
   showTableOfContents = false
   showCards = false
   groupByYear = true
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
 
@@ -94,8 +93,8 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
 
 [taxonomy]
   showTermCount = true
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
   showLikes = false
@@ -103,14 +102,14 @@ defaultFeaturedImage = "img/Penguin/Penguin-HD.jpg" # used as default for featur
   cardView = false
 
 [term]
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = true
   showViews = false
   showLikes = false
   showTableOfContents = true
-  groupByYear = false
-  cardView = false
+  groupByYear = true
+  cardView = true
   cardViewScreenWidth = false
 
 [buymeacoffee]
