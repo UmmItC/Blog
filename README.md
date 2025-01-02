@@ -17,7 +17,7 @@ sudo pacman -S hugo git
 Clone the repository, including its submodules:
 
 ```shell
-git clone --recursive https://codeberg.org/UmmIt/Blog.git
+git clone --recursive https://github.com/UmmItC/Blog.git
 ```
 
 ### 3. Navigate to the Repository
@@ -80,15 +80,15 @@ I'm using differnet Devops to hosting my server. Including Mirror servers.
 
 Here are the servers of my hosting list. You can visit the same content with different server.
 
-- [Github page](https://gh-blog.ummit.dev) (Mirror Server) - Running
+- [Github page](https://blog.ummit.dev) (Main Server) - Running
 - [Codeberg page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
 - [Gitlab page](https://gl-blog.ummit.dev) (Mirror Server) - Running
 - [Cloudflare page](https://cf-blog.ummit.dev) (Mirror Server) - Running
 
 ## Help me
 
-Feel free to open an issue in my codeberg [repository](https://codeberg.org/UmmIt/Blog/issues) :D
+Feel free to open an issue in my repository if you have any questions or need help. I will try to help you as much as I can.
 
 ## LICENSE
 
-All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://codeberg.org/UmmIt/Article/src/branch/master/LICENSE.md)
+All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://github.com/UmmItC/Article/blob/master/LICENSE.md) for more information.
