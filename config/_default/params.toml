@@ -127,10 +127,8 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
 
 [umamiAnalytics]
   websiteid = "37554541-6f3e-48a5-b609-65383997b4ff"
-  domain = "blog.ummit.dev"
-  # dataDomains = "yoursite.com,yoursite2.com"
-  # scriptName = ""
-  enableTrackEvent = true
+  domain = "cloud.umami.is"
+  scriptName = "script.js"
 
 [selineAnalytics]
   # token = "XXXXXX"
