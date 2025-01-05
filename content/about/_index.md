@@ -28,7 +28,9 @@ This blog is about GNU/Linux, and technology. I will share my experiences and kn
 This blog is built using [Hugo](https://gohugo.io/), a static site generator. The theme I use is [Blowfish](https://github.com/nunocoracao/blowfish). The source code for this blog is available on [GitHub](https://github.com/UmmItC/Blog).
 
 {{< github repo="gohugoio/hugo" >}}
+
 {{< github repo="nunocoracao/blowfish" >}}
+
 {{< github repo="umami-software/umami" >}}
 
 ### Server Hosting
