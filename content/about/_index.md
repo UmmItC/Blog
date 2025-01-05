@@ -2,73 +2,54 @@
 author: "UmmIt"
 title: "About"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2024-09-14T11:03:10+08:00
+lastmod: 2025-01-06T00:13:34+08:00
 ---
 
 ## Who are you?
 
-I'm an Arch Linux & Gentoo user. Also a FOSS user. I blog for fun and interest.
+Hello, I'm UmmIt. I'm a student and a GNU/Linux enthusiast. Also a FOSS user. I blog for fun and interest.
 
-![GENTOO](https://styles.redditmedia.com/t5_2qrnc/styles/communityIcon_hist2hbkf2711.png)
+## Why did you start this blog?
 
-## Why this blog?
+I started this blog to share my experiences with GNU/Linux and other technologies. I also want to help people who are new to GNU/Linux and want to learn more about it.
 
-This blog is intended to share my experiences, for example there are a number of articles that guide you on how to install Arch Linux, the installation process can be overwhelming due to the amount of documentation available. Therefore, my articles make it easier for you by explaining the installation method in a simple and clear way. Happy to help you guys!
+Also, people who want to search for solutions to their problems. As my view point, there are many blogs that are not transparent and contain a lot of ads, and the content is not clear and easy to understand. For these reasons, I started this blog to provide clear and easy-to-understand content ***without ads***.
 
 ### Blog in general
 
-I will mainly write about Linux, with occasional posts about games, Windows, Mac, and other topics.
+This blog is about GNU/Linux, and technology. I will share my experiences and knowledge about GNU/Linux and other technologies. I will also share tips and tricks that I have learned over the years. I will also share tutorials
 
-This blog is open source, transparency and no spam.
+>***This blog completely open source, you can see the source code on [GitHub](https://github.com/UmmItC/Blog)***
 
-### Favourite animal
-
-Penguin for sure. really cute :3
-
-<img src="https://imagepng.org/wp-content/uploads/2017/06/pinguim-linux-tux.png" width="50%">
+{{< github repo="UmmItC/Blog" >}}
 
 ### Blog Core
 
-1. Umami for web analytics
-2. SSG use Hugo and [Blowfish theme](https://github.com/nunocoracao/blowfish)
+This blog is built using [Hugo](https://gohugo.io/), a static site generator. The theme I use is [Blowfish](https://github.com/nunocoracao/blowfish). The source code for this blog is available on [GitHub](https://github.com/UmmItC/Blog).
 
 {{< github repo="gohugoio/hugo" >}}
-
 {{< github repo="nunocoracao/blowfish" >}}
-
 {{< github repo="umami-software/umami" >}}
 
 ### Server Hosting
 
 This website has multiple mirror servers, each hosting the same content but on different servers. Please visit the following:
 
-- [Main Server (Github)](https://blog.ummit.dev)
+- [Github Page](https://blog.ummit.dev)
 - [Cloudflare Page](https://cf-blog.ummit.dev)
 - [Codeberg Pages](https://cb-blog.ummit.dev)
-- [GitLab Pages](https://gl-blog.ummit.dev)
 
 ### Privacy policy
 
-To ensure the transparency of my site, I'll explain what this site uses. This will make it easier for you to understand and trust my site, thank you :))
+This website use [Cloudflare](https://www.cloudflare.com/) for CDN and [Umami](https://umami.is/) for web analytics. For the Cloudflare will be used for CDN and Umami will be used for web analytics.
 
-1. I track some content using [Umami](https://github.com/umami-software/umami) and use Cloudflare for CDN.
-2. I have not enabled Cloudflare web analytics.
+For maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://cloud.umami.is/share/HCL1bUSg0XgAfLOv/blog.ummit.dev).
 
-If you want to block these things, I recommend using uBlock Origin or a similar tool. If you don't believe me, press F12 to see the network activity analysis :)
+### Contact me
 
-Additionally, this blog site is completely open source.
+The contact method currently accepts `Email only`, for the content of the email, please mention you're come from my blog. otherwise, I will ignore it and mark it as spam.
 
-{{< codeberg repo="UmmIt/Blog" >}}
-
-Also, for maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://cloud.umami.is/share/HCL1bUSg0XgAfLOv/blog.ummit.dev).
-
-And that's it. Thank you for your supporting my blog. *Frankly, traffic is also my motivation HAHA...*
-
-### Contact Us
-
-The contact method currently accepts `Email only`, email please send via: `blog@ummit.dev`
-
-For email please mention that you're from my blog site. otherwise I might think you're Bot Spam.
+> blog@ummit.dev
 
 ## Support me!
 
