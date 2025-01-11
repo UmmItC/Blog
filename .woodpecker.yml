@@ -30,6 +30,7 @@ steps:
   build:
     image: hugomods/hugo:exts
     commands:
+      # Build the static site and minify it and set the base URL for the domain
       - hugo --minify -b "https://cb-blog.ummit.dev"
     when:
       event: [pull_request, push]
@@ -44,23 +45,27 @@ steps:
       CODEBERG_TOKEN:
         from_secret: codeberg_token
     commands:
+
       # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
 
+      # There would be already after the hugo build
+      # Change the directory to the root of the repository
       - cd ..
+
+      # Under the root path, clone the pages branch
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
 
-      # Copy build step output to repository folder
+      # Copy the new hugo static files to the pages branch
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
+      # Copy the .domains file to the pages branch (from Blog repository)
       - cp -v Blog/.domains pages/
            
-      # Commit and push all static files with pipeline started timestamp
+      # Lastly, commit to repository pages branch and push changes
       - cd pages
-      - ls
-      - git config --list
       - git add .
-      - git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
+      - git commit -m "[Woodpecker CI] Update static site content - Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
     when:
       event: push
