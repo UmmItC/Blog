@@ -50,19 +50,11 @@ steps:
 
       - cd ..
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
-      - echo "cb-blog.ummit.dev" > .domains
-
-      # test
-      - cat .domains
-      - ls
-      - pwd
 
       # Copy build step output to repository folder
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
-
-      # Copy custom domains file
-      - cp -v .domains pages/
-      
+      - cp -v Blog/.domains pages/
+           
       # Commit and push all static files with pipeline started timestamp
       - cd pages
       - ls
