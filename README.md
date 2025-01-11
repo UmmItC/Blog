@@ -71,4 +71,4 @@ Feel free to open an issue in my repository if you have any questions or need as
 
 ## License
 
-All articles are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For more information, see [here](https://github.com/UmmItC/Article/blob/master/LICENSE.md).
+This project is licensed under the GPL-2.0 License - see the [LICENSE](./LICENSE) file for details.
