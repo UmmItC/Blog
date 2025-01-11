@@ -67,8 +67,8 @@ steps:
       - cd pages
       - ls
       - git config --list
-      #- git add .
-      #- git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
-      #- git push origin pages
+      - git add .
+      - git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
+      - git push origin pages
     when:
       event: push
