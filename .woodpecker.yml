@@ -30,7 +30,7 @@ steps:
   build:
     image: hugomods/hugo:exts
     commands:
-      - hugo --minify
+      - hugo --minify -b "https://cb-blog.ummit.dev"
     when:
       event: [pull_request, push]
 
@@ -47,15 +47,18 @@ steps:
       # Git configuration
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
-      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git page
 
-      - echo "cb-blog.ummit.dev" > .domains
+      - cd ..
+      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
+      - echo "cb-blog.ummit.dev" > pages/.domains
       # Copy build step output to repository folder
-      - cp -ar $HUGO_OUTPUT/. $CI_REPO_NAME/
-      # Needed for custom domains
-      - cp .domains $CI_REPO_NAME || true # Ignore if it doesn't exist
+      - cp -ar Blog/$HUGO_OUTPUT/. pages/
+
+      # Copy custom domains file
+      - cp -v pages/.domains pages/
+      
       # Commit and push all static files with pipeline started timestamp
-      - cd $CI_REPO_NAME
+      - cd pages
       - git add .
       - git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
