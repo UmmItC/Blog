@@ -1,52 +1,35 @@
-## Introduction
+# Blog Server
 
-UmmIt server utilizes [Hugo](https://gohugo.io/) with the [Blowfish](https://blowfish.page/) theme to power its website. Follow the steps below to host this website on your server.
+My Blog server was utilizes [Hugo](https://gohugo.io/) with the [Blowfish](https://blowfish.page/) theme to power. Follow the steps below to host this website on your server.
 
 ## Usage Guide
 
-### 1. Install Required Packages
-
-Ensure you have the necessary packages installed by running the following command:
+This website was built using Hugo, so please install it on your system before proceeding. For Arch Linux users, you can install Hugo using the following command:
 
 ```shell
-sudo pacman -S hugo git
+sudo pacman -S hugo
 ```
 
-### 2. Clone the Repository
-
-Clone the repository, including its submodules:
+Next, clone the repository, including its submodules. It is important to use the `--recursive` flag to include the submodules, as this repository relies on two submodules that are necessary for building:
 
 ```shell
 git clone --recursive https://github.com/UmmItC/Blog.git
 ```
 
-### 3. Navigate to the Repository
-
-Move into the cloned repository directory:
+Ensure that all submodules are up to date:
 
 ```shell
-cd Blog
-```
-
-### 4. Update Submodules
-
-Ensure all submodules are up to date:
-
-```shell
-git submodule update --recursive --remote --init # First time only
+git submodule update --recursive --remote # First time only
 git submodule update --recursive --remote
 ```
 
-or run the lazy script :D
+Alternatively, you can run the provided script to update everything which i wrote:
 
 ```shell
-chmod +x update.sh
 ./update.sh
 ```
 
-#### Skipping Confirmation
-
-You can skip the confirmation prompt for updating submodules and Building hugo site by using the `--noconfirm` option:
+To skip the confirmation prompt for updating submodules and building the Hugo site, use the `--noconfirm` option:
 
 ```shell
 ./update.sh --noconfirm
@@ -62,7 +45,7 @@ hugo server --watch --logLevel debug
 
 ## Build HTML Files
 
-Build the HTML files to the default path `./public/`. After building, upload them to your server:
+To build the HTML files to the default path `./public/`, run the following command. After building, you can upload the files to your server:
 
 ```shell
 hugo --logLevel debug
@@ -70,25 +53,22 @@ hugo --logLevel debug
 
 ### CI/CD
 
-Currently, we have CI/CD pipelines set up across multiple platforms: `.woodpecker.yml` on Codeberg, `.gitlab-ci.yml` on GitLab, and `hugo.yaml` within `./github/workflows` on GitHub. Once successfully enabled, these pipelines automatically trigger builds every time you push changes, This is very convenient!
+We have CI/CD pipelines set up across multiple platforms: `.woodpecker.yml` on Codeberg and `hugo.yaml` within `./github/workflows` on GitHub. Once enabled, these pipelines automatically trigger builds every time you push changes :)
 
-With Cloudflare Pages, just link your GitLab or GitHub repository, clone it, and run the installation commands (See build section)
+With Cloudflare Pages, you can link your GitHub repository, clone it, and run the installation commands (see the build section).
 
-## Running Server
+## Running the Server
 
-I'm using differnet Devops to hosting my server. Including Mirror servers.
+I use various DevOps tools to host my server, including mirror servers. Here are the servers in my hosting list. You can access the same content through different servers:
 
-Here are the servers of my hosting list. You can visit the same content with different server.
+- [GitHub Page](https://blog.ummit.dev) (Main Server) - Running
+- [Codeberg Page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
+- [Cloudflare Page](https://cf-blog.ummit.dev) (Mirror Server) - Running
 
-- [Github page](https://blog.ummit.dev) (Main Server) - Running
-- [Codeberg page](https://cb-blog.ummit.dev) (Mirror Server) - Running 
-- [Gitlab page](https://gl-blog.ummit.dev) (Mirror Server) - Running
-- [Cloudflare page](https://cf-blog.ummit.dev) (Mirror Server) - Running
+## Help
 
-## Help me
+Feel free to open an issue in my repository if you have any questions or need assistance. I will do my best to help you!
 
-Feel free to open an issue in my repository if you have any questions or need help. I will try to help you as much as I can.
+## License
 
-## LICENSE
-
-All articles are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [here](https://github.com/UmmItC/Article/blob/master/LICENSE.md) for more information.
+All articles are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For more information, see [here](https://github.com/UmmItC/Article/blob/master/LICENSE.md).
