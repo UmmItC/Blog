@@ -65,8 +65,10 @@ steps:
       
       # Commit and push all static files with pipeline started timestamp
       - cd pages
-      - git add .
-      - git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
-      - git push origin pages
+      - ls
+      - git config --list
+      #- git add .
+      #- git commit -m "Woodpecker CI Commit SHA ${CI_COMMIT_SHA}"
+      #- git push origin pages
     when:
       event: push
