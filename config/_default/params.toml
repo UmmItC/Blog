@@ -62,13 +62,13 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
   seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
-  invertPagination = false
+  invertPagination = true
   showReadingTime = true
   showTableOfContents = true
   showRelatedContent = true
-  relatedContentLimit = 5
+  relatedContentLimit = 6
   showTaxonomies = true
-  showAuthorsBadges = false
+  showAuthorsBadges = true
   showWordCount = true
   sharingLinks = [ "mastodon", "telegram", "twitter", "reddit", "facebook","whatsapp", ]
 
