@@ -46,8 +46,8 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
 
 [article]
   showDate = true
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   showDateUpdated = true
   showAuthor = true
   showHero = true
@@ -113,13 +113,13 @@ defaultFeaturedImage = "img/推しの子/1313221.png" # used as default for feat
   cardViewScreenWidth = false
 
 [firebase]
-  #apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
-  #authDomain = "blowfish-21fff.firebaseapp.com"
-  #projectId = "blowfish-21fff"
-  #storageBucket = "blowfish-21fff.appspot.com"
-  #messagingSenderId = "60108104191"
-  #appId = "1:60108104191:web:039842ebe1370698b487ca"
-  #measurementId = "G-PEDMYR1V0K"
+  apiKey = "AIzaSyBto26qIqUT2LtUnvQyY8mFq_s4pt0PNUI"
+  authDomain = "blog-b6d9f.firebaseapp.com"
+  projectId = "blog-b6d9f"
+  storageBucket = "blog-b6d9f.firebasestorage.app"
+  messagingSenderId = "306908457658"
+  appId = "1:306908457658:web:252cf92557f220fcaef083"
+  measurementId = "G-FF44T8MF2S"
 
 [fathomAnalytics]
   # site = "ABC12345"
