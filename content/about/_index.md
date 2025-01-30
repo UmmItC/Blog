@@ -1,25 +1,38 @@
 ---
 author: "UmmIt"
-title: "About"
+title: "Who Am I?"
 date: 2023-11-23T02:41:50+08:00
-lastmod: 2025-01-06T00:13:34+08:00
+lastmod: 2025-01-30T19:23:02+08:00
 ---
 
-## Who are you?
+Hello, I'm UmmIt. I'm a student and a GNU/Linux enthusiast, as well as a Free and Open Source Software (FOSS) user. I blog for fun and out of interest, using this platform to write articles and share my experiences—let's say my knowledge and notes.
 
-Hello, I'm UmmIt. I'm a student and a GNU/Linux enthusiast. Also a FOSS user. I blog for fun and interest.
+>***I am particularly interested in GNU/Linux and ethical hacking.***
 
-## Why did you start this blog?
+## Which kind of user am I?
 
-I started this blog to share my experiences with GNU/Linux and other technologies. I also want to help people who are new to GNU/Linux and want to learn more about it.
+I have been using GNU/Linux for over six years and have tried around 25 different distributions. However, I generally use four distributions for different purposes:
 
-Also, people who want to search for solutions to their problems. As my view point, there are many blogs that are not transparent and contain a lot of ads, and the content is not clear and easy to understand. For these reasons, I started this blog to provide clear and easy-to-understand content ***without ads***.
+- **Arch Linux** (Daily Driver)
+- **Debian** (VPS Server)
+- **Raspberry Pi OS** (Mini Home Server)
+- **Kali Linux** (Cyber Security Learning)
+- **Gentoo** (Used occasionally, depending on my mood)
+- **NixOS** (Learning; it’s truly a mind-blowing distro)
 
-### Blog in general
+In short, apt, pacman, nix, and emerge :)
 
-This blog is about GNU/Linux, and technology. I will share my experiences and knowledge about GNU/Linux and other technologies. I will also share tips and tricks that I have learned over the years. I will also share tutorials
+I also have a KVM-based ReviOS Windows 10 VM for gaming vm, but I rarely use it and am considering removing it.
 
->***This blog completely open source, you can see the source code on [GitHub](https://github.com/UmmItC/Blog)***
+## Why Did I Start This Blog?
+
+I started this blog to share my experiences with GNU/Linux and other technologies. I also want to help those who are new to GNU/Linux and eager to learn more about it. Additionally, I aim to provide solutions for people searching for answers to their problems. In my view, many blogs lack transparency, are filled with ads, and present content that is not clear or easy to understand. For these reasons, I created this blog to offer clear and easy-to-understand content ***without ads***.
+
+### Blog Overview
+
+This blog focuses on GNU/Linux and technology. I will share my experiences and knowledge about GNU/Linux and other technologies, along with tips and tricks I have learned over the years. I will also provide tutorials.
+
+> ***This blog is completely open source; you can view the source code on GitHub.***
 
 {{< github repo="UmmItC/Blog" >}}
 
@@ -37,24 +50,28 @@ This blog is built using [Hugo](https://gohugo.io/), a static site generator. Th
 
 This website has multiple mirror servers, each hosting the same content but on different servers. Please visit the following:
 
-- [Github Page](https://blog.ummit.dev)
+- [GitHub Page](https://blog.ummit.dev)
 - [Cloudflare Page](https://cf-blog.ummit.dev)
 - [Codeberg Pages](https://cb-blog.ummit.dev)
 
-### Privacy policy
+### Privacy Policy
 
-This website use [Cloudflare](https://www.cloudflare.com/) for CDN and [Umami](https://umami.is/) for web analytics. For the Cloudflare will be used for CDN and Umami will be used for web analytics.
+This website uses [Cloudflare](https://www.cloudflare.com/) for CDN and [Umami](https://umami.is/) for web analytics. Cloudflare will be used for CDN, while Umami will handle web analytics.
 
-For maximize my site transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you guys to see what I can see. Please see [here](https://cloud.umami.is/share/HCL1bUSg0XgAfLOv/blog.ummit.dev).
+To maximize transparency, Umami Cloud has a feature called `Enable share URL`. This feature allows you to see what I can see. Please check it out [here](https://cloud.umami.is/share/HCL1bUSg0XgAfLOv/blog.ummit.dev).
 
-### Contact me
+Additionally, I am using Google Firebase for the view/like counter on my blog. You can see the counter at the bottom of each post :)
 
-The contact method currently accepts `Email only`, for the content of the email, please mention you're come from my blog. otherwise, I will ignore it and mark it as spam.
+### Contact Me
+
+Currently, I only accept contact via email. If you reach out, please mention that you came from my blog; otherwise, I will ignore your message and mark it as spam.
 
 > blog@ummit.dev
 
-## Support me!
+## Support Me
 
-I have set up a librepay account if you like my posts and actually want to support me with money. You can support me via [here](https://liberapay.com/UmmIt/) Thank you very much!
+Click the like button of that post if you found it good or helpful. The motivation I get from your likes is what keeps me going. Thank you for your support!
 
->https://liberapay.com/UmmIt/
+As a non-paid blogger, I don't have any income from this blog. No ads, no sponsors, no short links for any advertisements :)
+
+I pay for the domain, hosting, and other services out of my own pocket.
