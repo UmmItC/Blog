@@ -61,13 +61,13 @@ steps:
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
       # Copy the .domains file to the pages branch (from Blog repository)
       - cp -v Blog/.domains pages/
-
-      - git config --list
-
-      - ls -la
            
       # Lastly, commit to repository pages branch and push changes
       - cd pages
+
+      - git config --list
+      - ls -la
+
       - git add .
       - git commit -m "[Woodpecker CI] Update static site content - Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
