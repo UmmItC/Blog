@@ -28,7 +28,7 @@ clone:
 steps:
   # Build hugo static files
   build:
-    image: hugomods/hugo:exts
+    image: floryn90/hugo:0.143.1
     commands:
       # Build the static site and minify it and set the base URL for the domain
       - hugo --minify -b "https://cb-blog.ummit.dev"
