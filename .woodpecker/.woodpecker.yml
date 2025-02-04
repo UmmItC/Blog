@@ -67,6 +67,7 @@ steps:
            
       # Lastly, commit to repository pages branch and push changes
       - cd pages
+      - git remote set-url origin https://codeberg.org/UmmIt/pages.git
       - git add .
       - git commit -m "[Woodpecker CI] Update static site content - Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
