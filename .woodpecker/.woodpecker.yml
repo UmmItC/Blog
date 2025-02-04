@@ -62,7 +62,6 @@ steps:
       # Copy the .domains file to the pages branch (from Blog repository)
       - cp -v Blog/.domains pages/
 
-      - git remote -v
       - git config --list
            
       # Lastly, commit to repository pages branch and push changes
