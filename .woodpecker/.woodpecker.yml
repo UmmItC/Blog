@@ -55,7 +55,7 @@ steps:
       - cd ..
 
       # Under the root path, clone the pages branch
-      - git clone -b pages https://codeberg.org/UmmIt/pages.git
+      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/UmmIt/pages.git pages
 
       # Copy the new hugo static files to the pages branch
       - cp -ar Blog/$HUGO_OUTPUT/. pages/
@@ -64,10 +64,6 @@ steps:
            
       # Lastly, commit to repository pages branch and push changes
       - cd pages
-
-      - git config --list
-      - ls -la
-
       - git add .
       - git commit -m "[Woodpecker CI] Update static site content - Commit SHA ${CI_COMMIT_SHA}"
       - git push origin pages
