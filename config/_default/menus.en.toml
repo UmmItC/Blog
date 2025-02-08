@@ -49,3 +49,8 @@
   name = "About"
   pageRef = "about"
   weight = 10
+
+[[main]]
+  name = "Friends"
+  pageRef = "friends"
+  weight = 70
