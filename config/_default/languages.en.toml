@@ -20,7 +20,7 @@ All articles are under CC BY-SA 4.0 License
    headline = "GNU/Linux Enthusiast :)"
    bio = "Loves to write about technology, and cybersecurity related topics :)"
    links = [
-     { gitlab = "https://gitlab.com/UmmIt" },
+     { ko-fi = "https://ko-fi.com/UmmIt"},
      { github = "https://github.com/UmmItC"},
      { codeberg = "https://codeberg.org/UmmIt"},
      { email = "mailto:blog@ummit.dev" },
