@@ -75,3 +75,9 @@ Click the like button of that post if you found it good or helpful. The motivati
 As a non-paid blogger, I don't have any income from this blog. No ads, no sponsors, no short links for any advertisements :)
 
 I pay for the domain, hosting, and other services out of my own pocket.
+
+### Ko-fi
+
+If you would like to support me, you can buy me a coffee at Ko-fi. Your support is greatly appreciated!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C219O3RV)
