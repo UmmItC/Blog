@@ -28,6 +28,13 @@ Friends list :3
 
 ---
 
+<img src="https://neko70.net/images/avatar.jpg" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://neko70.net/">ChiLin.H</a>
+{{</lead >}}
+
+---
+
 
 **If you would like to add your profile here, just pm me :3**
 
