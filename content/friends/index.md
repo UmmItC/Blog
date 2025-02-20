@@ -35,6 +35,12 @@ Friends list :3
 
 ---
 
+<img src="https://avatars.githubusercontent.com/u/135571477?v=4" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://links.frankk.uk/">Frank</a>
+{{</lead >}}
+
+---
 
 **If you would like to add your profile here, just pm me :3**
 
