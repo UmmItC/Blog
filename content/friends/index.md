@@ -28,7 +28,7 @@ Friends list :3
 
 ---
 
-<img src="https://neko70.net/images/avatar.jpg" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+<img src="https://avatars.githubusercontent.com/u/107759974?v=4" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
 {{< lead >}}
 <a href="https://neko70.net/">ChiLin.H</a>
 {{</lead >}}
