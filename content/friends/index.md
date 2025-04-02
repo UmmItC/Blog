@@ -35,3 +35,29 @@ Friends list :3
 {{</lead >}}
 
 ---
+
+<img src="https://avatars.githubusercontent.com/u/115418645?v=4" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://elliot-tw.pages.dev/">Elliot</a>
+{{</lead >}}
+
+---
+
+<img src="https://avatars.githubusercontent.com/u/132590659?v=4" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://yochan06.github.io/">Yochan</a>
+{{</lead >}}
+
+---
+
+<img src="https://avatars.githubusercontent.com/u/161041270?v=4" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://github.com/kohiro961021">Kohiro</a>
+{{</lead >}}
+
+---
+
+<img src="https://avatars.githubusercontent.com/u/150093538?v=4 " class="grid-w50 md:grid-w33 xl:grid-w25 rounded-full" />
+{{< lead >}}
+<a href="https://robin-tw.me/">Robin</a>
+{{</lead >}}
