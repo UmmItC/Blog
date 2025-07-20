@@ -1,3 +1,8 @@
+> [!NOTE]
+> The blog will soon close and be replaced by my new theme use Astro to write, which I created. Please check it out at this :D
+>
+> https://github.com/UmmItC/Purple
+
 # Blog Server
 
 My Blog server was utilizes [Hugo](https://gohugo.io/) with the [Blowfish](https://blowfish.page/) theme to power. Follow the steps below to host this website on your server.
